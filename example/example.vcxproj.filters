@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Deferred">
+      <UniqueIdentifier>{44af6e47-3cb2-4c02-85d8-12af847dff22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shadows">
+      <UniqueIdentifier>{7276a6e2-1818-44ee-bccc-31dd20e5d2b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FullScreen">
+      <UniqueIdentifier>{7172e82c-42b2-4e7b-ba7d-3e1bef75ae73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\VertexAnim">
+      <UniqueIdentifier>{9c177c6a-66fb-4fe2-b014-a94509ed8451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Tess">
+      <UniqueIdentifier>{08d46c01-e77f-4153-9311-3e0e27c809cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assimp">
+      <UniqueIdentifier>{545c72cd-b5fb-4489-967d-8700cf3e9d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS">
+      <UniqueIdentifier>{db7f6e19-49bb-4f98-bc03-17171ba0c7ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS\Components">
+      <UniqueIdentifier>{0b84bb1b-8343-4fef-96f4-1b661a398aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI">
+      <UniqueIdentifier>{429a7db3-07e3-4018-ab0d-e7c340acc99f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Lights">
+      <UniqueIdentifier>{8fcba909-ac97-4e5f-81cb-822cc4278ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Log">
+      <UniqueIdentifier>{5c9e0621-bbd4-4fce-bff2-90ee1601642a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shaders">
+      <UniqueIdentifier>{b6d0b74c-71c1-4c6c-9df5-c725914e8f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Assimp">
+      <UniqueIdentifier>{fd523135-de57-44e4-bb76-20fed1235c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS">
+      <UniqueIdentifier>{e3af3f7b-b023-49e1-a4e7-a9c384b86c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Components">
+      <UniqueIdentifier>{4af177bb-74bd-45aa-bab7-f98ad7c70305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUI">
+      <UniqueIdentifier>{16b746b4-65c7-4970-9213-87cab2008252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lights">
+      <UniqueIdentifier>{8120bd2a-263e-4a00-b50a-f0870b8c89f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Log">
+      <UniqueIdentifier>{1dea76af-a400-4285-a175-89387d2b397f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{857adb3f-3ba0-42fe-a15e-4b94117f208e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PP">
+      <UniqueIdentifier>{e4c23255-e91d-4eff-97b3-332b6ed465ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PP">
+      <UniqueIdentifier>{b10bbcbc-cd39-4263-914b-73133c83f427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\PP">
+      <UniqueIdentifier>{d17a0821-fb72-4dd4-a898-ff27800816fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\MyApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AssimpMesh.h">
+      <Filter>Header Files\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AssimpModel.h">
+      <Filter>Header Files\Assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MeshComponent.h">
+      <Filter>Header Files\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TransformComponent.h">
+      <Filter>Header Files\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CameraComponent.h">
+      <Filter>Header Files\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component.h">
+      <Filter>Header Files\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ECS.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityManager.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUI.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUIBase.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUIHierarchy.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GUIInspector.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AmbientLight.h">
+      <Filter>Header Files\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DirectionalLight.h">
+      <Filter>Header Files\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightVolumeManager.h">
+      <Filter>Header Files\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PointLight.h">
+      <Filter>Header Files\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SpotLight.h">
+      <Filter>Header Files\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightComponent.h">
+      <Filter>Header Files\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Log.h">
+      <Filter>Header Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DeferredShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FullScreenShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShadowMapShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShadowShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TessShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\VertexShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WaterShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DeferredLightPassShader.h">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PostProcessing.h">
+      <Filter>Header Files\PP</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PPEffect.h">
+      <Filter>Header Files\PP</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PPScreenOverlay.h">
+      <Filter>Header Files\PP</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PPBlur.h">
+      <Filter>Header Files\PP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MyApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PointLight.cpp">
+      <Filter>Source Files\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpotLight.cpp">
+      <Filter>Source Files\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AmbientLight.cpp">
+      <Filter>Source Files\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DirectionalLight.cpp">
+      <Filter>Source Files\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CameraComponent.cpp">
+      <Filter>Source Files\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LightComponent.cpp">
+      <Filter>Source Files\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MeshComponent.cpp">
+      <Filter>Source Files\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransformComponent.cpp">
+      <Filter>Source Files\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUIBase.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUIHierarchy.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUIInspector.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Log.cpp">
+      <Filter>Source Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeferredShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FullScreenShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShadowMapShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShadowShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TessShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VertexShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WaterShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AssimpMesh.cpp">
+      <Filter>Source Files\Assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AssimpModel.cpp">
+      <Filter>Source Files\Assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LightVolumeManager.cpp">
+      <Filter>Source Files\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityManager.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeferredLightPassShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PostProcessing.cpp">
+      <Filter>Source Files\PP</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PPEffect.cpp">
+      <Filter>Source Files\PP</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PPScreenOverlay.cpp">
+      <Filter>Source Files\PP</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PPBlur.cpp">
+      <Filter>Source Files\PP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\shaders\fragment.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\vertex.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\fragment_def.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\vertex_def.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\deferred\fragment_def_light.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\vertex_shadow.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\vertex_shadow_map.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\fragment_shadow.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\fragment_shadow_map.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\fragment_fs.glsl">
+      <Filter>Resource Files\FullScreen</Filter>
+    </None>
+    <None Include="bin\shaders\vertex_fs.glsl">
+      <Filter>Resource Files\FullScreen</Filter>
+    </None>
+    <None Include="bin\shaders\vertexAnim\fragment_water.glsl">
+      <Filter>Resource Files\VertexAnim</Filter>
+    </None>
+    <None Include="bin\shaders\vertexAnim\vertex_water.glsl">
+      <Filter>Resource Files\VertexAnim</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tessCon.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tessEval.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tess.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\tess\fragment_tess.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_gaussianBlurVertex.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_screenOverlay.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_baseVertex.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_gaussianBlurFragment.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+  </ItemGroup>
+</Project>
