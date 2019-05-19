@@ -14,5 +14,5 @@ Insight uses ImGui to handle the UI of the engine. ImGui is currently being used
 
 ## Development Tools
 [Deleaker]( https://www.deleaker.com)
-Deleaker is being used to help find memory issue within the code. This includes finding any memory leaks which may been within the engine. Deleaker can be found here: []https://www.deleaker.com.
+Deleaker is being used to help find memory issue within the code. This includes finding any memory leaks which may been within the engine. Deleaker can be found [here](https://www.deleaker.com). Deleaker helps us to find leaks.
 
