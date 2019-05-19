@@ -1,0 +1,119 @@
+﻿  AmbientLight.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  CameraComponent.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  DeferredLightPassShader.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\deferredlightpassshader.cpp(85): warning C4458: declaration of 'drawBuffers' hides class member
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(187): note: see declaration of 'Shader::drawBuffers'
+  DirectionalLight.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  Entity.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  EntityManager.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  GUIHierarchy.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  GUIInspector.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  LightComponent.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  LightVolumeManager.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  MeshComponent.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(148): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(148): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(150): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(150): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(181): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(181): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(208): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(208): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(210): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(210): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(321): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(323): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(302): warning C4189: 'widthF': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\meshcomponent.cpp(303): warning C4189: 'lengthF': local variable is initialized but not referenced
+  MyApplication.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\myapplication.cpp(68): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\myapplication.cpp(68): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\myapplication.cpp(437): warning C4100: 'aProjectionView': unreferenced formal parameter
+  PointLight.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  Shader.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(106): warning C4244: '=': conversion from 'int' to 'short', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(143): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(382): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(443): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(504): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(504): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(504): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(516): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(516): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(516): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(516): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(534): warning C4100: 'w': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(534): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(534): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(534): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shader.cpp(534): warning C4100: 'name': unreferenced formal parameter
+  ShadowMapShader.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\shadowmapshader.cpp(39): warning C4100: 'aClear': unreferenced formal parameter
+  ShadowShader.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  SpotLight.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\spotlight.cpp(10): warning C4100: 'aLength': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\spotlight.cpp(10): warning C4100: 'aOuterCutoff': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\spotlight.cpp(10): warning C4100: 'aInnerCutOff': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\spotlight.cpp(10): warning C4100: 'aLightTarget': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\spotlight.cpp(35): warning C4100: 'aBindTextures': unreferenced formal parameter
+  TransformComponent.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  WaterShader.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  main.cpp
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\gbuffer.h(45): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\include\shader.h(147): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\main.cpp(8): warning C4100: 'argv': unreferenced formal parameter
+e:\users\documents\sourcecontrol\perforce\students\1506620\ct6024-shaders-gameengine\example\src\main.cpp(8): warning C4100: 'argc': unreferenced formal parameter
+  Generating Code...
+  example.vcxproj -> E:\Users\Documents\SourceControl\Perforce\Students\1506620\CT6024-Shaders-GameEngine\example\bin\example.exe
