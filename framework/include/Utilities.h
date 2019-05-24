@@ -4,6 +4,8 @@
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 
+#include "Debug.h"
+
 #define ARRAY_SIZE(a)(sizeof(a) / sizeof(a[0]))
 
 // a utility class with static helper methods

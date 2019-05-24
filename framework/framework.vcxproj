@@ -16,6 +16,7 @@
     <ClInclude Include="..\deps\imgui\impl\imgui_impl_opengl3.h" />
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\Application_Log.h" />
+    <ClInclude Include="include\Debug.h" />
     <ClInclude Include="include\Error.h" />
     <ClInclude Include="include\Gizmos.h" />
     <ClInclude Include="include\Utilities.h" />

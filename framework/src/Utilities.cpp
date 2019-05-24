@@ -63,7 +63,7 @@ unsigned int Utility::loadShader(const char* a_filename, unsigned int a_type)
 	{
 		int infoLogLength = 0;		
 		glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &infoLogLength);
-		char* infoLog = new  char[infoLogLength];
+		char* infoLog = DEBUG_NEW  char[infoLogLength];
 
 		glGetShaderInfoLog(handle, infoLogLength, 0, infoLog);
 		Application_Log* log = Application_Log::Create();
@@ -110,7 +110,7 @@ unsigned int Utility::createProgram(unsigned int a_vertexShader, unsigned int a_
 	{
 		int infoLogLength = 0;		
 		glGetProgramiv(handle, GL_INFO_LOG_LENGTH, &infoLogLength);
-		char* infoLog = new  char[infoLogLength];
+		char* infoLog = DEBUG_NEW  char[infoLogLength];
 
 		glGetProgramInfoLog(handle, infoLogLength, 0, infoLog);
 
@@ -142,7 +142,7 @@ unsigned char* Utility::fileToBuffer(const char* a_sPath)
 	fseek(pFile, 0, SEEK_SET);
 
 	// allocate buffer and read file contents
-	unsigned char* acBuffer = new  unsigned char[uiLength + 1];
+	unsigned char* acBuffer = DEBUG_NEW  unsigned char[uiLength + 1];
 	memset(acBuffer,0,uiLength + 1);
 	fread(acBuffer, sizeof(unsigned char), uiLength, pFile);
 
@@ -300,7 +300,7 @@ void Utility::loadTextureFromFile(const char* aFileName, unsigned int& aTexture)
 	if (imageData != nullptr)
 	{
 		aTexture = 0;
-		glGenTextures(1, &aTexture); //Generate a new texture
+		glGenTextures(1, &aTexture); //Generate a DEBUG_NEW texture
 
 		glBindTexture(GL_TEXTURE_2D, aTexture); //Bind a texture 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //Set a texture parameter

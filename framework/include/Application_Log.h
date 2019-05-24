@@ -4,6 +4,7 @@
 #define __APPLICATION_LOG_H__
 
 #include <imgui.h>
+#include "Debug.h"
 
 enum LOG_LEVEL
 {

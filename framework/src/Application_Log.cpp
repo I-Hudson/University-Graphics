@@ -7,7 +7,7 @@ Application_Log* Application_Log::Create()
 {
 	if (m_instance == nullptr)
 	{
-		m_instance = new  Application_Log();
+		m_instance = DEBUG_NEW  Application_Log();
 	}
 	return m_instance;
 }

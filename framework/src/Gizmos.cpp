@@ -11,8 +11,8 @@ Gizmos::Gizmos(unsigned int a_maxLines, unsigned int a_maxTris)
 	m_maxTris(a_maxTris),
 	m_lineCount(0),
 	m_triCount(0),
-	m_lines(new  GizmoLine[a_maxLines]),
-	m_tris(new  GizmoTri[a_maxTris])
+	m_lines(DEBUG_NEW  GizmoLine[a_maxLines]),
+	m_tris(DEBUG_NEW  GizmoTri[a_maxTris])
 {
 	int success = GL_FALSE;
 	//\==============================================================================================
@@ -96,7 +96,7 @@ Gizmos::~Gizmos()
 void Gizmos::create(unsigned int a_maxLines /* = 16384 */, unsigned int a_maxTris /* = 16384 */)
 {
 	if (sm_singleton == nullptr)
-		sm_singleton = new  Gizmos(a_maxLines, a_maxTris);
+		sm_singleton = DEBUG_NEW  Gizmos(a_maxLines, a_maxTris);
 }
 
 void Gizmos::destroy()
@@ -161,13 +161,6 @@ void Gizmos::addBox(const glm::vec3& a_center,
 	vVerts[6] = a_center + vX + vZ + vY;
 	vVerts[7] = a_center + vX - vZ + vY;
 
-	if (vertexData != nullptr)
-	{
-		*vertexData = new  glm::vec3[8];
-		memcpy(*vertexData, vVerts, sizeof(glm::vec3) * 8);
-		*a_vertexCount = 8;
-	}
-
 	glm::vec4 vWhite(1, 1, 1, 1);
 
 	addLine(vVerts[0], vVerts[1], vWhite, vWhite);
@@ -222,11 +215,6 @@ void Gizmos::addCylinder(const glm::vec3& a_center, float a_radius,
 	glm::vec4 vWhite(1, 1, 1, 1);
 
 	float fSegmentSize = (2 * glm::pi<float>()) / a_segments;
-	if (vertexData != nullptr)
-	{
-		*vertexData = new  glm::vec3[a_segments * 12];
-		*a_vertexCount = a_segments * 12;
-	}
 
 
 	for (unsigned int i = 0; i < a_segments; ++i)
@@ -283,11 +271,6 @@ void Gizmos::addCircle(const glm::vec3& a_center, float a_radius, unsigned int a
 	float fAngle = (2 * glm::pi<float>()) / a_segments;
 	//We can start our first edge vector at (0,0,radius) as sin(0) = 0, cos(0) = 1
 	glm::vec4 v3Edge1(0, 0, a_radius, 0);
-	if (vertexData != nullptr)
-	{
-		*vertexData = new  glm::vec3[a_segments * 3];
-		*a_vertexCount = a_segments * 3;
-	}
 
 	for (unsigned int i = 0; i < a_segments; ++i)
 	{
@@ -301,13 +284,6 @@ void Gizmos::addCircle(const glm::vec3& a_center, float a_radius, unsigned int a
 		{
 			addTri(a_center, v3Edge1.xyz, a_center + v3Edge2.xyz, a_Colour);
 			addTri(a_center + v3Edge2.xyz, a_center + v3Edge1.xyz, a_center, a_Colour);
-			if (vertexData != nullptr)
-			{
-				unsigned int index = i * 3;
-				(*vertexData)[index] = a_center;
-				(*vertexData)[index + 1] = v3Edge1.xyz;
-				(*vertexData)[index + 2] = a_center + v3Edge2.xyz;
-			}
 		}
 		else
 		{
@@ -333,7 +309,7 @@ void Gizmos::addSphere(const glm::vec3& a_center, int a_rows, int a_columns, flo
 	float latitiudinalRange = (a_latMax - a_latMin) * DEG2RAD;
 	float longitudinalRange = (a_longMax - a_longMin) * DEG2RAD;
 	// for each row of the mesh
-	glm::vec3* v4Array = new  glm::vec3[a_rows*a_columns + a_columns];
+	glm::vec3* v4Array = DEBUG_NEW  glm::vec3[a_rows*a_columns + a_columns];
 
 	for (int row = 0; row <= a_rows; ++row)
 	{
@@ -357,14 +333,6 @@ void Gizmos::addSphere(const glm::vec3& a_center, int a_rows, int a_columns, flo
 			int index = row * a_columns + (col % a_columns);
 			v4Array[index] = a_center + v4Point;
 		}
-	}
-
-	if (vertexData != nullptr)
-	{
-		unsigned int vertexCount = a_rows * a_columns + a_columns;
-		*vertexData = new  glm::vec3[vertexCount];
-		memcpy(*vertexData, v4Array, sizeof(glm::vec3)*vertexCount);
-		*a_vertexCount = a_rows * a_columns + a_columns;
 	}
 
 	for (int face = 0; face < (a_rows)*(a_columns); ++face)

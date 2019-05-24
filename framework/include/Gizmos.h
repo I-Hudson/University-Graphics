@@ -2,6 +2,7 @@
 #define __GIZMOS_H_
 
 #include <glm/glm.hpp>
+#include "Debug.h"
 
 class Gizmos
 {

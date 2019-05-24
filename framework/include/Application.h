@@ -1,6 +1,8 @@
 #ifndef __APPLICATION_H_
 #define __APPLICATION_H_
 
+#include "Debug.h"
+
 struct GLFWwindow;
 
 class Application
