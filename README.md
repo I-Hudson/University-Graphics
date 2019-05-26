@@ -16,4 +16,16 @@ Insight uses ImGui to handle the UI of the engine. ImGui is currently being used
 ## [Deleaker]( https://www.deleaker.com)
 Deleaker is being used to help find memory issue within the code. This includes finding any memory leaks which may been within the engine. Deleaker can be found [here](https://www.deleaker.com). Deleaker helps us to find leaks.
 
+# 3rd Party Libraries
+
+### [Assimp](http://www.assimp.org)
+### [Fmod](https://www.fmod.com) 
+### [glad](https://github.com/Dav1dde/glad)
+### [glfw](https://www.glfw.org)
+### [glm](https://glm.g-truc.net/0.9.9/index.html)
+### [ImGui / Dear ImGui](https://github.com/ocornut/imgui)
+### [spdlog](https://github.com/gabime/spdlog)
+### [stb](https://github.com/nothings/stb)
+### [tinyxml]( http://www.grinninglizard.com/tinyxml)
+
 Current Build 1.0
