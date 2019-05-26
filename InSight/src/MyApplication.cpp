@@ -414,89 +414,89 @@ void MyApplication::Update(float a_deltaTime)
 	//\====================================================
 	// ImGui render view to show what is held in the fbo texture position
 	//\====================================================
-	ImGui::SetNextWindowPos(ImVec2(m_windowWidth - (m_windowWidth * 0.5f), m_windowHeight - (m_windowHeight * 0.5f)));
-	ImGui::SetNextWindowSize(ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f));
-	ImGui::Begin("Framebuffer");
-	ImGui::SliderFloat("Exp", &mPostProcessing->mExposure, 0.1f, 15.0f);
-	ImGui::SliderFloat("Gamma", &mPostProcessing->mGamma, 0.1f, 15.0f);
+	//ImGui::SetNextWindowPos(ImVec2(m_windowWidth - (m_windowWidth * 0.5f), m_windowHeight - (m_windowHeight * 0.5f)));
+	//ImGui::SetNextWindowSize(ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f));
+	//ImGui::Begin("Framebuffer");
+	//ImGui::SliderFloat("Exp", &mPostProcessing->mExposure, 0.1f, 15.0f);
+	//ImGui::SliderFloat("Gamma", &mPostProcessing->mGamma, 0.1f, 15.0f);
 
-	ImGui::BeginTabBar("Framebuffer textures");
+	//ImGui::BeginTabBar("Framebuffer textures");
 
-	if (ImGui::BeginTabItem("Colour Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(0);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Normal Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(1);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("World Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(2);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Specular Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(3);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Depth Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(4);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Light Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(5);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("HDR Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(6);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Dir Light Depth Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<DirectionalLight>()->getShadowMap();
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("mSpotLight Light Depth Buffer"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<SpotLight>()->getShadowMap();
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Reflection Master"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mWaterShader->mReflectionBuffer->getTexture(0);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("Refraction Master"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mWaterShader->mRefractionBuffer->getTexture(0);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	if (ImGui::BeginTabItem("SSR"))
-	{
-		ImTextureID texID = (void*)(intptr_t)*mSSRShader->mSSRBuffer->getTexture(0);
-		ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::EndTabItem();
-	}
-	ImGui::EndTabBar();
+	//if (ImGui::BeginTabItem("Colour Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(0);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Normal Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(1);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("World Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(2);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Specular Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(3);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Depth Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(4);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Light Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(5);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("HDR Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(6);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Dir Light Depth Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<DirectionalLight>()->getShadowMap();
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("mSpotLight Light Depth Buffer"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<SpotLight>()->getShadowMap();
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Reflection Master"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mWaterShader->mReflectionBuffer->getTexture(0);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("Refraction Master"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mWaterShader->mRefractionBuffer->getTexture(0);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//if (ImGui::BeginTabItem("SSR"))
+	//{
+	//	ImTextureID texID = (void*)(intptr_t)*mSSRShader->mSSRBuffer->getTexture(0);
+	//	ImGui::Image(texID, ImVec2(m_windowWidth * 0.5f, m_windowHeight * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+	//	ImGui::EndTabItem();
+	//}
+	//ImGui::EndTabBar();
 
-	ImGui::End();
+	//ImGui::End();
 
 	static bool show_demo_window = true;
 	//ImGui::ShowDemoWindow(&show_demo_window);
