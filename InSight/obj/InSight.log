@@ -1,4 +1,101 @@
-﻿  MyApplication.cpp
+﻿  AmbientLight.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  AssimpMesh.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  AssimpModel.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\assimpmodel.cpp(255): warning C4100: 'gamma': unreferenced formal parameter
+  AudioManager.cpp
+  CameraComponent.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  DeferredLightPassShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\deferredlightpassshader.cpp(113): warning C4458: declaration of 'drawBuffers' hides class member
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(197): note: see declaration of 'Shader::drawBuffers'
+  DeferredShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\deferredshader.cpp(52): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  DirectionalLight.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  Entity.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  EntityManager.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  FullScreenShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\fullscreenshader.cpp(58): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tvec2<float,0>' to 'glm::vec2 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\fullscreenshader.cpp(58): note: A non-const reference may only be bound to an lvalue
+  GBuffer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\gbuffer.cpp(77): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\gbuffer.cpp(122): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\gbuffer.cpp(166): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  GUI.cpp
+  GUIBase.cpp
+  GUIHierarchy.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  GUIInspector.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  LightComponent.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\lightcomponent.cpp(230): warning C4100: 'aShader': unreferenced formal parameter
+  LightVolumeManager.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  Log.cpp
+  main.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\main.cpp(7): warning C4100: 'argv': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\main.cpp(7): warning C4100: 'argc': unreferenced formal parameter
+  Generating Code...
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\gbuffer.cpp(90): warning C4172: returning address of local variable or temporary: fbo
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\assimpmodel.cpp(281): warning C4701: potentially uninitialized local variable 'format' used
+  Compiling...
+  MeshComponent.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(155): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(155): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(196): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(196): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(227): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(227): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(231): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(231): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(348): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(350): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(329): warning C4189: 'widthF': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\meshcomponent.cpp(330): warning C4189: 'lengthF': local variable is initialized but not referenced
+  MyApplication.cpp
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
 e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
@@ -10,6 +107,137 @@ e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\f
 e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\myapplication.cpp(70): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
   e:\users\documents\sourcecontrol\github\insight-engine\insight\src\myapplication.cpp(70): note: A non-const reference may only be bound to an lvalue
+  PointLight.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  PostProcessing.cpp
+  PPBloom.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\ppbloom.cpp(91): warning C4189: 'vClear': local variable is initialized but not referenced
+  PPBlur.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  PPEffect.cpp
+  PPScreenOverlay.cpp
+  Renderer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  Shader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(127): warning C4244: '=': conversion from 'int' to 'short', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(167): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(423): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(492): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(565): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(565): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(565): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(585): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(585): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(585): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(585): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(605): warning C4100: 'w': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(605): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(605): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(605): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shader.cpp(605): warning C4100: 'name': unreferenced formal parameter
+  ShadowMapShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowmapshader.cpp(22): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowmapshader.cpp(24): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowmapshader.cpp(82): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowmapshader.cpp(36): warning C4100: 'aClear': unreferenced formal parameter
+  ShadowShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowshader.cpp(11): warning C4100: 'aFragmentPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowshader.cpp(11): warning C4100: 'aVertexPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\shadowshader.cpp(30): warning C4100: 'aClear': unreferenced formal parameter
+  SpotLight.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\spotlight.cpp(34): warning C4100: 'aBindTextures': unreferenced formal parameter
+  SSAOShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\ssaoshader.cpp(90): warning C4100: 'aClear': unreferenced formal parameter
+  SSRShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\ssrshader.cpp(52): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\ssrshader.cpp(52): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\ssrshader.cpp(30): warning C4100: 'aClear': unreferenced formal parameter
+  TessShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\tessshader.cpp(69): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  TransformComponent.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+  VertexShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(10): warning C4100: 'aOutputs': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(10): warning C4100: 'aOutputCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(10): warning C4100: 'aInputs': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(9): warning C4100: 'aInputCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(9): warning C4100: 'aGeometryPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(8): warning C4100: 'aEvaluationpath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(8): warning C4100: 'aControlpath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(16): warning C4189: 'szInputs': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\vertexshader.cpp(52): warning C4100: 'aClear': unreferenced formal parameter
+  WaterShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(55): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(64): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(66): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(194): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\watershader.cpp(245): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...
      Creating library E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\bin\InSight.lib and object E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\bin\InSight.exp
 FBX_Loader.lib(FBXFile.obj) : warning LNK4099: PDB 'FBX_Loader.pdb' was not found with 'FBX_Loader.lib(FBXFile.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\bin\FBX_Loader.pdb'; linking object as if no debug info
 framework.lib(imgui_widgets.obj) : warning LNK4099: PDB 'Imgui.pdb' was not found with 'framework.lib(imgui_widgets.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\bin\Imgui.pdb'; linking object as if no debug info

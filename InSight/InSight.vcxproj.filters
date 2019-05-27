@@ -115,6 +115,9 @@
     <ClCompile Include="src\LightVolumeManager.cpp">
       <Filter>Source\Lights</Filter>
     </ClCompile>
+    <ClCompile Include="src\audio\AudioManager.cpp">
+      <Filter>Source\Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GBuffer.h">
@@ -236,6 +239,9 @@
     </ClInclude>
     <ClInclude Include="include\GUIInspector.h">
       <Filter>Includes\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\audio\AudioManager.h">
+      <Filter>Includes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -408,6 +414,12 @@
     </Filter>
     <Filter Include="Resource Files\Water">
       <UniqueIdentifier>{047f6fd3-272c-49ed-be55-7ec8feaeda67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Includes\Audio">
+      <UniqueIdentifier>{b701dc71-f775-4b38-ae3b-02edf034ec0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Audio">
+      <UniqueIdentifier>{08346c64-047f-4179-9e08-eb7ec34430be}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
