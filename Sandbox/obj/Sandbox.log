@@ -1,0 +1,38 @@
+﻿  MyApplication.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\shader\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\myapplication.cpp(72): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\myapplication.cpp(72): note: A non-const reference may only be bound to an lvalue
+  main.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\gbuffer.h(65): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\shader\shader.h(155): warning C4245: 'initializing': conversion from 'int' to 'unsigned int', signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\main.cpp(7): warning C4100: 'argv': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\main.cpp(7): warning C4100: 'argc': unreferenced formal parameter
+  Generating Code...
+     Creating library E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Sandbox.lib and object E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Sandbox.exp
+InSIght.lib(imgui_widgets.obj) : warning LNK4099: PDB 'Imgui.pdb' was not found with 'InSIght.lib(imgui_widgets.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Imgui.pdb'; linking object as if no debug info
+InSIght.lib(imgui_draw.obj) : warning LNK4099: PDB 'Imgui.pdb' was not found with 'InSIght.lib(imgui_draw.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Imgui.pdb'; linking object as if no debug info
+InSIght.lib(imgui.obj) : warning LNK4099: PDB 'Imgui.pdb' was not found with 'InSIght.lib(imgui.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Imgui.pdb'; linking object as if no debug info
+InSIght.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(egl_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(wgl_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_window.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_tls.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_time.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_monitor.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_joystick.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(win32_init.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(window.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(vulkan.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(vulkan.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(monitor.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(input.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(init.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSIght.lib(context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+InSIght.lib(FBXFile.obj) : warning LNK4099: PDB 'FBX_Loader.pdb' was not found with 'InSIght.lib(FBXFile.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\FBX_Loader.pdb'; linking object as if no debug info
+  Sandbox.vcxproj -> E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\Sandbox.exe

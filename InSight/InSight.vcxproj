@@ -11,199 +11,126 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\AmbientLight.h" />
-    <ClInclude Include="include\AssimpMesh.h" />
-    <ClInclude Include="include\AssimpModel.h" />
-    <ClInclude Include="include\audio\AudioManager.h" />
-    <ClInclude Include="include\CameraComponent.h" />
-    <ClInclude Include="include\Component.h" />
-    <ClInclude Include="include\DeferredLightPassShader.h" />
-    <ClInclude Include="include\DeferredShader.h" />
-    <ClInclude Include="include\DirectionalLight.h" />
-    <ClInclude Include="include\ECS.h" />
-    <ClInclude Include="include\Entity.h" />
-    <ClInclude Include="include\EntityManager.h" />
-    <ClInclude Include="include\FullScreenShader.h" />
-    <ClInclude Include="include\GBuffer.h" />
-    <ClInclude Include="include\GUI.h" />
-    <ClInclude Include="include\GUIBase.h" />
-    <ClInclude Include="include\GUIHierarchy.h" />
-    <ClInclude Include="include\GUIInspector.h" />
-    <ClInclude Include="include\LightComponent.h" />
-    <ClInclude Include="include\LightVolumeManager.h" />
-    <ClInclude Include="include\Log.h" />
-    <ClInclude Include="include\MeshComponent.h" />
-    <ClInclude Include="include\MyApplication.h" />
-    <ClInclude Include="include\PointLight.h" />
-    <ClInclude Include="include\PostProcessing.h" />
-    <ClInclude Include="include\PPBloom.h" />
-    <ClInclude Include="include\PPBlur.h" />
-    <ClInclude Include="include\PPEffect.h" />
-    <ClInclude Include="include\PPScreenOverlay.h" />
-    <ClInclude Include="include\PPSSR.h" />
-    <ClInclude Include="include\Renderer.h" />
-    <ClInclude Include="include\Shader.h" />
-    <ClInclude Include="include\ShadowMapShader.h" />
-    <ClInclude Include="include\ShadowShader.h" />
-    <ClInclude Include="include\SpotLight.h" />
-    <ClInclude Include="include\SSAOShader.h" />
-    <ClInclude Include="include\SSRShader.h" />
-    <ClInclude Include="include\TessShader.h" />
-    <ClInclude Include="include\TransformComponent.h" />
-    <ClInclude Include="include\VertexShader.h" />
-    <ClInclude Include="include\WaterShader.h" />
+    <ClInclude Include="..\deps\glad\include\glad\glad.h" />
+    <ClInclude Include="..\deps\imgui\impl\imgui_impl_glfw.h" />
+    <ClInclude Include="..\deps\imgui\impl\imgui_impl_opengl3.h" />
+    <ClInclude Include="include\InSight\Application.h" />
+    <ClInclude Include="include\InSight\Application_Log.h" />
+    <ClInclude Include="include\InSight\Assimp\AssimpMesh.h" />
+    <ClInclude Include="include\InSight\Assimp\AssimpModel.h" />
+    <ClInclude Include="include\InSight\Audio\AudioManager.h" />
+    <ClInclude Include="include\InSight\Component\AmbientLight.h" />
+    <ClInclude Include="include\InSight\Component\CameraComponent.h" />
+    <ClInclude Include="include\InSight\Component\Component.h" />
+    <ClInclude Include="include\InSight\Component\DirectionalLight.h" />
+    <ClInclude Include="include\InSight\Component\LightComponent.h" />
+    <ClInclude Include="include\InSight\Component\MeshComponent.h" />
+    <ClInclude Include="include\InSight\Component\PointLight.h" />
+    <ClInclude Include="include\InSight\Component\SpotLight.h" />
+    <ClInclude Include="include\InSight\Component\TransformComponent.h" />
+    <ClInclude Include="include\InSight\Debug.h" />
+    <ClInclude Include="include\InSight\Entity\ECS.h" />
+    <ClInclude Include="include\InSight\Entity\Entity.h" />
+    <ClInclude Include="include\InSight\Entity\EntityManager.h" />
+    <ClInclude Include="include\InSight\Error.h" />
+    <ClInclude Include="include\InSight\Event\ApplicationEvent.h" />
+    <ClInclude Include="include\InSight\Event\Event.h" />
+    <ClInclude Include="include\InSight\Event\KeyEvent.h" />
+    <ClInclude Include="include\InSight\GBuffer.h" />
+    <ClInclude Include="include\InSight\Gizmos.h" />
+    <ClInclude Include="include\InSight\GUI\GUI.h" />
+    <ClInclude Include="include\InSight\GUI\GUIBase.h" />
+    <ClInclude Include="include\InSight\GUI\GUIHierarchy.h" />
+    <ClInclude Include="include\InSight\GUI\GUIInspector.h" />
+    <ClInclude Include="include\InSight\Layer\Layer.h" />
+    <ClInclude Include="include\InSight\LightVolumeManager.h" />
+    <ClInclude Include="include\InSight\Log.h" />
+    <ClInclude Include="include\InSight\PP\PostProcessing.h" />
+    <ClInclude Include="include\InSight\PP\PPBloom.h" />
+    <ClInclude Include="include\InSight\PP\PPBlur.h" />
+    <ClInclude Include="include\InSight\PP\PPEffect.h" />
+    <ClInclude Include="include\InSight\PP\PPScreenOverlay.h" />
+    <ClInclude Include="include\InSight\PP\PPSSR.h" />
+    <ClInclude Include="include\InSight\Renderer.h" />
+    <ClInclude Include="include\InSight\Shader\DeferredLightPassShader.h" />
+    <ClInclude Include="include\InSight\Shader\DeferredShader.h" />
+    <ClInclude Include="include\InSight\Shader\FullScreenShader.h" />
+    <ClInclude Include="include\InSight\Shader\Shader.h" />
+    <ClInclude Include="include\InSight\Shader\ShadowMapShader.h" />
+    <ClInclude Include="include\InSight\Shader\ShadowShader.h" />
+    <ClInclude Include="include\InSight\Shader\SSAOShader.h" />
+    <ClInclude Include="include\InSight\Shader\SSRShader.h" />
+    <ClInclude Include="include\InSight\Shader\TessShader.h" />
+    <ClInclude Include="include\InSight\Shader\VertexShader.h" />
+    <ClInclude Include="include\InSight\Shader\WaterShader.h" />
+    <ClInclude Include="include\InSight\Utilities.h" />
+    <ClInclude Include="include\Platform\Window.h" />
+    <ClInclude Include="include\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AmbientLight.cpp" />
-    <ClCompile Include="src\AssimpMesh.cpp" />
-    <ClCompile Include="src\AssimpModel.cpp" />
-    <ClCompile Include="src\audio\AudioManager.cpp" />
-    <ClCompile Include="src\CameraComponent.cpp" />
-    <ClCompile Include="src\DeferredLightPassShader.cpp" />
-    <ClCompile Include="src\DeferredShader.cpp" />
-    <ClCompile Include="src\DirectionalLight.cpp" />
-    <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\EntityManager.cpp" />
-    <ClCompile Include="src\FullScreenShader.cpp" />
-    <ClCompile Include="src\GBuffer.cpp" />
-    <ClCompile Include="src\GUI.cpp" />
-    <ClCompile Include="src\GUIBase.cpp" />
-    <ClCompile Include="src\GUIHierarchy.cpp" />
-    <ClCompile Include="src\GUIInspector.cpp" />
-    <ClCompile Include="src\LightComponent.cpp" />
-    <ClCompile Include="src\LightVolumeManager.cpp" />
-    <ClCompile Include="src\Log.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\MeshComponent.cpp" />
-    <ClCompile Include="src\MyApplication.cpp" />
-    <ClCompile Include="src\PointLight.cpp" />
-    <ClCompile Include="src\PostProcessing.cpp" />
-    <ClCompile Include="src\PPBloom.cpp" />
-    <ClCompile Include="src\PPBlur.cpp" />
-    <ClCompile Include="src\PPEffect.cpp" />
-    <ClCompile Include="src\PPScreenOverlay.cpp" />
-    <ClCompile Include="src\Renderer.cpp" />
-    <ClCompile Include="src\Shader.cpp" />
-    <ClCompile Include="src\ShadowMapShader.cpp" />
-    <ClCompile Include="src\ShadowShader.cpp" />
-    <ClCompile Include="src\SpotLight.cpp" />
-    <ClCompile Include="src\SSAOShader.cpp" />
-    <ClCompile Include="src\SSRShader.cpp" />
-    <ClCompile Include="src\TessShader.cpp" />
-    <ClCompile Include="src\TransformComponent.cpp" />
-    <ClCompile Include="src\VertexShader.cpp" />
-    <ClCompile Include="src\WaterShader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\shaders\deferred\fragment_def_light.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\fragment.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\fragment_def.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\fragment_fs.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\fragment_postLight.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_baseVertex.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_bloomCompositeFragment.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_bloomEvalFragment.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_fsApplyBlurFragment.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_fsApplyBlurVertex.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_gaussianBlurFragment.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_gaussianBlurVertex.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\pp\pp_screenOverlay.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\shadows\fragment_shadow.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\shadows\fragment_shadow_map.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\shadows\vertex_shadow.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\shadows\vertex_shadow_map.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\ssao\fragment_ssao.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\ssao\vertex_ssao.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\ssr\fragment_ssr.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\ssr\vertex_ssr.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\tess\fragment_tess.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\tess\vertex_tess.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\tess\vertex_tessCon.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\tess\vertex_tessEval.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertex.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertexAnim\fragment_water.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertexAnim\vertex_water.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertex_def.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertex_fs.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
-    <None Include="bin\shaders\vertex_postLight.glsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </None>
+    <ClCompile Include="..\deps\glad\src\glad.c" />
+    <ClCompile Include="..\deps\imgui\impl\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\deps\imgui\impl\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\InSight\Application.cpp" />
+    <ClCompile Include="src\InSight\Application_Log.cpp" />
+    <ClCompile Include="src\InSight\Assimp\AssimpMesh.cpp" />
+    <ClCompile Include="src\InSight\Assimp\AssimpModel.cpp" />
+    <ClCompile Include="src\InSight\Audio\AudioManager.cpp" />
+    <ClCompile Include="src\InSight\Component\AmbientLight.cpp" />
+    <ClCompile Include="src\InSight\Component\CameraComponent.cpp" />
+    <ClCompile Include="src\InSight\Component\DirectionalLight.cpp" />
+    <ClCompile Include="src\InSight\Component\LightComponent.cpp" />
+    <ClCompile Include="src\InSight\Component\MeshComponent.cpp" />
+    <ClCompile Include="src\InSight\Component\PointLight.cpp" />
+    <ClCompile Include="src\InSight\Component\SpotLight.cpp" />
+    <ClCompile Include="src\InSight\Component\TransformComponent.cpp" />
+    <ClCompile Include="src\InSight\Entity\Entity.cpp" />
+    <ClCompile Include="src\InSight\Entity\EntityManager.cpp" />
+    <ClCompile Include="src\InSight\Error.cpp" />
+    <ClCompile Include="src\InSight\GBuffer.cpp" />
+    <ClCompile Include="src\InSight\Gizmos.cpp" />
+    <ClCompile Include="src\InSight\GUI\GUI.cpp" />
+    <ClCompile Include="src\InSight\GUI\GUIBase.cpp" />
+    <ClCompile Include="src\InSight\GUI\GUIHierarchy.cpp" />
+    <ClCompile Include="src\InSight\GUI\GUIInspector.cpp" />
+    <ClCompile Include="src\InSight\LightVolumeManager.cpp" />
+    <ClCompile Include="src\InSight\Log.cpp" />
+    <ClCompile Include="src\InSight\PP\PostProcessing.cpp" />
+    <ClCompile Include="src\InSight\PP\PPBloom.cpp" />
+    <ClCompile Include="src\InSight\PP\PPBlur.cpp" />
+    <ClCompile Include="src\InSight\PP\PPEffect.cpp" />
+    <ClCompile Include="src\InSight\PP\PPScreenOverlay.cpp" />
+    <ClCompile Include="src\InSight\Renderer.cpp" />
+    <ClCompile Include="src\InSight\Shader\DeferredLightPassShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\DeferredShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\FullScreenShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\Shader.cpp" />
+    <ClCompile Include="src\InSight\Shader\ShadowMapShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\ShadowShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\SSAOShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\SSRShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\TessShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\VertexShader.cpp" />
+    <ClCompile Include="src\InSight\Shader\WaterShader.cpp" />
+    <ClCompile Include="src\InSight\Utilities.cpp" />
+    <ClCompile Include="src\Platform\Window.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FD4570AB-7F0A-4AFE-8B38-383FC82E2A5E}</ProjectGuid>
-    <RootNamespace>example</RootNamespace>
+    <ProjectGuid>{473F1220-17D6-4B43-BF91-9F839980F0A3}</ProjectGuid>
+    <RootNamespace>InSight</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>InSight</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
-    <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -222,14 +149,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)bin\</OutDir>
-    <IntDir>$(ProjectDir)obj\</IntDir>
-    <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
-    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>$(ProjectDir)../lib\</OutDir>
+    <IntDir>$(ProjectDir)/obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)/bin\</OutDir>
+    <OutDir>$(ProjectDir)../lib\</OutDir>
     <IntDir>$(ProjectDir)/obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -237,24 +161,14 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)deps\fmod\include;$(SolutionDir)deps/utili;$(SolutionDir)deps/stb;$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps\fbx_loader\include;$(SolutionDir)deps/assimp/include;$(ProjectDir)include;$(SolutionDir)framework/include;$(SolutionDir)deps/tinyxml;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui/imgui_tabs;$(SolutionDir)deps/imgui/include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__GL_DEBUG__;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4310;4099;</DisableSpecificWarnings>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\fmod\lib\$(Platform);$(SolutionDir)deps/assimp/lib;$(SolutionDir)deps/fbx_loader/lib;$(SolutionDir)lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp.lib;FBX_Loader.lib;framework.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>NotSet</SubSystem>
-      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-    </Link>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib;$(SolutionDir)deps\fbx_loader\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp.lib;FBX_Loader.lib;OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -263,25 +177,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)framework/include;$(SolutionDir)deps/tinyxml;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui/imgui_tabs;$(SolutionDir)deps/imgui/include</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4310;4099;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>framework.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
     </Link>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
