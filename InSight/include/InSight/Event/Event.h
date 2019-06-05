@@ -14,7 +14,7 @@ enum class EventType
 	None = 0,
 	WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMove,
 	AppTick, AppUpdate, AppRender,
-	KeyPressed, KeyReleased,
+	KeyPressed, KeyReleased, KeyTyped,
 	MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 };
 
@@ -63,9 +63,9 @@ public:
 	template<typename T>
 	bool Dispatch(EventFn<T> aFunc)
 	{
-		if (mEvent.GetEvetType() == T::GetStaticType())
+		if (mEvent.GetEventType() == T::GetStaticType())
 		{
-			mEvent.mHandled = func(*(T*)&mEvent);
+			mEvent.Handled = aFunc(*(T*)&mEvent);
 			return true;
 		}
 		return false;

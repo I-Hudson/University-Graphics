@@ -15,9 +15,10 @@
 
 //include the application log to record details
 #include "Application_Log.h"
+#include "Log.h"
 
 #define BUILD_VERSION_MAJOR 1
-#define BUILD_VERSION_MINOR 0
+#define BUILD_VERSION_MINOR 1
 #define BULID_VERSION_REVISION 1
 
 #ifdef __GL_DEBUG__
@@ -65,6 +66,8 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 }
 #endif
 
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
 bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen )
 {
 	//// initialise glfw systems
@@ -86,6 +89,7 @@ bool Application::create(const char* a_name, int a_width, int a_height, bool a_b
 	//glfwMakeContextCurrent(m_window);
 
 	mWindow = std::unique_ptr<Window>(Window::Create());
+	mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 	if (!gladLoadGL()) {
 		glfwDestroyWindow(mWindow->GetWindow());
@@ -185,6 +189,20 @@ void Application::run(const char* a_name, int a_width, int a_height, bool a_bFul
 	glfwTerminate();
 }
 
+bool Application::OnWindowClose(WindowCloseEvent& aEvent)
+{
+	m_running = false;
+	return true;
+}
+
+void Application::OnEvent(Event& aE)
+{
+	EventDispatcher dispatcher(aE);
+	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+	EN_CORE_INFO("{0}", aE);
+}
+
 void Application::showFrameData(bool a_showFrameData)
 {
 	m_showFrameData = a_showFrameData;
@@ -216,3 +234,5 @@ void Application::showFrameData(bool a_showFrameData)
 	ImGui::End();
 	
 }
+
+

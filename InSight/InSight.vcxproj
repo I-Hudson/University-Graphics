@@ -36,6 +36,7 @@
     <ClInclude Include="include\InSight\Event\ApplicationEvent.h" />
     <ClInclude Include="include\InSight\Event\Event.h" />
     <ClInclude Include="include\InSight\Event\KeyEvent.h" />
+    <ClInclude Include="include\InSight\Event\MouseEvent.h" />
     <ClInclude Include="include\InSight\GBuffer.h" />
     <ClInclude Include="include\InSight\Gizmos.h" />
     <ClInclude Include="include\InSight\GUI\GUI.h" />

@@ -3,6 +3,8 @@
 
 #include "Debug.h"
 #include "Platform/Window.h"
+#include "Event/Event.h"
+#include "Event/ApplicationEvent.h"
 
 struct GLFWwindow;
 
@@ -17,18 +19,22 @@ public:
 
 	void	run(const char* a_name, int a_width, int a_height, bool a_bFullscreen);
 
+	void	OnEvent(Event& aE);
+
 	void	quit()	{ m_running = false; }
 
 	void	showFrameData(bool a_showFrameData);
 
 protected:
 
+
+	bool OnWindowClose(WindowCloseEvent& aEvent);
+	std::unique_ptr<Window> mWindow;
+
 	virtual bool	onCreate() = 0;
 	virtual void	Update(float a_deltaTime) = 0;
 	virtual void	Draw() = 0;
 	virtual void	Destroy() = 0;
-	
-	std::unique_ptr<Window> mWindow;
 
 	GLFWwindow*		m_window;
 	unsigned int	m_windowWidth;

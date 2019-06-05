@@ -1,14 +1,9 @@
-﻿  Application.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(68): warning C4100: 'a_bFullscreen': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(68): warning C4100: 'a_height': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(68): warning C4100: 'a_width': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(68): warning C4100: 'a_name': unreferenced formal parameter
-  Window.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\window.cpp(3): warning C4100: 'aProps': unreferenced formal parameter
-  WindowsWindow.cpp
+﻿  WindowsWindow.cpp
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
   e:\users\documents\sourcecontrol\github\insight-engine\deps\glfw\include\glfw\glfw3.h(98): note: see previous definition of 'APIENTRY'
-  Generating Code...
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'mos': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'scancode': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(118): warning C4100: 'mods': unreferenced formal parameter
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(ImathBox.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
