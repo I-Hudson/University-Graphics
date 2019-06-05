@@ -1,9 +1,7 @@
-﻿  WindowsWindow.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glfw\include\glfw\glfw3.h(98): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'mos': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'scancode': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(118): warning C4100: 'mods': unreferenced formal parameter
+﻿  Application.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(18): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(81): warning C4100: 'a_bFullscreen': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(212): warning C4100: 'aEvent': unreferenced formal parameter
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(ImathBox.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
@@ -1127,4 +1125,12 @@ Window.obj : warning LNK4006: "public: static class Window * __cdecl Window::Cre
 Window.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 AssimpModel.obj : warning LNK4006: "public: enum aiReturn __cdecl aiMaterial::GetTexture(enum aiTextureType,unsigned int,struct aiString *,enum aiTextureMapping *,unsigned int *,float *,enum aiTextureOp *,enum aiTextureMapMode *)const " (?GetTexture@aiMaterial@@QEBA?AW4aiReturn@@W4aiTextureType@@IPEAUaiString@@PEAW4aiTextureMapping@@PEAIPEAMPEAW4aiTextureOp@@PEAW4aiTextureMapMode@@@Z) already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
 AssimpModel.obj : warning LNK4006: "public: unsigned int __cdecl aiMaterial::GetTextureCount(enum aiTextureType)const " (?GetTextureCount@aiMaterial@@QEBAIW4aiTextureType@@@Z) already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "bool __cdecl ImGui_ImplOpenGL3_CreateDeviceObjects(void)" (?ImGui_ImplOpenGL3_CreateDeviceObjects@@YA_NXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "bool __cdecl ImGui_ImplOpenGL3_CreateFontsTexture(void)" (?ImGui_ImplOpenGL3_CreateFontsTexture@@YA_NXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "void __cdecl ImGui_ImplOpenGL3_DestroyDeviceObjects(void)" (?ImGui_ImplOpenGL3_DestroyDeviceObjects@@YAXXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "void __cdecl ImGui_ImplOpenGL3_DestroyFontsTexture(void)" (?ImGui_ImplOpenGL3_DestroyFontsTexture@@YAXXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "bool __cdecl ImGui_ImplOpenGL3_Init(char const *)" (?ImGui_ImplOpenGL3_Init@@YA_NPEBD@Z) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "void __cdecl ImGui_ImplOpenGL3_NewFrame(void)" (?ImGui_ImplOpenGL3_NewFrame@@YAXXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "void __cdecl ImGui_ImplOpenGL3_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL3_RenderDrawData@@YAXPEAUImDrawData@@@Z) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
+imgui_impl_opengl3.obj : warning LNK4006: "void __cdecl ImGui_ImplOpenGL3_Shutdown(void)" (?ImGui_ImplOpenGL3_Shutdown@@YAXXZ) already defined in ImGuiOpenGLRenderer.obj; second definition ignored
   InSight.vcxproj -> E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\../lib\InSight.lib

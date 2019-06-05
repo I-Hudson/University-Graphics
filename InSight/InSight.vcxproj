@@ -43,7 +43,9 @@
     <ClInclude Include="include\InSight\GUI\GUIBase.h" />
     <ClInclude Include="include\InSight\GUI\GUIHierarchy.h" />
     <ClInclude Include="include\InSight\GUI\GUIInspector.h" />
+    <ClInclude Include="include\InSight\Layer\ImGui\ImGuiLayer.h" />
     <ClInclude Include="include\InSight\Layer\Layer.h" />
+    <ClInclude Include="include\InSight\Layer\LayerStack.h" />
     <ClInclude Include="include\InSight\LightVolumeManager.h" />
     <ClInclude Include="include\InSight\Log.h" />
     <ClInclude Include="include\InSight\PP\PostProcessing.h" />
@@ -65,6 +67,7 @@
     <ClInclude Include="include\InSight\Shader\VertexShader.h" />
     <ClInclude Include="include\InSight\Shader\WaterShader.h" />
     <ClInclude Include="include\InSight\Utilities.h" />
+    <ClInclude Include="include\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="include\Platform\Window.h" />
     <ClInclude Include="include\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
@@ -94,6 +97,9 @@
     <ClCompile Include="src\InSight\GUI\GUIBase.cpp" />
     <ClCompile Include="src\InSight\GUI\GUIHierarchy.cpp" />
     <ClCompile Include="src\InSight\GUI\GUIInspector.cpp" />
+    <ClCompile Include="src\InSight\Layer\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\InSight\Layer\Layer.cpp" />
+    <ClCompile Include="src\InSight\Layer\LayerStack.cpp" />
     <ClCompile Include="src\InSight\LightVolumeManager.cpp" />
     <ClCompile Include="src\InSight\Log.cpp" />
     <ClCompile Include="src\InSight\PP\PostProcessing.cpp" />
@@ -114,6 +120,7 @@
     <ClCompile Include="src\InSight\Shader\VertexShader.cpp" />
     <ClCompile Include="src\InSight\Shader\WaterShader.cpp" />
     <ClCompile Include="src\InSight\Utilities.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Window.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
@@ -162,7 +169,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4310;4099;</DisableSpecificWarnings>
     </ClCompile>

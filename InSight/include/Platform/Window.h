@@ -5,6 +5,7 @@
 
 #include <string>
 #include "InSight/Event/Event.h"
+#include <glad/glad.h>
 
 struct GLFWwindow;
 

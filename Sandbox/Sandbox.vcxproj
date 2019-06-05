@@ -12,10 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\MyApplication.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\MyApplication.cpp" />
+    <ClInclude Include="include\Sandbox.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\shaders\deferred\fragment_def_light.glsl">
@@ -111,6 +108,11 @@
     <None Include="bin\shaders\vertex_postLight.glsl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MyApplication.cpp" />
+    <ClCompile Include="src\Sandbox.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FD4570AB-7F0A-4AFE-8B38-383FC82E2A5E}</ProjectGuid>

@@ -4,6 +4,8 @@
 #define __WINDOWS_WINDOW_H__
 
 #include "Platform/Window.h"
+
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 class WindowsWindow : public Window

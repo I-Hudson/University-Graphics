@@ -16,6 +16,7 @@
 //include the application log to record details
 #include "Application_Log.h"
 #include "Log.h"
+#include "Gizmos.h"
 
 #define BUILD_VERSION_MAJOR 1
 #define BUILD_VERSION_MINOR 1
@@ -68,6 +69,15 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+Application* Application::sInstnace = nullptr;
+
+Application::Application()
+	: m_running(false)
+{
+	EN_CORE_ASSERT(!sInstnace, "Application already exists!");
+	sInstnace = this;
+}
+
 bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen )
 {
 	//// initialise glfw systems
@@ -88,14 +98,14 @@ bool Application::create(const char* a_name, int a_width, int a_height, bool a_b
 	//}
 	//glfwMakeContextCurrent(m_window);
 
-	mWindow = std::unique_ptr<Window>(Window::Create());
+	mWindow = std::unique_ptr<Window>(Window::Create(WindowProps(a_name, a_width, a_height)));
 	mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
-	if (!gladLoadGL()) {
-		glfwDestroyWindow(mWindow->GetWindow());
-		glfwTerminate();
-		return false;
-	}
+	//if (!glLoadGLL()) {
+	//	glfwDestroyWindow(mWindow->GetWindow());
+	//	glfwTerminate();
+	//	return false;
+	//}
 
 
 	
@@ -110,30 +120,36 @@ bool Application::create(const char* a_name, int a_width, int a_height, bool a_b
 
 	//Set Up IMGUI
 	//Setup Dear ImGui context
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	//IMGUI_CHECKVERSION();
+	//ImGui::CreateContext();
+	//ImGuiIO& io = ImGui::GetIO(); (void)io;
 	// Setup Dear ImGui style
-	ImGui::StyleColorsDark();
-	const char* glsl_version = "#version 400";
+	//ImGui::StyleColorsDark();
+	//const char* glsl_version = "#version 400";
 
 	// Setup Platform/Renderer bindings
-	ImGui_ImplGlfw_InitForOpenGL(mWindow->GetWindow() , true);
-	ImGui_ImplOpenGL3_Init(glsl_version);
+	//ImGui_ImplGlfw_InitForOpenGL(mWindow->GetWindow() , true);
+	//ImGui_ImplOpenGL3_Init(glsl_version);
 
+	//start the logger
+	Engine::Log::Init();
 
 	Application_Log* log = Application_Log::Create();
 	if (log != nullptr)
 	{
 
-		log->addLog(LOG_LEVEL::LOG_INFO, "UG Framework Version: %i.%i.%i", BUILD_VERSION_MAJOR, BUILD_VERSION_MINOR, BULID_VERSION_REVISION);
+		//log->addLog
+		EN_CORE_INFO("UG Framework Version: %i.%i.%i", BUILD_VERSION_MAJOR, BUILD_VERSION_MINOR, BULID_VERSION_REVISION);
 		int major = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_VERSION_MAJOR);
 		int minor = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_VERSION_MINOR);
 		int revision = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_REVISION);
 
-		log->addLog(LOG_LEVEL::LOG_INFO, "OpenGL Version %i.%i.%i", major, minor, revision);
+		//log->addLog
+		EN_CORE_INFO("OpenGL Version %i.%i.%i", major, minor, revision);
 	}
 	m_showFrameData = true;
+
+
 
 	bool result = onCreate();
 	if (result == false)
@@ -154,21 +170,24 @@ void Application::run(const char* a_name, int a_width, int a_height, bool a_bFul
 			float deltaTime = Utility::tickTimer();
 
 			// Start the Dear ImGui frame
-			ImGui_ImplOpenGL3_NewFrame();
-			ImGui_ImplGlfw_NewFrame();
-			ImGui::NewFrame();
+			//ImGui_ImplOpenGL3_NewFrame();
+			//ImGui_ImplGlfw_NewFrame();
+			//ImGui::NewFrame();
 
 			//ImGui Set up Framerate window
-			showFrameData(true);
+			//showFrameData(true);
 
+			for (Layer* layer : mLayerStack)
+			{
+				layer->OnUpdate();
+			}
 			Update(deltaTime);
-
 
 			Draw();
 
-			ImGui::Render();
+			//ImGui::Render();
 
-			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+			//ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 			mWindow->OnUpdate();
 			//glfwSwapBuffers(m_window);
@@ -180,6 +199,7 @@ void Application::run(const char* a_name, int a_width, int a_height, bool a_bFul
 	}
 
 	Application_Log::Destroy();
+	Gizmos::destroy();
 
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown();
@@ -200,7 +220,26 @@ void Application::OnEvent(Event& aE)
 	EventDispatcher dispatcher(aE);
 	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-	EN_CORE_INFO("{0}", aE);
+	for (auto it = mLayerStack.end(); it != mLayerStack.begin(); )
+	{
+		(*--it)->OnEvent(aE);
+		if (aE.Handled)
+		{
+			break;
+		}
+	}
+}
+
+void Application::PushLayer(Layer * aLayer)
+{
+	mLayerStack.PushLayer(aLayer);
+	aLayer->OnAttach();
+}
+
+void Application::PushOverlay(Layer * aLayer)
+{
+	mLayerStack.PushOverlay(aLayer);
+	aLayer->OnAttach();
 }
 
 void Application::showFrameData(bool a_showFrameData)

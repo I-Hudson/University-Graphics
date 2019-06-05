@@ -30,9 +30,6 @@ MyApplication::~MyApplication()
 
 bool MyApplication::onCreate()
 {
-	//start the logger
-	Engine::Log::Init();
-
 	EN_CORE_TRACE("Project Init");
 
 	mRenderer = new Renderer();

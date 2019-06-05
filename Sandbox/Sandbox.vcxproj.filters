@@ -1,15 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MyApplication.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="include\MyApplication.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sandbox.h">
       <Filter>Includes</Filter>
     </ClInclude>
   </ItemGroup>
@@ -113,7 +108,7 @@
       <UniqueIdentifier>{a9b1f9d6-cb0a-408c-8dd6-78cb68b4aa23}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{479823de-fe1c-4cf2-9884-7db6d91f1fad}</UniqueIdentifier>
+      <UniqueIdentifier>{15125504-5016-4ad4-88cd-8915e0918d56}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{78b44e01-356e-46d8-a6bc-a4ec1c76faf2}</UniqueIdentifier>
@@ -142,5 +137,16 @@
     <Filter Include="Resource Files\Water">
       <UniqueIdentifier>{047f6fd3-272c-49ed-be55-7ec8feaeda67}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyApplication.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sandbox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

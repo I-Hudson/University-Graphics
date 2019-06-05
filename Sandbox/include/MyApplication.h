@@ -38,7 +38,7 @@
 #include "InSight/GUI/GUIHierarchy.h"
 #include "InSight/GUI/GUIInspector.h"
 
-//#include "Renderer.h"
+#include "Layer/LayerStack.h";
 
 // Derived application class that wraps up all globals neatly
 class MyApplication : public Application
