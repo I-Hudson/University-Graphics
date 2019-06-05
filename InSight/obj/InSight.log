@@ -1,1 +1,1130 @@
-﻿
+﻿  WindowsWindow.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glfw\include\glfw\glfw3.h(98): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'mos': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(97): warning C4100: 'scancode': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(118): warning C4100: 'mods': unreferenced formal parameter
+FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
+FBX_Loader.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(ImathBox.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(ImathShear.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(H5Dmpio.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(H5FDdirect.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(H5FDmpio.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(H5FDmpiposix.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+FBX_Loader.lib(H5Smpio.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglUseFontOutlinesW already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglUseFontOutlinesW already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglUseFontOutlinesA already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglUseFontOutlinesA already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglUseFontBitmapsW already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglUseFontBitmapsW already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglUseFontBitmapsA already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglUseFontBitmapsA already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglSwapMultipleBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglSwapMultipleBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglSwapLayerBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglSwapLayerBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglSwapBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglSwapBuffers already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglShareLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglShareLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglSetPixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglSetPixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglSetLayerPaletteEntries already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglSetLayerPaletteEntries already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglRealizeLayerPalette already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglRealizeLayerPalette already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglMakeCurrent already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglMakeCurrent already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetProcAddress already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetProcAddress already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetPixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetPixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetLayerPaletteEntries already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetLayerPaletteEntries already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetDefaultProcAddress already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetDefaultProcAddress already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetCurrentDC already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetCurrentDC already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglGetCurrentContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglGetCurrentContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglDescribePixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglDescribePixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglDescribeLayerPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglDescribeLayerPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglDeleteContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglDeleteContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglCreateLayerContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglCreateLayerContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglCreateContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglCreateContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglCopyContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglCopyContext already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_wglChoosePixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: wglChoosePixelFormat already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glViewport already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glViewport already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertexPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertexPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glVertex2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glVertex2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTranslatef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTranslatef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTranslated already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTranslated already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexSubImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexSubImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexSubImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexSubImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexParameteri already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexParameteri already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexParameterf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexParameterf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGeniv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGeniv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGeni already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGeni already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGenfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGenfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGenf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGenf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGendv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGendv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexGend already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexGend already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexEnviv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexEnviv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexEnvi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexEnvi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexEnvfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexEnvfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexEnvf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexEnvf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoordPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoordPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glTexCoord1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glTexCoord1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glStencilOp already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glStencilOp already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glStencilMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glStencilMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glStencilFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glStencilFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glShadeModel already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glShadeModel already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glSelectBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glSelectBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glScissor already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glScissor already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glScalef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glScalef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glScaled already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glScaled already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRotatef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRotatef already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRotated already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRotated already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRenderMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRenderMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectsv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectsv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRects already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRects already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRecti already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRecti already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRectd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRectd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glReadPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glReadPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glReadBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glReadBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glRasterPos2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glRasterPos2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPushName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPushName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPushMatrix already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPushMatrix already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPushClientAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPushClientAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPushAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPushAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPrioritizeTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPrioritizeTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPopName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPopName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPopMatrix already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPopMatrix already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPopClientAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPopClientAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPopAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPopAttrib already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPolygonStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPolygonStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPolygonOffset already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPolygonOffset already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPolygonMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPolygonMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPointSize already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPointSize already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelZoom already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelZoom already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelTransferi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelTransferi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelTransferf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelTransferf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelStorei already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelStorei already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelStoref already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelStoref already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelMapusv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelMapusv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelMapuiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelMapuiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPixelMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPixelMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glPassThrough already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glPassThrough already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glOrtho already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glOrtho already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormalPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormalPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNormal3b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNormal3b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glNewList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glNewList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMultMatrixf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMultMatrixf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMultMatrixd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMultMatrixd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMatrixMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMatrixMode already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMaterialiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMaterialiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMateriali already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMateriali already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMaterialfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMaterialfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMaterialf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMaterialf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMapGrid2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMapGrid2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMapGrid2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMapGrid2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMapGrid1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMapGrid1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMapGrid1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMapGrid1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMap2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMap2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMap2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMap2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMap1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMap1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glMap1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glMap1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLogicOp already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLogicOp already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLoadName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLoadName already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLoadMatrixf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLoadMatrixf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLoadMatrixd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLoadMatrixd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLoadIdentity already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLoadIdentity already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glListBase already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glListBase already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLineWidth already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLineWidth already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLineStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLineStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLighti already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLighti already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightModeliv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightModeliv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightModeli already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightModeli already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightModelfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightModelfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glLightModelf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glLightModelf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIsTexture already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIsTexture already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIsList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIsList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIsEnabled already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIsEnabled already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glInterleavedArrays already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glInterleavedArrays already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glInitNames already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glInitNames already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexsv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexsv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexs already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexs already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glIndexMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glIndexMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glHint already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glHint already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexLevelParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexLevelParameteriv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexLevelParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexLevelParameterfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexImage already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexImage already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexGeniv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexGeniv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexGenfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexGenfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexGendv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexGendv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexEnviv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexEnviv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetTexEnvfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetTexEnvfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetString already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetString already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetPolygonStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetPolygonStipple already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetPointerv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetPointerv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetPixelMapusv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetPixelMapusv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetPixelMapuiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetPixelMapuiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetPixelMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetPixelMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetMaterialiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetMaterialiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetMaterialfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetMaterialfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetMapiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetMapiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetMapfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetMapdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetMapdv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetLightiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetLightiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetLightfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetLightfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetIntegerv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetIntegerv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetFloatv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetFloatv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetError already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetError already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetDoublev already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetDoublev already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetClipPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetClipPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGetBooleanv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGetBooleanv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGenTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGenTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glGenLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glGenLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFrustum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFrustum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFrontFace already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFrontFace already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFogiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFogiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFogi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFogi already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFogfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFogfv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFogf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFogf already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFlush already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFlush already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFinish already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFinish already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glFeedbackBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glFeedbackBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalPoint2 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalPoint2 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalPoint1 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalPoint1 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalMesh2 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalMesh2 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalMesh1 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalMesh1 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord2fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord2f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord2dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord2d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord1fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord1fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord1f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord1dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord1dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEvalCoord1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEvalCoord1d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEndList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEndList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEnd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEnd already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEnableClientState already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEnableClientState already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEnable already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEnable already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEdgeFlagv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEdgeFlagv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEdgeFlagPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEdgeFlagPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glEdgeFlag already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glEdgeFlag already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDrawPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDrawPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDrawElements already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDrawElements already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDrawBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDrawBuffer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDrawArrays already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDrawArrays already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDisableClientState already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDisableClientState already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDisable already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDisable already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDepthRange already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDepthRange already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDepthMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDepthMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDepthFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDepthFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDeleteTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDeleteTextures already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDeleteLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDeleteLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glDebugEntry already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glDebugEntry already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCullFace already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCullFace already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCopyTexSubImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCopyTexSubImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCopyTexSubImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCopyTexSubImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCopyTexImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCopyTexImage2D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCopyTexImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCopyTexImage1D already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCopyPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCopyPixels already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColorPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColorPointer already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColorMaterial already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColorMaterial already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColorMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColorMask already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4usv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4usv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4us already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4us already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4uiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4uiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4ui already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4ui already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4ubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4ubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4ub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4ub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor4b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor4b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3usv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3usv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3us already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3us already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3uiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3uiv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3ui already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3ui already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3ubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3ubv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3ub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3ub already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3sv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3s already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3iv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3i already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3fv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3f already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3dv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3d already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3bv already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glColor3b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glColor3b already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClipPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClipPlane already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClearStencil already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClearStencil already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClearIndex already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClearIndex already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClearDepth already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClearDepth already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClearColor already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClearColor already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClearAccum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClearAccum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glClear already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glClear already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCallLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCallLists already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glCallList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glCallList already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glBlendFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glBlendFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glBitmap already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glBitmap already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glBindTexture already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glBindTexture already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glBegin already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glBegin already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glArrayElement already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glArrayElement already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glAreTexturesResident already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glAreTexturesResident already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glAlphaFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glAlphaFunc already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_glAccum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: glAccum already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfPlayGlsRecord already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfPlayGlsRecord already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfInitPlayback already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfInitPlayback already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfEndPlayback already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfEndPlayback already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfEndGlsBlock already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfEndGlsBlock already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfCloseMetaFile already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfCloseMetaFile already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __imp_GlmfBeginGlsBlock already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: GlmfBeginGlsBlock already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: OPENGL32_NULL_THUNK_DATA already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __IMPORT_DESCRIPTOR_OPENGL32 already defined in FBX_Loader.lib(OPENGL32.dll); second definition ignored
+OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+Window.obj : warning LNK4006: "public: static class Window * __cdecl Window::Create(struct WindowProps const &)" (?Create@Window@@SAPEAV1@AEBUWindowProps@@@Z) already defined in WindowsWindow.obj; second definition ignored
+Window.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+AssimpModel.obj : warning LNK4006: "public: enum aiReturn __cdecl aiMaterial::GetTexture(enum aiTextureType,unsigned int,struct aiString *,enum aiTextureMapping *,unsigned int *,float *,enum aiTextureOp *,enum aiTextureMapMode *)const " (?GetTexture@aiMaterial@@QEBA?AW4aiReturn@@W4aiTextureType@@IPEAUaiString@@PEAW4aiTextureMapping@@PEAIPEAMPEAW4aiTextureOp@@PEAW4aiTextureMapMode@@@Z) already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
+AssimpModel.obj : warning LNK4006: "public: unsigned int __cdecl aiMaterial::GetTextureCount(enum aiTextureType)const " (?GetTextureCount@aiMaterial@@QEBAIW4aiTextureType@@@Z) already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
+  InSight.vcxproj -> E:\Users\Documents\SourceControl\Github\Insight-Engine\InSight\../lib\InSight.lib

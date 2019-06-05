@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyApplication.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\MyApplication.h">
+      <Filter>Includes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\shaders\fragment.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\fragment_postLight.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\vertex.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\vertex_postLight.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bin\shaders\fragment_def.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\deferred\fragment_def_light.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\vertex_def.glsl">
+      <Filter>Resource Files\Deferred</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_screenOverlay.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_gaussianBlurVertex.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_gaussianBlurFragment.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_fsApplyBlurVertex.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_fsApplyBlurFragment.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_bloomCompositeFragment.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_bloomEvalFragment.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\pp\pp_baseVertex.glsl">
+      <Filter>Resource Files\PP</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\fragment_shadow.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\fragment_shadow_map.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\vertex_shadow_map.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\shadows\vertex_shadow.glsl">
+      <Filter>Resource Files\Shadows</Filter>
+    </None>
+    <None Include="bin\shaders\ssr\vertex_ssr.glsl">
+      <Filter>Resource Files\SSR</Filter>
+    </None>
+    <None Include="bin\shaders\ssr\fragment_ssr.glsl">
+      <Filter>Resource Files\SSR</Filter>
+    </None>
+    <None Include="bin\shaders\ssao\fragment_ssao.glsl">
+      <Filter>Resource Files\SSAO</Filter>
+    </None>
+    <None Include="bin\shaders\ssao\vertex_ssao.glsl">
+      <Filter>Resource Files\SSAO</Filter>
+    </None>
+    <None Include="bin\shaders\fragment_fs.glsl">
+      <Filter>Resource Files\FS</Filter>
+    </None>
+    <None Include="bin\shaders\vertex_fs.glsl">
+      <Filter>Resource Files\FS</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tessEval.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tessCon.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\vertexAnim\vertex_water.glsl">
+      <Filter>Resource Files\Water</Filter>
+    </None>
+    <None Include="bin\shaders\vertexAnim\fragment_water.glsl">
+      <Filter>Resource Files\Water</Filter>
+    </None>
+    <None Include="bin\shaders\tess\fragment_tess.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+    <None Include="bin\shaders\tess\vertex_tess.glsl">
+      <Filter>Resource Files\Tess</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Includes">
+      <UniqueIdentifier>{a9b1f9d6-cb0a-408c-8dd6-78cb68b4aa23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{479823de-fe1c-4cf2-9884-7db6d91f1fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{78b44e01-356e-46d8-a6bc-a4ec1c76faf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Deferred">
+      <UniqueIdentifier>{7359a3c1-474d-4e93-abb3-38fd2bf8f296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\PP">
+      <UniqueIdentifier>{6706de20-a53e-421e-9e8d-daced36711d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SSR">
+      <UniqueIdentifier>{6972404d-ba7d-401b-820c-28e442d66c65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shadows">
+      <UniqueIdentifier>{53334b1f-fdb8-4143-91be-b9aa7f4baa09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SSAO">
+      <UniqueIdentifier>{695e5fed-b6e8-4deb-b84f-dd2fef9720c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\FS">
+      <UniqueIdentifier>{2a918ea1-bf18-484d-ba0b-73e675d757b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Tess">
+      <UniqueIdentifier>{9bca03c4-80d0-4499-934d-2d070a7a3bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Water">
+      <UniqueIdentifier>{047f6fd3-272c-49ed-be55-7ec8feaeda67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
