@@ -167,6 +167,8 @@ void Application::run(const char* a_name, int a_width, int a_height, bool a_bFul
 		m_running = true;
 		do
 		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 			float deltaTime = Utility::tickTimer();
 
 			// Start the Dear ImGui frame
@@ -181,9 +183,9 @@ void Application::run(const char* a_name, int a_width, int a_height, bool a_bFul
 			{
 				layer->OnUpdate();
 			}
-			Update(deltaTime);
+			//Update(deltaTime);
 
-			Draw();
+			//Draw();
 
 			//ImGui::Render();
 

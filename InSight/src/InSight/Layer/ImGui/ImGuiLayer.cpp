@@ -6,8 +6,12 @@
 #include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 #include "GLFW/glfw3.h"
 
+#include <imgui_impl_glfw.h>
+
 namespace InSight
 {
+	#define EN_BIND_EVENT_FN(fn) std::bind(&ImGuiLayer::fn, this, std::placeholders::_1)
+
 	ImGuiLayer::ImGuiLayer()
 		: Layer("ImGuiLayer")
 	{
@@ -15,6 +19,9 @@ namespace InSight
 
 	ImGuiLayer::~ImGuiLayer()
 	{
+		ImGui_ImplOpenGL3_Shutdown();
+		ImGui_ImplGlfw_Shutdown();
+		ImGui::DestroyContext();
 	}
 
 	void ImGuiLayer::OnAttach()
@@ -57,6 +64,7 @@ namespace InSight
 		const char* glsl_version = "#version 400";
 
 		// Setup Platform/Renderer bindings
+		//ImGui_ImplGlfw_InitForOpenGL(Application::Get().GetWindow().GetWindow(), true);
 		ImGui_ImplOpenGL3_Init(glsl_version);
 	}
 
@@ -76,6 +84,7 @@ namespace InSight
 		mTime = time;
 
 		ImGui_ImplOpenGL3_NewFrame();
+		//ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
 		static bool show = true;
@@ -87,6 +96,67 @@ namespace InSight
 
 	void ImGuiLayer::OnEvent(Event & aEvent)
 	{
+		EventDispatcher dispatcher(aEvent);
+		dispatcher.Dispatch<MouseButtonPressedEvent>(EN_BIND_EVENT_FN(OnMouseButtonPressedEvent));
+		dispatcher.Dispatch<MouseButtonReleasedEvent>(EN_BIND_EVENT_FN(OnMouseButtonReleasedEvent));
+		dispatcher.Dispatch<MouseMovedEvent>(EN_BIND_EVENT_FN(OnMouseMoveEvent));
+		dispatcher.Dispatch<MouseScrolledEvent>(EN_BIND_EVENT_FN(OnMouseScolledEvent));
 
+		dispatcher.Dispatch<KeyPressedEvent>(EN_BIND_EVENT_FN(OnKeyPressedEvent));
+		dispatcher.Dispatch<KeyReleasedEvent>(EN_BIND_EVENT_FN(OnKeyReleasedEvent));
+		dispatcher.Dispatch<KeyTypedEvent>(EN_BIND_EVENT_FN(OnKeyTypedEvent));
+
+		dispatcher.Dispatch<WindowResizeEvent>(EN_BIND_EVENT_FN(OnWindowResizeEvent));
+	}
+
+	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent & aEvent)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[aEvent.GetMouseButton()] = true;
+
+		return false;
+	}
+	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent & aEvent)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[aEvent.GetMouseButton()] = false;
+
+		return false;
+	}
+	bool ImGuiLayer::OnMouseMoveEvent(MouseMovedEvent & aEvent)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MousePos = ImVec2(aEvent.GetX(), aEvent.GetY());
+
+		return false;
+	}
+	bool ImGuiLayer::OnMouseScolledEvent(MouseScrolledEvent & aEvent)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseWheelH += aEvent.GetXOffset();
+		io.MouseWheel += aEvent.GetYOffset();
+
+		return false;
+	}
+
+	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent & aEvent)
+	{
+		return false;
+
+	}
+	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent & aEvent)
+	{
+		return false;
+
+	}
+	bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent & aEvent)
+	{
+		return false;
+
+	}
+
+	bool ImGuiLayer::OnWindowResizeEvent(WindowResizeEvent & aEvent)
+	{
+		return false;
 	}
 }

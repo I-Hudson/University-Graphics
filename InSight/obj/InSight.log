@@ -1,7 +1,16 @@
 ﻿  Application.cpp
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(18): warning C4100: 'aEvent': unreferenced formal parameter
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(81): warning C4100: 'a_bFullscreen': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(212): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(172): warning C4189: 'deltaTime': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(214): warning C4100: 'aEvent': unreferenced formal parameter
+  ImGuiLayer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(18): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(80): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(142): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(147): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(152): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(158): warning C4100: 'aEvent': unreferenced formal parameter
+  Generating Code...
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in assimp.lib(assimp-vc140-mt.dll); second definition ignored
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(ImathBox.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
