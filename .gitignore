@@ -1,2 +1,4 @@
 # Ignore folders
 .vs/
+InSight/obj/
+Sandbox/obj/
