@@ -2,9 +2,9 @@
 
 #include <glm/glm.hpp>
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 
-class FullScreenShader : public Shader
+class FullScreenShader : public BaseShader
 {
 public:
 	//Constructors

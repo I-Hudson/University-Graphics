@@ -1,5 +1,5 @@
 #include "Shader/FullScreenShader.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 
 FullScreenShader::FullScreenShader()
 {
@@ -8,7 +8,7 @@ FullScreenShader::FullScreenShader()
 FullScreenShader::FullScreenShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount /*= 3*/,
 	const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[] /*= nullptr*/) :
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 	//full screen vertices
 	FullScreenVertex vertexData[4];
@@ -55,7 +55,7 @@ void FullScreenShader::useShader(bool aClear)
 {
 	aClear;
 
-	setVec2("screenSize", glm::vec2(getRenderer()->getScreenSize()));
+	setVec2("screenSize", glm::vec2(getBaseRenderer()->getScreenSize()));
 
 	//bind back buffer
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);

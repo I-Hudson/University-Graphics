@@ -55,6 +55,8 @@ public:
 private:
 	//entities
 	std::vector<Entity*> mEntities;
+
+	static EntityManager* sInstance;
 };
 
 #endif // !__ENTIT_MANAGER_H__

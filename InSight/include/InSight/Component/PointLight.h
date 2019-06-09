@@ -22,11 +22,11 @@ public:
 	//update
 	void			update()override;
 	//Draw the light volume
-	void			draw(Shader* aShader, const bool& aBindTextures = true) override;
+	void			draw(BaseShader* aShader, const bool& aBindTextures = true) override;
 	void			gui()override;
 
 	//call when the light pass has finished
-	void			PostLight(Shader* aShader) override;
+	void			PostLight(BaseShader* aShader) override;
 
 	//Setters
 	void			setConstant(const float& aConstant);
@@ -55,7 +55,7 @@ private:
 	glm::vec4 mAmbient;
 
 	void createSphereMesh();
-	void setUniforms(Shader* aShader);
+	void setUniforms(BaseShader* aShader);
 
 	//Cube VAO, VBO, IBO
 	unsigned int mCubeVAO;

@@ -10,7 +10,7 @@
 
 #include "Entity/ECS.h"
 
-class Shader;
+class BaseShader;
 class TransformComponent;
 
 //type of light
@@ -33,7 +33,7 @@ public:
 
 	void					init() override;
 	//Draw the light volume
-	void					draw(Shader* aShader = nullptr, const bool& aBindTextures = true) override;
+	void					draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true) override;
 
 	//Draw all gui 
 	void					gui()override;
@@ -90,7 +90,7 @@ public:
 	void					clearMesh();
 
 	//call after the light pass
-	virtual void			PostLight(Shader* aShader);
+	virtual void			PostLight(BaseShader* aShader);
 
 protected:
 

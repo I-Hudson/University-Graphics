@@ -17,10 +17,10 @@ PPBloom::PPBloom()
 	mVerBuffer->createFrameBuffer();
 	mVerBuffer->attachTextureToFrameBuffer(0, GL_RGBA16F, 1920, 1080, 0, GL_RGBA, GL_FLOAT, 0, GL_COLOR_ATTACHMENT0, "Ver Blur");
 
-	//evalation shader
+	//evalation BaseShader
 	const char* inputs[] = { "Position", "TexCoord1" };
 	const char* outputs[] = { "FragColour" };
-	mEvalShader = new Shader(
+	mEvalShader = new BaseShader(
 		"./shaders/pp/pp_baseVertex.glsl",
 		"",
 		"",
@@ -30,8 +30,8 @@ PPBloom::PPBloom()
 		1, outputs
 	);
 
-	//blur shader
-	mBlurShader = new Shader(
+	//blur BaseShader
+	mBlurShader = new BaseShader(
 		"./shaders/pp/pp_gaussianBlurVertex.glsl",
 		"",
 		"",
@@ -41,8 +41,8 @@ PPBloom::PPBloom()
 		1, outputs
 	);
 
-	//composite shader
-	mCompositeShader = new Shader(
+	//composite BaseShader
+	mCompositeShader = new BaseShader(
 		"./shaders/pp/pp_baseVertex.glsl",
 		"",
 		"",
@@ -76,7 +76,7 @@ void PPBloom::draw()
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_BLEND);
 
-	//bind eval buffer and shader, render quad
+	//bind eval buffer and BaseShader, render quad
 	mEvalBuffer->bindBuffer();
 	mEvalShader->useShaderPP(true);
 	getPostProcessing()->renderQuad();

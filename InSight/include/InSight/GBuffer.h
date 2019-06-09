@@ -62,7 +62,7 @@ public:
 	void setViewPort();
 
 private:
-	unsigned int mFrameBuffer = -1;
+	unsigned int mFrameBuffer;
 	std::vector<FBTexture> mFrameBufferTextures;
 	std::vector<GLenum> mDrawBuffers;
 

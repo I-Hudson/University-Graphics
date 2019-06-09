@@ -51,7 +51,7 @@ MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
 		//Utility::TestShaderStatus(m_vertexShader, GL_COMPILE_STATUS, success, "Vertex");
 		//if (!success)
 		//{
-		//	std::cout << "Basic Vertex shader has not compiled" << std::endl;
+		//	std::cout << "Basic Vertex BaseShader has not compiled" << std::endl;
 		//}
 
 		//const char* fragmentShader = "#version 150\n \
@@ -65,7 +65,7 @@ MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
 		//Utility::TestShaderStatus(m_fragmentShader, GL_COMPILE_STATUS, success, "Fragment");
 		//if (!success)
 		//{
-		//	std::cout << "Basic Fragement shader has not compiled" << std::endl;
+		//	std::cout << "Basic Fragement BaseShader has not compiled" << std::endl;
 		//}
 
 		///*
@@ -73,7 +73,7 @@ MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
 		//*/
 		//const char* szInputs[] = { "Position", "Colour" };
 		//const char* szOutputs[] = { "FragColor" };
-		////bind the shaders to create our shader program
+		////bind the shaders to create our BaseShader program
 		//mProgrmID = Utility::createProgram(
 		//	m_vertexShader,
 		//	0,
@@ -102,7 +102,7 @@ MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
 		////glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(FBXVertex), ((char *)0) + FBXVertex::PositionOffset);
 		////glVertexAttribPointer(1, 4, GL_FLOAT, GL_TRUE, sizeof(FBXVertex), ((char *)0) + FBXVertex::ColourOffset);
 		//
-		//// finally, where done describing our mesh to the shader
+		//// finally, where done describing our mesh to the BaseShader
 		//// we can describe the next mesh
 		//glBindVertexArray(0);
 		//glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -121,9 +121,9 @@ MeshComponent::~MeshComponent()
 	//delete model;
 }
 
-void MeshComponent::draw(Shader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
+void MeshComponent::draw(BaseShader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
 {
-	//bing our shader program
+	//bing our BaseShader program
 	//glUseProgram(mProgrmID);
 	//bind our vertex array object
 	//glBindVertexArray(mVAO);
@@ -163,7 +163,7 @@ void MeshComponent::draw(Shader* aShader, const glm::mat4& aModelMatrx, const bo
 	model->Draw(aShader, aBindTextures);
 }
 
-void MeshComponent::draw(Shader* aShader, unsigned int& aProgram, const glm::mat4 & aModelMatrx, const bool & aBindTextures)
+void MeshComponent::draw(BaseShader* aShader, unsigned int& aProgram, const glm::mat4 & aModelMatrx, const bool & aBindTextures)
 {
 	//check for transform. If null get transform from entity
 	if (mTransform == nullptr)
@@ -200,7 +200,7 @@ void MeshComponent::draw(Shader* aShader, unsigned int& aProgram, const glm::mat
 	model->Draw(aProgram, aShader, aBindTextures);
 }
 
-void MeshComponent::draw(const int& aDrawMode, Shader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
+void MeshComponent::draw(const int& aDrawMode, BaseShader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
 {
 	//check for transform. If null get transform from entity
 	if (mTransform == nullptr)
@@ -239,7 +239,7 @@ void MeshComponent::gui()
 	{
 		ImGui::Text(std::string("Model Path :" + *model->getModelFileName()).c_str());
 
-		if(ImGui::CollapsingHeader("Shader Properties"))
+		if(ImGui::CollapsingHeader("BaseShader Properties"))
 		{
 			mShader->gui();
 			/*for (auto& s : mShaders)
@@ -276,12 +276,12 @@ RenderMode& MeshComponent::getRenderMode()
 	return mRenderMode;
 }
 
-void MeshComponent::addShader(Shader* aShader)
+void MeshComponent::addShader(BaseShader* aShader)
 {
-	//add shader
+	//add BaseShader
 	mShader = aShader;
 	mShader->setMeshComponent(this);
-	//check if shader it good
+	//check if BaseShader it good
 	/*mShaders.push_back(aShader);
 	aShader->addMesh(this);*/
 	//if it is then allow

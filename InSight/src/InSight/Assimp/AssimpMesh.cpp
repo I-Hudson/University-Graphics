@@ -83,7 +83,7 @@ AssimpMesh::AssimpMesh(std::vector<AssimpVertex> aVertices, std::vector<unsigned
 	setupMesh();
 }
 
-void AssimpMesh::Draw(Shader* aShader, const bool& aBindTextures)
+void AssimpMesh::Draw(BaseShader* aShader, const bool& aBindTextures)
 {
 	unsigned int diffuseNr = 0;
 	unsigned int specularNr = 0;
@@ -140,7 +140,7 @@ void AssimpMesh::Draw(Shader* aShader, const bool& aBindTextures)
 	glActiveTexture(GL_TEXTURE0);
 }
 
-void AssimpMesh::Draw(unsigned int& aProgram, Shader* aShader, const bool& aBindTextures)
+void AssimpMesh::Draw(unsigned int& aProgram, BaseShader* aShader, const bool& aBindTextures)
 {
 	unsigned int diffuseNr = 0;
 	unsigned int specularNr = 0;
@@ -190,7 +190,7 @@ void AssimpMesh::Draw(unsigned int& aProgram, Shader* aShader, const bool& aBind
 	glActiveTexture(GL_TEXTURE0);
 }
 
-void AssimpMesh::Draw(const int& aDrawMode, Shader* aShader, const bool& aBindTextures)
+void AssimpMesh::Draw(const int& aDrawMode, BaseShader* aShader, const bool& aBindTextures)
 {
 	unsigned int diffuseNr = 1;
 	unsigned int specularNr = 1;

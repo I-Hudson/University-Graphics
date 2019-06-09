@@ -1,5 +1,5 @@
 #include "Component/DirectionalLight.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Utilities.h"
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -23,7 +23,7 @@ void DirectionalLight::init()
 	setSpecular(glm::vec4(1, 1, 1, 1));
 }
 
-void DirectionalLight::draw(Shader* aShader, const bool& aBindTextures)
+void DirectionalLight::draw(BaseShader* aShader, const bool& aBindTextures)
 {
 	aBindTextures;
 	//if light volume not generated then generate it
@@ -116,7 +116,7 @@ void DirectionalLight::createQuadMesh()
 	addTri(glm::vec4(1.f, -1.f, 0.f, 1.f), glm::vec4(1.f, 1.f, 0.f, 1.f), glm::vec4(-1.f, 1.f, 0.f, 1.f));
 }
 
-void DirectionalLight::setUniforms(Shader* aShader)
+void DirectionalLight::setUniforms(BaseShader* aShader)
 {
 	//set uniforms
 	aShader->setVec4("dLight.Position", *getPosition(), true);

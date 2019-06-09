@@ -1,6 +1,6 @@
 #include "Shader/DeferredShader.h"
 #include "Gizmos.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 
 
 DeferredShader::DeferredShader()
@@ -10,7 +10,7 @@ DeferredShader::DeferredShader()
 DeferredShader::DeferredShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath, 
 							   const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount /*= 3*/, 
 							   const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[] /*= nullptr*/) : 
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 }
 
@@ -40,8 +40,8 @@ void DeferredShader::useShader(bool aClear)
 	glDepthMask(GL_TRUE);
 	glDisable(GL_BLEND);
 
-	//draw objects with this shader
-	Shader::useShader(aClear);
+	//draw objects with this BaseShader
+	BaseShader::useShader(aClear);
 	//draw gizmos
 	Gizmos::draw(*mMat4Uniforms["ProjectionView"]);
 	
@@ -49,7 +49,7 @@ void DeferredShader::useShader(bool aClear)
 	glDepthMask(GL_FALSE);
 	glDisable(GL_DEPTH_TEST);
 	//reset viewport 
-	glViewport(0, 0, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y);
+	glViewport(0, 0, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y);
 	//unbind gbuffer
 	mGBuffer->unBindBuffer();
 

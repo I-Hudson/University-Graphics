@@ -1,5 +1,5 @@
 #include "Component/PointLight.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Gizmos.h"
 #include "Component/TransformComponent.h"
 #include "Component/CameraComponent.h"
@@ -177,7 +177,7 @@ void PointLight::createSphereMesh()
 	delete[] v4Array;
 }
 
-void PointLight::setUniforms(Shader* aShader)
+void PointLight::setUniforms(BaseShader* aShader)
 {
 	//set uniforms 
 	aShader->setVec4("pLight.Diffuse", *getDiffuse(), true);
@@ -194,7 +194,7 @@ void PointLight::setUniforms(Shader* aShader)
 	aShader->setFloat("IsDirLight", l, true);
 }
 
-void PointLight::draw(Shader* aShader, const bool& aBindTextures)
+void PointLight::draw(BaseShader* aShader, const bool& aBindTextures)
 {
 	aBindTextures;
 	//check if we have a mesh
@@ -271,7 +271,7 @@ void PointLight::gui()
 	}
 }
 
-void PointLight::PostLight(Shader* aShader)
+void PointLight::PostLight(BaseShader* aShader)
 {
 	aShader->setVec4("colour", *getDiffuse(), true);
 	aShader->setMat4("model", *entity->getComponent<TransformComponent>()->getTransformMatrix(), true);

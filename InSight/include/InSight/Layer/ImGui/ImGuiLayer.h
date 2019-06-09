@@ -16,10 +16,13 @@ namespace InSight
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach() override;
-		void OnDetach() override;
-		void OnUpdate() override;
-		void OnEvent(Event& aEvent) override;
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
+		virtual void OnEvent(Event& aEvent) override;
+
+		void Begin();
+		void End();
 
 	private:
 		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& aEvent);

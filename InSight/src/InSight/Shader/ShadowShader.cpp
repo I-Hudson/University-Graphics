@@ -1,5 +1,5 @@
 #include "Shader/ShadowShader.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 #include "Entity/EntityManager.h"
 #include "Component/DirectionalLight.h"
 #include "Component/MeshComponent.h"
@@ -15,7 +15,7 @@ ShadowShader::ShadowShader(const char* aVertexPath, const char* aFragmentPath)
 ShadowShader::ShadowShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath, 
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount, 
 	const char* aInputs[], unsigned int aOutputCount, const char* aOutputs[]) : 
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 }
 
@@ -30,11 +30,11 @@ void ShadowShader::destroy()
 void ShadowShader::useShader(bool aClear)
 {
 	//get all lights
-	std::vector<DirectionalLight*> lights = getRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
+	std::vector<DirectionalLight*> lights = getBaseRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
 	//get all meshes
-	std::vector<MeshComponent*> allMeshes = getRenderer()->getEntityManager()->getAllEntityComponents<MeshComponent>();
+	std::vector<MeshComponent*> allMeshes = getBaseRenderer()->getEntityManager()->getAllEntityComponents<MeshComponent>();
 
-	//bind shader
+	//bind BaseShader
 	glUseProgram(mShaderID);
 
 	//loop though all lights and render their depth

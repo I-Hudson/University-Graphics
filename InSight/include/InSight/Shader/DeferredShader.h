@@ -1,13 +1,10 @@
 #pragma once
 
-#ifndef __DEFERRED_SHADER_H__
-#define __DEFERRED_SHADER_H__
-
 #include <map>
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 
-class DeferredShader : public Shader
+class DeferredShader : public BaseShader
 {
 public:
 	//Constructors
@@ -26,7 +23,6 @@ public:
 	void			gui() override;
 
 private:
-	//render this shader in wireframe
+	//render this BaseShader in wireframe
 	bool mRenderWireFrame;
 };
-#endif // __DEFERRED_SHADER_H__

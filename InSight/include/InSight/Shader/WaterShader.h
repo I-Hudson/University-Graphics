@@ -1,15 +1,12 @@
 #pragma once
 
-#ifndef __WATER_SHADER_H__
-#define __WATER_SHADER_H__
-
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Entity/Entity.h"
 #include "Component/TransformComponent.h"
 #include "Component/CameraComponent.h"
 #include "Component/MeshComponent.h"
 
-class WaterShader : public Shader
+class WaterShader : public BaseShader
 {
 public:
 	//Constructors
@@ -53,5 +50,3 @@ private:
 	//wave data
 	glm::vec4* waveData;
 };
-
-#endif //__WATER_SHADER_H__

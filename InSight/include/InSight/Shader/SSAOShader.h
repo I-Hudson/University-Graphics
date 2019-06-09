@@ -3,10 +3,10 @@
 #ifndef __SSAO_H__
 #define __SSAO_H__
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "GBuffer.h"
 
-class SSAOShader : public Shader
+class SSAOShader : public BaseShader
 {
 public:
 	//Constructors
@@ -31,14 +31,14 @@ private:
 	//buffer for ssao pass
 	GBuffer mViewNormalBuffer;
 
-	//blur shader
-	Shader* mViewNormalShader;
+	//blur BaseShader
+	BaseShader* mViewNormalShader;
 
 	//buffer for ssao pass
 	GBuffer mSSAOBuffer;
 
-	//blur shader
-	Shader* mBlurShader;
+	//blur BaseShader
+	BaseShader* mBlurShader;
 
 	//kernal array
 	std::vector<glm::vec3> mKernel;

@@ -2,8 +2,12 @@
 #include "Entity/Entity.h"
 #include <iostream>
 
+EntityManager* EntityManager::sInstance = nullptr;
+
 EntityManager::EntityManager()
 {
+	EN_ASSERT(sInstance, "EntityManager already exists!");
+	sInstance = this;
 }
 
 EntityManager::~EntityManager()

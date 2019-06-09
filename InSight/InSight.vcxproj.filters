@@ -100,6 +100,15 @@
     <Filter Include="Source Files\Platform\OpenGL">
       <UniqueIdentifier>{ab542ef2-0cc7-4eae-b509-41e1d895808c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\InSight\Input">
+      <UniqueIdentifier>{1b4e5115-0b96-4aad-bc95-3edf9888ea0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\InSight\Renderer">
+      <UniqueIdentifier>{5638eeb1-7be3-481d-a271-91a59eef3c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\InSight\Renderer">
+      <UniqueIdentifier>{e42ce2df-f7c8-402c-8d56-b2ce363976f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\deps\glad\include\glad\glad.h">
@@ -228,16 +237,10 @@
     <ClInclude Include="include\InSight\Shader\FullScreenShader.h">
       <Filter>Header Files\InSight\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="include\InSight\Shader\Shader.h">
-      <Filter>Header Files\InSight\Shader</Filter>
-    </ClInclude>
     <ClInclude Include="include\InSight\LightVolumeManager.h">
       <Filter>Header Files\InSight</Filter>
     </ClInclude>
     <ClInclude Include="include\InSight\Log.h">
-      <Filter>Header Files\InSight</Filter>
-    </ClInclude>
-    <ClInclude Include="include\InSight\Renderer.h">
       <Filter>Header Files\InSight</Filter>
     </ClInclude>
     <ClInclude Include="include\InSight\Utilities.h">
@@ -276,8 +279,44 @@
     <ClInclude Include="include\InSight\Layer\ImGui\ImGuiLayer.h">
       <Filter>Header Files\InSight\Layer\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="include\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+    <ClInclude Include="include\InSight\Input\Input.h">
+      <Filter>Header Files\InSight\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform\Windows\WindowsInput.h">
+      <Filter>Header Files\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Input\KeyCodes.h">
+      <Filter>Header Files\InSight\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Input\MouseButtonCodes.h">
+      <Filter>Header Files\InSight\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\InSight.h">
+      <Filter>Header Files\InSight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\GraphicsContext.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform\OpenGL\OpenGLContext.h">
       <Filter>Header Files\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\Shader.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Shader\BaseShader.h">
+      <Filter>Header Files\InSight\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\Buffer.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>Header Files\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\BaseRenderer.h">
+      <Filter>Header Files\InSight</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\Renderer.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -294,9 +333,6 @@
       <Filter>Source Files\InSight</Filter>
     </ClCompile>
     <ClCompile Include="src\InSight\Log.cpp">
-      <Filter>Source Files\InSight</Filter>
-    </ClCompile>
-    <ClCompile Include="src\InSight\Renderer.cpp">
       <Filter>Source Files\InSight</Filter>
     </ClCompile>
     <ClCompile Include="src\InSight\Utilities.cpp">
@@ -383,9 +419,6 @@
     <ClCompile Include="src\InSight\PP\PostProcessing.cpp">
       <Filter>Source Files\InSight\PP</Filter>
     </ClCompile>
-    <ClCompile Include="src\InSight\Shader\Shader.cpp">
-      <Filter>Source Files\InSight\Shader</Filter>
-    </ClCompile>
     <ClCompile Include="src\InSight\Shader\ShadowMapShader.cpp">
       <Filter>Source Files\InSight\Shader</Filter>
     </ClCompile>
@@ -431,8 +464,32 @@
     <ClCompile Include="src\InSight\Layer\ImGui\ImGuiLayer.cpp">
       <Filter>Source Files\InSight\Layer\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Source Files\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>Source Files\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\GraphicsContext.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\Shader.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Shader\BaseShader.cpp">
+      <Filter>Source Files\InSight\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\Buffer.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>Source Files\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\BaseRenderer.cpp">
+      <Filter>Source Files\InSight</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\Renderer.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

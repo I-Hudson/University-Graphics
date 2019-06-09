@@ -1,14 +1,11 @@
 #pragma once
 
-#ifndef __SHADOW_MAP_SHADER_H__
-#define __SHADOW_MAP_SHADER_H__
-
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "GBuffer.h"
 
 class LightComponent;
 
-class ShadowMapShader : public Shader
+class ShadowMapShader : public BaseShader
 {
 public:
 	//Constructor
@@ -31,5 +28,3 @@ private:
 	//shaodw map buffer
 	GBuffer* mShadowMapBuffer;
 };
-
-#endif // __SHADOW_MAP_SHADER_H__

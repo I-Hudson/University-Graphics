@@ -19,7 +19,7 @@ PPScreenOverlay::PPScreenOverlay()
 		2, inputs,
 		1, outputs);
 
-	//delete shader
+	//delete BaseShader
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
 }

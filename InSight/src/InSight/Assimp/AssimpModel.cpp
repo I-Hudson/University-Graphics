@@ -28,7 +28,7 @@ AssimpModel::AssimpModel(std::vector<AssimpVertex> aVertices, std::vector<unsign
 	mMeshes.push_back(mesh);
 }
 
-void AssimpModel::Draw(Shader* aShader, const bool& aBindTextures)
+void AssimpModel::Draw(BaseShader* aShader, const bool& aBindTextures)
 {
 	//draw all meshes
 	for (unsigned int i = 0; i < mMeshes.size(); ++i)
@@ -37,7 +37,7 @@ void AssimpModel::Draw(Shader* aShader, const bool& aBindTextures)
 	}
 }
 
-void AssimpModel::Draw(unsigned int & aProgram, Shader * aShader, const bool & aBindTextures)
+void AssimpModel::Draw(unsigned int & aProgram, BaseShader * aShader, const bool & aBindTextures)
 {
 	//draw all meshes
 
@@ -47,7 +47,7 @@ void AssimpModel::Draw(unsigned int & aProgram, Shader * aShader, const bool & a
 	}
 }
 
-void AssimpModel::Draw(const int& aDrawMode, Shader* aShader, const bool& aBindTextures)
+void AssimpModel::Draw(const int& aDrawMode, BaseShader* aShader, const bool& aBindTextures)
 {
 	//draw all meshes
 	for (unsigned int i = 0; i < mMeshes.size(); ++i)

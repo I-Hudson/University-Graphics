@@ -1,0 +1,8 @@
+﻿  imgui_fileDialog.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\source\imgui_filedialog.cpp(44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\source\imgui_filedialog.cpp(50): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\dirent\dirent.h(458): warning C4505: '_wreaddir': unreferenced local function has been removed
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\dirent\dirent.h(726): warning C4505: 'readdir': unreferenced local function has been removed
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\dirent\dirent.h(864): warning C4505: 'rewinddir': unreferenced local function has been removed
+e:\users\documents\sourcecontrol\github\insight-engine\deps\imgui\dirent\dirent.h(1021): warning C4505: 'versionsort': unreferenced local function has been removed
+  Imgui.vcxproj -> E:\Users\Documents\SourceControl\Github\Insight-Engine\deps\imgui\lib\Imgui_Debug_x64.lib

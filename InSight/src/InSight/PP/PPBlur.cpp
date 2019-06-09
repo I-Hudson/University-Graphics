@@ -14,10 +14,10 @@ PPBlur::PPBlur()
 	mVerBuffer->createFrameBuffer();
 	mVerBuffer->attachTextureToFrameBuffer(0, GL_RGBA16F, 1920, 1080, 0, GL_RGBA, GL_FLOAT, 0, GL_COLOR_ATTACHMENT0, "Ver Blur");
 
-	//blur shader
+	//blur BaseShader
 	const char* inputs[] = { "Position", "TexCoord1" };
 	const char* outputs[] = { "FragColour" };
-	mBlurShader = new Shader(
+	mBlurShader = new BaseShader(
 		"./shaders/pp/pp_gaussianBlurVertex.glsl",
 		"",
 		"",
@@ -27,8 +27,8 @@ PPBlur::PPBlur()
 		1, outputs
 	);
 
-	//composite shader
-	mCompositeShader = new Shader(
+	//composite BaseShader
+	mCompositeShader = new BaseShader(
 		"./shaders/pp/pp_fsApplyBlurVertex.glsl",
 		"",
 		"",
@@ -64,7 +64,7 @@ PPBlur::~PPBlur()
 void PPBlur::draw()
 {
 	//disable depth test, depth write and blend
-	glDepthMask(FALSE);
+	glDepthMask(GL_FALSE);
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_BLEND);
 

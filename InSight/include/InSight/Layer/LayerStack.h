@@ -30,7 +30,7 @@ public:
 private:
 	//vector of all layers
 	std::vector<Layer*> mLayers;
-	std::vector<Layer*>::iterator mLayerInsert;
+	unsigned int mLayerInsertIndex = 0;
 };
 
 #endif // __LAYER_STACK_H__

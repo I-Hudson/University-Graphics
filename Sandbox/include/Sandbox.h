@@ -1,5 +1,4 @@
-#ifndef __SANDBOX_H__
-#define __SANDBOX_H__
+#pragma once
 
 #include "InSight/Application.h"
 #include <glm/glm.hpp>
@@ -9,7 +8,7 @@
 #include "Layer/ImGui/ImGuiLayer.h"
 
 // Derived application class that wraps up all globals neatly
-class Sandbox : public Application
+class Sandbox : public InSight::Application
 {
 public:
 	Sandbox();
@@ -22,5 +21,3 @@ protected:
 	virtual void Draw() {}
 	virtual void Destroy() {}
 };
-
-#endif // __SANDBOX_H__

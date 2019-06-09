@@ -4,7 +4,7 @@
 #define __PP_BLOOM_H__
 
 #include "GBuffer.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "PP/PPEffect.h"
 
 class PPBloom : public PPEffect
@@ -25,9 +25,9 @@ public:
 private:
 
 	//shaders
-	Shader* mEvalShader;
-	Shader* mBlurShader;
-	Shader* mCompositeShader;
+	BaseShader* mEvalShader;
+	BaseShader* mBlurShader;
+	BaseShader* mCompositeShader;
 
 	//input input to use
 	unsigned int mHDRImage;

@@ -28,14 +28,14 @@ VertexShader::VertexShader(const char* aVertexPath, const char* aControlpath, co
 	glGetProgramiv(mShaderID, GL_LINK_STATUS, &Success);
 	if (Success == 0) {
 		glGetProgramInfoLog(mShaderID, sizeof(ErrorLog), NULL, ErrorLog);
-		fprintf(stderr, "Error linking shader program: '%s'\n", ErrorLog);
+		fprintf(stderr, "Error linking BaseShader program: '%s'\n", ErrorLog);
 	}
 
 	glValidateProgram(mShaderID);
 	glGetProgramiv(mShaderID, GL_VALIDATE_STATUS, &Success);
 	if (!Success) {
 		glGetProgramInfoLog(mShaderID, sizeof(ErrorLog), NULL, ErrorLog);
-		fprintf(stderr, "Invalid shader program: '%s'\n", ErrorLog);
+		fprintf(stderr, "Invalid BaseShader program: '%s'\n", ErrorLog);
 		//   return false;
 	}
 

@@ -4,7 +4,7 @@
 #define __PP_BLUR_H__
 
 #include "GBuffer.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "PP/PPEffect.h"
 
 class PPBlur : public PPEffect
@@ -25,8 +25,8 @@ public:
 private:
 
 	//shaders
-	Shader* mBlurShader;
-	Shader* mCompositeShader;
+	BaseShader* mBlurShader;
+	BaseShader* mCompositeShader;
 	//final rendered image from deferred 
 	unsigned int mFinalImage;
 

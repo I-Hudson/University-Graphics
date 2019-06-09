@@ -30,7 +30,7 @@ Sandbox::~Sandbox()
 bool Sandbox::onCreate()
 {
 	PushLayer(new EampleLayer());
-	PushOverlay(new InSight::ImGuiLayer());
+	//PushOverlay(new InSight::ImGuiLayer());
 
 	return true;
 }

@@ -43,6 +43,10 @@
     <ClInclude Include="include\InSight\GUI\GUIBase.h" />
     <ClInclude Include="include\InSight\GUI\GUIHierarchy.h" />
     <ClInclude Include="include\InSight\GUI\GUIInspector.h" />
+    <ClInclude Include="include\InSight\Input\Input.h" />
+    <ClInclude Include="include\InSight\Input\KeyCodes.h" />
+    <ClInclude Include="include\InSight\Input\MouseButtonCodes.h" />
+    <ClInclude Include="include\InSight\InSight.h" />
     <ClInclude Include="include\InSight\Layer\ImGui\ImGuiLayer.h" />
     <ClInclude Include="include\InSight\Layer\Layer.h" />
     <ClInclude Include="include\InSight\Layer\LayerStack.h" />
@@ -54,11 +58,15 @@
     <ClInclude Include="include\InSight\PP\PPEffect.h" />
     <ClInclude Include="include\InSight\PP\PPScreenOverlay.h" />
     <ClInclude Include="include\InSight\PP\PPSSR.h" />
-    <ClInclude Include="include\InSight\Renderer.h" />
+    <ClInclude Include="include\InSight\BaseRenderer.h" />
+    <ClInclude Include="include\InSight\Renderer\Buffer.h" />
+    <ClInclude Include="include\InSight\Renderer\GraphicsContext.h" />
+    <ClInclude Include="include\InSight\Renderer\Renderer.h" />
+    <ClInclude Include="include\InSight\Renderer\Shader.h" />
     <ClInclude Include="include\InSight\Shader\DeferredLightPassShader.h" />
     <ClInclude Include="include\InSight\Shader\DeferredShader.h" />
     <ClInclude Include="include\InSight\Shader\FullScreenShader.h" />
-    <ClInclude Include="include\InSight\Shader\Shader.h" />
+    <ClInclude Include="include\InSight\Shader\BaseShader.h" />
     <ClInclude Include="include\InSight\Shader\ShadowMapShader.h" />
     <ClInclude Include="include\InSight\Shader\ShadowShader.h" />
     <ClInclude Include="include\InSight\Shader\SSAOShader.h" />
@@ -67,8 +75,10 @@
     <ClInclude Include="include\InSight\Shader\VertexShader.h" />
     <ClInclude Include="include\InSight\Shader\WaterShader.h" />
     <ClInclude Include="include\InSight\Utilities.h" />
-    <ClInclude Include="include\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="include\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="include\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="include\Platform\Window.h" />
+    <ClInclude Include="include\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="include\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -107,11 +117,15 @@
     <ClCompile Include="src\InSight\PP\PPBlur.cpp" />
     <ClCompile Include="src\InSight\PP\PPEffect.cpp" />
     <ClCompile Include="src\InSight\PP\PPScreenOverlay.cpp" />
-    <ClCompile Include="src\InSight\Renderer.cpp" />
+    <ClCompile Include="src\InSight\BaseRenderer.cpp" />
+    <ClCompile Include="src\InSight\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\InSight\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\InSight\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\InSight\Renderer\Shader.cpp" />
     <ClCompile Include="src\InSight\Shader\DeferredLightPassShader.cpp" />
     <ClCompile Include="src\InSight\Shader\DeferredShader.cpp" />
     <ClCompile Include="src\InSight\Shader\FullScreenShader.cpp" />
-    <ClCompile Include="src\InSight\Shader\Shader.cpp" />
+    <ClCompile Include="src\InSight\Shader\BaseShader.cpp" />
     <ClCompile Include="src\InSight\Shader\ShadowMapShader.cpp" />
     <ClCompile Include="src\InSight\Shader\ShadowShader.cpp" />
     <ClCompile Include="src\InSight\Shader\SSAOShader.cpp" />
@@ -120,8 +134,10 @@
     <ClCompile Include="src\InSight\Shader\VertexShader.cpp" />
     <ClCompile Include="src\InSight\Shader\WaterShader.cpp" />
     <ClCompile Include="src\InSight\Utilities.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\Window.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -172,6 +188,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4310;4099;</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib;$(SolutionDir)deps\fbx_loader\lib</AdditionalLibraryDirectories>

@@ -1,6 +1,6 @@
 #include "Component/LightComponent.h"
 #include "Utilities.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Component/TransformComponent.h"
 #include <glm/gtc/type_ptr.hpp> 
 
@@ -48,7 +48,7 @@ void LightComponent::init()
 	}
 }
 
-void LightComponent::draw(Shader* aShader /*= nullptr*/, const bool& aBindTextures)
+void LightComponent::draw(BaseShader* aShader /*= nullptr*/, const bool& aBindTextures)
 {
 	aShader;
 	aBindTextures;
@@ -227,7 +227,7 @@ void LightComponent::clearMesh()
 	mLightTriCount = 0;
 }
 
-void LightComponent::PostLight(Shader* aShader)
+void LightComponent::PostLight(BaseShader* aShader)
 {
 }
 

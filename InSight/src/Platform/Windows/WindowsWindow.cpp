@@ -6,6 +6,8 @@
 #include "Event/MouseEvent.h"
 #include "Event/KeyEvent.h"
 
+#include "Platform/OpenGL/OpenGLContext.h"
+
 static bool sGLFWInitialized = false;
 static void GLFWErrorCallback(int aError, const char* aDesc)
 {
@@ -33,21 +35,21 @@ void WindowsWindow::Init(const WindowProps& aProps)
 	mData.Width = aProps.Width;
 	mData.Height = aProps.Height;
 
-	//EN_TRACE("Creating window {0} ({1}, {2})", aProps.Title, aProps.Width, aProps.Height);
+	EN_CORE_TRACE("Creating window {0} ({1}, {2})", aProps.Title, aProps.Width, aProps.Height);
 
 	if (!sGLFWInitialized)
 	{
 		int success = glfwInit();
-		
-		std::cout << success << std::endl;
+		EN_CORE_ASSERT(success, "Failed to initailize GLAD!");
 		glfwSetErrorCallback(GLFWErrorCallback);
 		sGLFWInitialized = true;
 	}
 
 	mWindow = glfwCreateWindow((int)aProps.Width, (int)aProps.Height, mData.Title.c_str(), nullptr, nullptr);
-	glfwMakeContextCurrent(mWindow);
-	int gladStatus = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	EN_CORE_ASSERT(gladStatus, "Failed to initailize GLAD!");
+
+	mContext = new InSight::OpenGLContext(mWindow);
+	mContext->Init();
+
 	glfwSetWindowUserPointer(mWindow, &mData);
 	SetVSync(true);
 
@@ -98,6 +100,15 @@ void WindowsWindow::Init(const WindowProps& aProps)
 		}
 	});
 
+	glfwSetCharCallback(mWindow, [](GLFWwindow* window, unsigned int aKeyCode)
+	{
+		WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+		KeyTypedEvent event(aKeyCode);
+		data.EventCallback(event);
+	});
+
+
 	glfwSetMouseButtonCallback(mWindow, [](GLFWwindow* window, int button, int action, int mods)
 		{
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -139,12 +150,13 @@ void WindowsWindow::Init(const WindowProps& aProps)
 void WindowsWindow::Shutdown()
 {
 	glfwDestroyWindow(mWindow);
+	glfwTerminate();
 }
 
 void WindowsWindow::OnUpdate()
 {
 	glfwPollEvents();
-	glfwSwapBuffers(mWindow);
+	mContext->SwapBuffers();
 }
 
 void WindowsWindow::SetVSync(bool aEnabled)

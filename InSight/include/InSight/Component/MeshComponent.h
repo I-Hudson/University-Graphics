@@ -8,7 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Assimp/AssimpModel.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Component/TransformComponent.h"
 
 //Which loader to use
@@ -41,11 +41,11 @@ public:
 	~MeshComponent();
 	
 	//Draw this mesh
-	void		draw(Shader* aShader, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) override;
+	void		draw(BaseShader* aShader, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) override;
 	//Draw this mesh
-	void		draw(Shader* aShader, unsigned int& aProgram, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true);
+	void		draw(BaseShader* aShader, unsigned int& aProgram, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true);
 	//Draw this mesh
-	void		draw(const int& aDrawMode, Shader* aShader, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true);
+	void		draw(const int& aDrawMode, BaseShader* aShader, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true);
 	//Draw this mesh's GUI
 	void		gui() override;
 	//Destroy this component
@@ -60,18 +60,18 @@ public:
 	RenderMode&	getRenderMode();
 
 	//Set mShader
-	void		addShader(Shader* aShader);
+	void		addShader(BaseShader* aShader);
 
-	//Return this mesh's shader as T is possible 
+	//Return this mesh's BaseShader as T is possible 
 	template<typename T>
 	T*			 getShader()
 	{
-		//cast shader to T*
+		//cast BaseShader to T*
 		T* tempT =  dynamic_cast<T*>(mShader);
 		//If cast was successful
 		if (tempT != nullptr)
 		{
-			//return shader csated to T*
+			//return BaseShader csated to T*
 			return dynamic_cast<T*>(mShader);
 		}
 		//cast not successful. Return nullptr
@@ -108,9 +108,9 @@ private:
 	//Meshes render mode. Is this object opaque or transparent
 	RenderMode mRenderMode;
 
-	//Shader to use with this mesh
-	Shader* mShader;
-	//std::vector<Shader*> mShaders;
+	//BaseShader to use with this mesh
+	BaseShader* mShader;
+	//std::vector<BaseShader*> mShaders;
 
 	//transform pointer 
 	TransformComponent* mTransform;

@@ -16,7 +16,7 @@ public:
 
 	//overrides
 	void			init() override;
-	void			draw(Shader* aShader, const bool& aBindTextures = true) override;
+	void			draw(BaseShader* aShader, const bool& aBindTextures = true) override;
 	void			update() override;
 	void			gui() override;
 
@@ -27,7 +27,7 @@ private:
 	//create a quad mesh
 	void createQuadMesh();
 	//set uniforms 
-	void setUniforms(Shader* aShader);
+	void setUniforms(BaseShader* aShader);
 };
 
 

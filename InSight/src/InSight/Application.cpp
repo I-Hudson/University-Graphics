@@ -6,8 +6,7 @@
 #include <iostream>
 //Include GLAD GL Extension defines
 #include <glad/glad.h>
-//Include GLFW header
-#include <GLFW/glfw3.h>
+
 //Dear ImGUI includes
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
@@ -17,6 +16,7 @@
 #include "Application_Log.h"
 #include "Log.h"
 #include "Gizmos.h"
+#include "Platform/Windows/WindowsInput.h"
 
 #define BUILD_VERSION_MAJOR 1
 #define BUILD_VERSION_MINOR 1
@@ -31,7 +31,7 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 	switch (source) {
 	case GL_DEBUG_SOURCE_API:     strSource = "API";						break;
 	case GL_DEBUG_SOURCE_WINDOW_SYSTEM:       strSource = "WINDOWS";		break;
-	case GL_DEBUG_SOURCE_SHADER_COMPILER:     strSource = "SHADER COMP.";	break;
+	case GL_DEBUG_SOURCE_SHADER_COMPILER:     strSource = "BaseShader COMP.";	break;
 	case GL_DEBUG_SOURCE_THIRD_PARTY:         strSource = "3RD PARTY";		break;
 	case GL_DEBUG_SOURCE_APPLICATION:         strSource = "APP";			break;
 	case GL_DEBUG_SOURCE_OTHER:               strSource = "OTHER";			break;
@@ -67,213 +67,295 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 }
 #endif
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
-Application* Application::sInstnace = nullptr;
 
-Application::Application()
-	: m_running(false)
+namespace InSight
 {
-	EN_CORE_ASSERT(!sInstnace, "Application already exists!");
-	sInstnace = this;
-}
+	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
-bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen )
-{
-	//// initialise glfw systems
-	//if (glfwInit() != GL_TRUE)
-	//{
-	//	std::cout << "Unable to initialize GLFW" << std::endl;
-	//	return false;
-	//}
-	//m_windowWidth = a_width;
-	//m_windowHeight = a_height;
-	//// create a windowed mode window and its OpenGL context
-	//m_window = glfwCreateWindow(m_windowWidth, m_windowHeight, a_name, ( a_bFullscreen ? glfwGetPrimaryMonitor() : nullptr), nullptr);
-	//if (m_window == nullptr)
-	//{
-	//	std::cout << "Unable to create a GLFW Window" << std::endl;
-	//	glfwTerminate();
-	//	return false;
-	//}
-	//glfwMakeContextCurrent(m_window);
+	Application* Application::sInstnace = nullptr;
 
-	mWindow = std::unique_ptr<Window>(Window::Create(WindowProps(a_name, a_width, a_height)));
-	mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
+	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType aType)
+	{
+		switch (aType)
+		{
+			case InSight::ShaderDataType::Float:	return GL_FLOAT;
+			case InSight::ShaderDataType::Float2:	return GL_FLOAT;
+			case InSight::ShaderDataType::Float3:	return GL_FLOAT;
+			case InSight::ShaderDataType::Float4:	return GL_FLOAT;
+			case InSight::ShaderDataType::Mat3:		return GL_FLOAT;
+			case InSight::ShaderDataType::Mat4:		return GL_FLOAT;
+			case InSight::ShaderDataType::Int:		return GL_INT;
+			case InSight::ShaderDataType::Int2:		return GL_INT;
+			case InSight::ShaderDataType::Int3:		return GL_INT;
+			case InSight::ShaderDataType::Int4:		return GL_INT;
+			case InSight::ShaderDataType::Bool:		return GL_BOOL;
+		}
+		EN_CORE_ASSERT(false, "Unknown ShaderDataType!");
+		return 0;
+	}
 
-	//if (!glLoadGLL()) {
-	//	glfwDestroyWindow(mWindow->GetWindow());
-	//	glfwTerminate();
-	//	return false;
-	//}
+	Application::Application()
+		: m_running(false)
+	{
+		EN_CORE_ASSERT(!sInstnace, "Application already exists!");
+		sInstnace = this;
+	}
+
+	bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen)
+	{
+		//start the logger
+		Engine::Log::Init();
+
+		mWindow = std::unique_ptr<Window>(Window::Create(WindowProps(a_name, a_width, a_height)));
+		mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		mImGuiLayer = new InSight::ImGuiLayer();
+		PushOverlay(mImGuiLayer);
+
+		glGenVertexArrays(1, &mVertexArray);
+		glBindVertexArray(mVertexArray);
+
+		float vertices[3 * 7] =
+		{
+			-0.5, -0.5, 0.0f,	/*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f,
+			0.5f, -0.5f, 0.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f,
+			0.0f, 0.5f, 0.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f
+		};
+
+		mVertexBuffer.reset(InSight::VertexBuffer::Create(vertices, sizeof(vertices)));
+
+		{
+			BufferLayout layout =
+			{
+				{ShaderDataType::Float3, "aPosition"},
+				{ShaderDataType::Float4, "aColour"},
+			};
+			mVertexBuffer->SetLayout(layout);
+		}
+
+		uint32_t index = 0;
+		const auto& layout = mVertexBuffer->GetLayout();
+		for (auto& element : layout)
+		{
+			glEnableVertexAttribArray(index);
+			glVertexAttribPointer(index, element.GetComponentCount(), 
+									ShaderDataTypeToOpenGLBaseType(element.Type), 
+									element.Normalized ? GL_TRUE : GL_FALSE, layout.GetStride(), (const void*)element.Offset);
+			index++;
+		}
 
 
-	
-	//glfwSetWindowSizeCallback(m_window, [](GLFWwindow*, int w, int h)
-	//{
-	//	glViewport(0, 0, w, h);
-	//});
-	
-#ifdef __GL_DEBUG__
-	glDebugMessageCallback(glErrorCallback, NULL);
+		uint32_t indices[3] = { 0,1,2 };
+
+		mIndexB.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+
+		std::string vertexSrc = R"(
+		#version 330
+
+		layout(location = 0) in vec3 aPosition;		
+		layout(location = 1) in vec4 aColour;		
+		
+		out vec3 vPosition;
+		out vec4 vColour;
+
+		void main()
+		{
+			vPosition = aPosition;
+			vColour = aColour;
+			gl_Position = vec4(aPosition, 1.0);
+		}
+	)";
+
+		std::string fragSrc = R"(
+		#version 330
+
+		in vec3 vPosition;
+		in vec4 vColour;
+		layout(location = 0) out vec4 outColour;		
+
+		void main()
+		{
+			outColour = vec4(vPosition * 0.5 + 0.5, 1.0);
+			outColour = vColour;
+		}
+	)";
+
+		mShader.reset(new InSight::Shader(vertexSrc, fragSrc));
+
+#if DRAFT_ENABLED
+		//Set Up IMGUI
+		//Setup Dear ImGui context
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO();
+		(void)io;
+		//Setup Dear ImGui style
+		ImGui::StyleColorsDark();
+		const char* glsl_version = "#version 400";
+
+		//Setup Platform/BaseRenderer bindings
+		ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(mWindow->GetNativeWindow()), true);
+		ImGui_ImplOpenGL3_Init(glsl_version);
 #endif
 
-	//Set Up IMGUI
-	//Setup Dear ImGui context
-	//IMGUI_CHECKVERSION();
-	//ImGui::CreateContext();
-	//ImGuiIO& io = ImGui::GetIO(); (void)io;
-	// Setup Dear ImGui style
-	//ImGui::StyleColorsDark();
-	//const char* glsl_version = "#version 400";
+#ifdef __GL_DEBUG__
+		glDebugMessageCallback(glErrorCallback, NULL);
+#endif
 
-	// Setup Platform/Renderer bindings
-	//ImGui_ImplGlfw_InitForOpenGL(mWindow->GetWindow() , true);
-	//ImGui_ImplOpenGL3_Init(glsl_version);
+		m_showFrameData = true;
 
-	//start the logger
-	Engine::Log::Init();
-
-	Application_Log* log = Application_Log::Create();
-	if (log != nullptr)
-	{
-
-		//log->addLog
-		EN_CORE_INFO("UG Framework Version: %i.%i.%i", BUILD_VERSION_MAJOR, BUILD_VERSION_MINOR, BULID_VERSION_REVISION);
-		int major = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_VERSION_MAJOR);
-		int minor = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_VERSION_MINOR);
-		int revision = glfwGetWindowAttrib(mWindow->GetWindow(), GLFW_CONTEXT_REVISION);
-
-		//log->addLog
-		EN_CORE_INFO("OpenGL Version %i.%i.%i", major, minor, revision);
-	}
-	m_showFrameData = true;
-
-
-
-	bool result = onCreate();
-	if (result == false)
-	{
-		glfwTerminate();
-	}
-	return result;
-}
-
-void Application::run(const char* a_name, int a_width, int a_height, bool a_bFullscreen)
-{
-	if (create(a_name, a_width, a_height, a_bFullscreen))
-	{
-		Utility::resetTimer();
-		m_running = true;
-		do
+		bool result = onCreate();
+		if (result == false)
 		{
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		}
+		return result;
+	}
 
-			float deltaTime = Utility::tickTimer();
-
-			// Start the Dear ImGui frame
-			//ImGui_ImplOpenGL3_NewFrame();
-			//ImGui_ImplGlfw_NewFrame();
-			//ImGui::NewFrame();
-
-			//ImGui Set up Framerate window
-			//showFrameData(true);
-
-			for (Layer* layer : mLayerStack)
+	void Application::run(const char* a_name, int a_width, int a_height, bool a_bFullscreen)
+	{
+		if (create(a_name, a_width, a_height, a_bFullscreen))
+		{
+			Utility::resetTimer();
+			m_running = true;
+			do
 			{
-				layer->OnUpdate();
+				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+				float deltaTime = Utility::tickTimer();
+
+				// Start the Dear ImGui frame
+#if DRAFT_ENABLED
+				ImGui_ImplOpenGL3_NewFrame();
+				ImGui_ImplGlfw_NewFrame();
+				ImGui::NewFrame();
+
+				//ImGui Set up Framerate window
+				showFrameData(true);
+
+				mImGuiLayer->Begin();
+
+				Update(deltaTime);
+
+				Draw();
+
+
+				for (Layer* layer : mLayerStack)
+				{
+					//layer->OnUpdate();
+				}
+
+				ImGui::Render();
+				ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+#else
+				mImGuiLayer->Begin();
+
+				//mShader->Bind();
+				//glBindVertexArray(mVertexArray);
+				//glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
+
+				//ImGui Set up Framerate window
+				showFrameData(true);
+
+				Update(deltaTime);
+
+				Draw();
+
+				for (Layer* layer : mLayerStack)
+				{
+					//layer->OnUpdate();
+				}
+
+				for (Layer* layer : mLayerStack)
+				{
+					layer->OnImGuiRender();
+				}
+
+				mImGuiLayer->End();
+#endif
+
+				mWindow->OnUpdate();
+				//glfwSwapBuffers(m_window);
+				//glfwPollEvents();
+
+			} while (m_running == true);
+
+			Destroy();
+		}
+
+		Application_Log::Destroy();
+		Gizmos::destroy();
+
+		ImGui_ImplOpenGL3_Shutdown();
+		ImGui_ImplGlfw_Shutdown();
+		ImGui::DestroyContext();
+
+		//glfwDestroyWindow(mWindow->GetWindow());
+		//glfwTerminate();
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& aEvent)
+	{
+		m_running = false;
+		return true;
+	}
+
+	void Application::OnEvent(Event& aE)
+	{
+		EventDispatcher dispatcher(aE);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+		for (auto it = mLayerStack.end(); it != mLayerStack.begin(); )
+		{
+			(*--it)->OnEvent(aE);
+			if (aE.Handled)
+			{
+				break;
 			}
-			//Update(deltaTime);
-
-			//Draw();
-
-			//ImGui::Render();
-
-			//ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-			mWindow->OnUpdate();
-			//glfwSwapBuffers(m_window);
-			//glfwPollEvents();
-
-		} while (m_running == true && glfwWindowShouldClose(mWindow->GetWindow()) == 0);
-
-		Destroy();
-	}
-
-	Application_Log::Destroy();
-	Gizmos::destroy();
-
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
-
-	//glfwDestroyWindow(m_window);
-	glfwTerminate();
-}
-
-bool Application::OnWindowClose(WindowCloseEvent& aEvent)
-{
-	m_running = false;
-	return true;
-}
-
-void Application::OnEvent(Event& aE)
-{
-	EventDispatcher dispatcher(aE);
-	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-
-	for (auto it = mLayerStack.end(); it != mLayerStack.begin(); )
-	{
-		(*--it)->OnEvent(aE);
-		if (aE.Handled)
-		{
-			break;
 		}
 	}
-}
 
-void Application::PushLayer(Layer * aLayer)
-{
-	mLayerStack.PushLayer(aLayer);
-	aLayer->OnAttach();
-}
-
-void Application::PushOverlay(Layer * aLayer)
-{
-	mLayerStack.PushOverlay(aLayer);
-	aLayer->OnAttach();
-}
-
-void Application::showFrameData(bool a_showFrameData)
-{
-	m_showFrameData = a_showFrameData;
-	const float DISTANCE = 10.0f;
-	static int corner = 0;
-	ImGuiIO& io = ImGui::GetIO();
-	ImVec2 window_pos = ImVec2((corner & 1) ? io.DisplaySize.x - DISTANCE : DISTANCE, (corner & 2) ? io.DisplaySize.y - DISTANCE : DISTANCE);
-	ImVec2 window_pos_pivot = ImVec2((corner & 1) ? 1.0f : 0.0f, (corner & 2) ? 1.0f : 0.0f);
-	ImGui::SetNextWindowPos(window_pos, ImGuiCond_Always, window_pos_pivot);
-	ImGui::SetNextWindowBgAlpha(0.3f); // Transparent background
-	if (ImGui::Begin("Frame Data", &m_showFrameData, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav))
+	void Application::PushLayer(Layer * aLayer)
 	{
-		ImGui::Separator();
-		ImGui::Text("Application Average: %.3f ms/frame (%.1f FPS)", 1000.f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-		if (ImGui::IsMousePosValid())
-			ImGui::Text("Mouse Position: (%.1f,%.1f)", io.MousePos.x, io.MousePos.y);
-		else
-			ImGui::Text("Mouse Position: <invalid>");
-		if (ImGui::BeginPopupContextWindow())
-		{
-			if (ImGui::MenuItem("Top-left", NULL, corner == 0)) corner = 0;
-			if (ImGui::MenuItem("Top-right", NULL, corner == 1)) corner = 1;
-			if (ImGui::MenuItem("Bottom-left", NULL, corner == 2)) corner = 2;
-			if (ImGui::MenuItem("Bottom-right", NULL, corner == 3)) corner = 3;
-			if (&m_showFrameData && ImGui::MenuItem("Close")) m_showFrameData = false;
-			ImGui::EndPopup();
-		}
+		mLayerStack.PushLayer(aLayer);
+		aLayer->OnAttach();
 	}
-	ImGui::End();
-	
+
+	void Application::PushOverlay(Layer * aLayer)
+	{
+		mLayerStack.PushOverlay(aLayer);
+		aLayer->OnAttach();
+	}
+
+	void Application::showFrameData(bool a_showFrameData)
+	{
+		m_showFrameData = a_showFrameData;
+		const float DISTANCE = 10.0f;
+		static int corner = 0;
+		ImGuiIO& io = ImGui::GetIO();
+		ImVec2 window_pos = ImVec2((corner & 1) ? io.DisplaySize.x - DISTANCE : DISTANCE, (corner & 2) ? io.DisplaySize.y - DISTANCE : DISTANCE);
+		ImVec2 window_pos_pivot = ImVec2((corner & 1) ? 1.0f : 0.0f, (corner & 2) ? 1.0f : 0.0f);
+		ImGui::SetNextWindowPos(window_pos, ImGuiCond_Always, window_pos_pivot);
+		ImGui::SetNextWindowBgAlpha(0.3f); // Transparent background
+		if (ImGui::Begin("Frame Data", &m_showFrameData, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav))
+		{
+			ImGui::Separator();
+			ImGui::Text("Application Average: %.3f ms/frame (%.1f FPS)", 1000.f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			if (ImGui::IsMousePosValid())
+				ImGui::Text("Mouse Position: (%.1f,%.1f)", io.MousePos.x, io.MousePos.y);
+			else
+				ImGui::Text("Mouse Position: <invalid>");
+			if (ImGui::BeginPopupContextWindow())
+			{
+				if (ImGui::MenuItem("Top-left", NULL, corner == 0)) corner = 0;
+				if (ImGui::MenuItem("Top-right", NULL, corner == 1)) corner = 1;
+				if (ImGui::MenuItem("Bottom-left", NULL, corner == 2)) corner = 2;
+				if (ImGui::MenuItem("Bottom-right", NULL, corner == 3)) corner = 3;
+				if (&m_showFrameData && ImGui::MenuItem("Close")) m_showFrameData = false;
+				ImGui::EndPopup();
+			}
+		}
+		ImGui::End();
+
+	}
 }
-
-

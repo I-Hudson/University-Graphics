@@ -6,7 +6,7 @@
 
 #include "InSight/Log.h"
 
-#include "InSight/Renderer.h"
+#include "InSight/BaseRenderer.h"
 #include "InSight/Entity/EntityManager.h"
 
 #include "InSight/PP/PostProcessing.h"
@@ -38,10 +38,14 @@
 #include "InSight/GUI/GUIHierarchy.h"
 #include "InSight/GUI/GUIInspector.h"
 
-#include "Layer/LayerStack.h";
+#include "Layer/LayerStack.h"
+#include "Layer/Layer.h"
+#include "Layer/ImGui/ImGuiLayer.h"
+
+#include "Input/Input.h"
 
 // Derived application class that wraps up all globals neatly
-class MyApplication : public Application
+class MyApplication : public InSight::Application
 {
 public:
 
@@ -65,7 +69,7 @@ protected:
 	glm::vec4 mLightDir;
 
 	//render
-	Renderer* mRenderer;
+	BaseRenderer* mBaseRenderer;
 	//post process
 	PostProcessing* mPostProcessing;
 	//entity manager

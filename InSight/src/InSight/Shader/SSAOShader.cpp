@@ -12,11 +12,11 @@ SSAOShader::SSAOShader()
 SSAOShader::SSAOShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount /*= 3*/,
 	const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[] /*= nullptr*/) :
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
-	//create view normal shader
+	//create view normal BaseShader
 	const char* pressaoInputs[] = { "Position", "Normal" };
-	mViewNormalShader = new Shader(
+	mViewNormalShader = new BaseShader(
 		"./shaders/ssao/vertex_preSSAO.glsl",
 		"",
 		"",
@@ -25,9 +25,9 @@ SSAOShader::SSAOShader(const char* aVertexPath, const char* aControlpath, const 
 		2, pressaoInputs
 	);
 
-	//create blur shader
+	//create blur BaseShader
 	const char* ssaoInputs[] = { "Position", "TexCoord1" };
-	mBlurShader = new Shader(
+	mBlurShader = new BaseShader(
 		"./shaders/pp/pp_gaussianBlurVertex.glsl",
 		"",
 		"",
@@ -84,14 +84,14 @@ void SSAOShader::destroy()
 	mBlurShader->destroy();
 	delete mBlurShader;
 
-	Shader::destroy();
+	BaseShader::destroy();
 }
 
 void SSAOShader::useShader(bool aClear)
 {
 	//bind buffer
 	mSSAOBuffer.bindBuffer();
-	Shader::useShaderPP(true);
+	BaseShader::useShaderPP(true);
 
 	//set kernal uniform
 	//unsigned int loc = glGetUniformLocation(mShaderID, "gKernel");

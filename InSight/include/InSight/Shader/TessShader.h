@@ -3,9 +3,9 @@
 #ifndef __TESS_SHADER_H__
 #define __TESS_SHADER_H__
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 
-class TessShader : public Shader
+class TessShader : public BaseShader
 {
 public:
 	//Constructors
@@ -16,7 +16,7 @@ public:
 	//Destructor
 	~TessShader();
 
-	//Use this shader to render
+	//Use this BaseShader to render
 	void			useShader(bool aClear = false) override;
 	//gui
 	void			gui() override;
@@ -31,7 +31,7 @@ private:
 
 	float mTessLowDetailValue;
 
-	//render this shader in wireframe
+	//render this BaseShader in wireframe
 	bool mRenderWireFrame;
 };
 

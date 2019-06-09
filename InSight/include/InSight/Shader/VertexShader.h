@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 
-class VertexShader : public Shader
+class VertexShader : public BaseShader
 {
 private:
 

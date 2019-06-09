@@ -18,7 +18,36 @@
 
 #include "InSight/Application_Log.h"
 
+#include <InSight/InSight.h>
 #include "InSight/Event/ApplicationEvent.h"
+
+class InputLayer : public Layer
+{
+public:
+	InputLayer()
+		:Layer("InputLayer")
+	{
+	}
+
+	void OnUpdate() override
+	{
+		if (InSight::Input::IsKeyPressed(EN_KEY_TAB))
+		{
+			EN_TRACE("Tab key was pressed");
+		}
+	}
+
+	void OnEvent(Event& aE) override
+	{
+		if (aE.GetEventType() == EventType::KeyPressed)
+		{
+			KeyPressedEvent e = (KeyPressedEvent&)aE;
+			EN_TRACE("{0}", (char)e.GetKeyCode());
+		}
+	}
+};
+
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 MyApplication::MyApplication()
 {
@@ -30,14 +59,16 @@ MyApplication::~MyApplication()
 
 bool MyApplication::onCreate()
 {
-	EN_CORE_TRACE("Project Init");
+	EN_TRACE("Project Init");
 
-	mRenderer = new Renderer();
-	mRenderer->setScreenSize(glm::vec2(mWindow->GetWidth(), mWindow->GetHeight()));
+	PushLayer(new InputLayer());
+
+	mBaseRenderer = new BaseRenderer();
+	mBaseRenderer->setScreenSize(glm::vec2(mWindow->GetWidth(), mWindow->GetHeight()));
 	mPostProcessing = new PostProcessing();
 	mEntityManager = new EntityManager();
 
-	mRenderer->setEntityManager(mEntityManager);
+	mBaseRenderer->setEntityManager(mEntityManager);
 
 	//Setup GUi
 	mGUI = new GUI();
@@ -51,7 +82,6 @@ bool MyApplication::onCreate()
 
 	// initialise the Gizmos helper class
 	Gizmos::create();
-	glfwSwapInterval(0);
 
 	mLightPos = glm::vec4(50.f, 25.f, 0.f, 1.f);
 	glm::mat4 depthViewMatrix = glm::lookAt(glm::vec3(mLightPos.xyz),
@@ -72,7 +102,7 @@ bool MyApplication::onCreate()
 	//mMainCamera->getComponent<SpotLight>().setPosition(*mMainCamera->getComponent<TransformComponent>().getPosition());
 
 	//\==============================================================================================
-	// DEFERRED GBUFFER SHADER
+	// DEFERRED GBUFFER BaseShader
 	//\==============================================================================================
 	GBuffer* gbuffer = new GBuffer();
 	gbuffer->createFrameBuffer();
@@ -106,11 +136,11 @@ bool MyApplication::onCreate()
 	mPostProcessing->getEffect<PPBloom>()->mActive = true;
 
 	//\==============================================================================================
-	// DEFERRED SHADER
+	// DEFERRED BaseShader
 	//\==============================================================================================
 	//Setup the deferred pass
 	const char* szOutputsGoem[] = { "Diffuse", "Normal", "World", "Specular" };
-	mDeferedShader = mRenderer->addShader<DeferredShader>(
+	mDeferedShader = mBaseRenderer->addShader<DeferredShader>(
 		"./shaders/deferred/vertex_def.glsl",
 		"",
 		"",
@@ -121,9 +151,9 @@ bool MyApplication::onCreate()
 	mDeferedShader->setGBuffer(gbuffer);
 
 	//\==============================================================================================
-	// TESS SHADER
+	// TESS BaseShader
 	//\==============================================================================================
-	mTessShader = mRenderer->addShader<TessShader>(
+	mTessShader = mBaseRenderer->addShader<TessShader>(
 		"./shaders/tess/vertex_tess.glsl",
 		"./shaders/tess/vertex_tessCon.glsl",
 		"./shaders/tess/vertex_tessEval.glsl",
@@ -135,9 +165,9 @@ bool MyApplication::onCreate()
 	mTessShader->setGBuffer(gbuffer);
 
 	//\==============================================================================================
-	// SCREEN SPACE REFLECTIONS SHADER
+	// SCREEN SPACE REFLECTIONS BaseShader
 	//\==============================================================================================
-	mSSRShader = mRenderer->addShader<SSRShader>(
+	mSSRShader = mBaseRenderer->addShader<SSRShader>(
 		"./shaders/ssr/vertex_ssr.glsl",
 		"",
 		"",
@@ -158,9 +188,9 @@ bool MyApplication::onCreate()
 	mSSRShader->setMat4("invView", *mMainCamera->getComponent<CameraComponent>()->getInvViewMatrix());
 
 	//\==============================================================================================
-	// WATER SHADER
+	// WATER BaseShader
 	//\==============================================================================================
-	mWaterShader = mRenderer->addShader<WaterShader>(
+	mWaterShader = mBaseRenderer->addShader<WaterShader>(
 		"./shaders/vertexAnim/vertex_water.glsl",
 		"",
 		"",
@@ -174,10 +204,10 @@ bool MyApplication::onCreate()
 	mWaterShader->mMainCamera = mMainCamera;
 
 	//\==============================================================================================
-	// SHADOW SHADER
+	// SHADOW BaseShader
 	//\==============================================================================================
 	const char* shadowOut[] = { "FragDepth" };
-	mShadowShader = mRenderer->addShader<ShadowShader>(
+	mShadowShader = mBaseRenderer->addShader<ShadowShader>(
 		"./shaders/shadows/vertex_shadow.glsl",
 		"",
 		"",
@@ -190,9 +220,9 @@ bool MyApplication::onCreate()
 	mShadowShader->setUnsignedIntUniforms("texture_worldPos", *gbuffer->getTexture(2));
 
 	//\==============================================================================================
-	// SHADOW MAP SHADER
+	// SHADOW MAP BaseShader
 	//\==============================================================================================
-	mShadowMapShader = mRenderer->addShader<ShadowMapShader>(
+	mShadowMapShader = mBaseRenderer->addShader<ShadowMapShader>(
 		"./shaders/shadows/vertex_shadow_map.glsl",
 		"",
 		"",
@@ -204,10 +234,10 @@ bool MyApplication::onCreate()
 	mShadowMapShader->setUnsignedIntUniforms("texture_worldPos", *gbuffer->getTexture(2));
 
 	//\==============================================================================================
-	// SSAO SHADER
+	// SSAO BaseShader
 	//\==============================================================================================
 	//const char* ssaoInputs[] = { "Position", "TexCoord1" };
-	//mSSAOShader = mRenderer->addShader<SSAOShader>(
+	//mSSAOShader = mBaseRenderer->addShader<SSAOShader>(
 	//	"./shaders/ssao/vertex_ssao.glsl",
 	//	"",
 	//	"",
@@ -220,12 +250,12 @@ bool MyApplication::onCreate()
 	//mSSAOShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
 
 	//\==============================================================================================
-	// DEFERRED LIGHT SHADER
+	// DEFERRED LIGHT BaseShader
 	//\==============================================================================================
 	//Setup the deferred light pass
 	const char* szInputsFS[] = { "Position" };
 	const char* szOutputDefLight[] = { "FragColour", "HDRColour" };
-	mDeferredLight = mRenderer->addShader<DeferredLightPassShader>(
+	mDeferredLight = mBaseRenderer->addShader<DeferredLightPassShader>(
 		"./shaders/deferred/vertex_def_light.glsl",
 		"",
 		"",
@@ -269,7 +299,7 @@ bool MyApplication::onCreate()
 	//nanoSuitModel->getComponent<MeshComponent>()->setRenderMode(RenderMode::Opaque);
 
 	//\==============================================================================================
-	// WATER MODEL SHADER
+	// WATER MODEL BaseShader
 	//\==============================================================================================
 	mWaveModel = mEntityManager->addEntity();
 	mWaveModel->setID("Wave");
@@ -282,10 +312,10 @@ bool MyApplication::onCreate()
 	mSSRShader->setMeshComponent(mWaveModel->getComponent<MeshComponent>());
 
 	//\==============================================================================================
-	// FULLSCREEN SHADER
+	// FULLSCREEN BaseShader
 	//\==============================================================================================
 	const char* szInputsFS2[] = { "Position", "TexCoord1" };
-	mFullScreenShader = mRenderer->addShader<FullScreenShader>(
+	mFullScreenShader = mBaseRenderer->addShader<FullScreenShader>(
 		"./shaders/vertex_fs.glsl",
 		"",
 		"",
@@ -413,89 +443,87 @@ void MyApplication::Update(float a_deltaTime)
 	//\====================================================
 	// ImGui render view to show what is held in the fbo texture position
 	//\====================================================
-	//ImGui::SetNextWindowPos(ImVec2(mWindow->GetWidth() - (mWindow->GetWidth() * 0.5f), mWindow->GetHeight() - (mWindow->GetHeight() * 0.5f)));
-	//ImGui::SetNextWindowSize(ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f));
-	//ImGui::Begin("Framebuffer");
-	//ImGui::SliderFloat("Exp", &mPostProcessing->mExposure, 0.1f, 15.0f);
-	//ImGui::SliderFloat("Gamma", &mPostProcessing->mGamma, 0.1f, 15.0f);
-
-	//ImGui::BeginTabBar("Framebuffer textures");
-
-	//if (ImGui::BeginTabItem("Colour Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(0);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Normal Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(1);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("World Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(2);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Specular Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(3);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Depth Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(4);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Light Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(5);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("HDR Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(6);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Dir Light Depth Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<DirectionalLight>()->getShadowMap();
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("mSpotLight Light Depth Buffer"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<SpotLight>()->getShadowMap();
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Reflection Master"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mWaterShader->mReflectionBuffer->getTexture(0);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("Refraction Master"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mWaterShader->mRefractionBuffer->getTexture(0);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//if (ImGui::BeginTabItem("SSR"))
-	//{
-	//	ImTextureID texID = (void*)(intptr_t)*mSSRShader->mSSRBuffer->getTexture(0);
-	//	ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
-	//	ImGui::EndTabItem();
-	//}
-	//ImGui::EndTabBar();
-
-	//ImGui::End();
+	ImGui::SetNextWindowPos(ImVec2(mWindow->GetWidth() - (mWindow->GetWidth() * 0.5f), mWindow->GetHeight() - (mWindow->GetHeight() * 0.5f)));
+	ImGui::SetNextWindowSize(ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f));
+	ImGui::Begin("Framebuffer");
+	ImGui::SliderFloat("Exp", &mPostProcessing->mExposure, 0.1f, 15.0f);
+	ImGui::SliderFloat("Gamma", &mPostProcessing->mGamma, 0.1f, 15.0f);
+	
+	ImGui::BeginTabBar("Framebuffer textures");
+	if (ImGui::BeginTabItem("Colour Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(0);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Normal Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(1);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("World Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(2);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Specular Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(3);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Depth Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(4);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Light Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(5);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("HDR Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDeferedShader->getGBuffer()->getTexture(6);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Dir Light Depth Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<DirectionalLight>()->getShadowMap();
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("mSpotLight Light Depth Buffer"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<SpotLight>()->getShadowMap();
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Reflection Master"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mWaterShader->mReflectionBuffer->getTexture(0);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("Refraction Master"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mWaterShader->mRefractionBuffer->getTexture(0);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	if (ImGui::BeginTabItem("SSR"))
+	{
+		ImTextureID texID = (void*)(intptr_t)*mSSRShader->mSSRBuffer->getTexture(0);
+		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
+		ImGui::EndTabItem();
+	}
+	ImGui::EndTabBar();
+	ImGui::End();
 
 	static bool show_demo_window = true;
 	//ImGui::ShowDemoWindow(&show_demo_window);
@@ -505,28 +533,31 @@ void MyApplication::Update(float a_deltaTime)
 		log->showLog(&show_demo_window);
 	}
 	//show application log window
-	if (glfwGetKey(mWindow->GetWindow(), GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS && glfwGetKey(mWindow->GetWindow(), GLFW_KEY_L) == GLFW_PRESS) {
+	if (InSight::Input::IsKeyPressed(EN_KEY_LEFT_CONTROL) && InSight::Input::IsKeyPressed(EN_KEY_L))
+	{
 		show_demo_window = !show_demo_window;
 	}
 	// quit our application when escape is pressed
-	if (glfwGetKey(mWindow->GetWindow(),GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	if (InSight::Input::IsKeyPressed(EN_KEY_ESCAPE))
+	{
 		quit();
+	}
 }
 
 //void MyApplication::sortDraw(glm::mat4& aProjectionView)
 //{
-//	std::vector<Shader*> shaders;
+//	std::vector<BaseShader*> shaders;
 //	for (auto& e : mEntityManager->getEntities())
 //	{
 //		if (e->hasComponent<MeshComponent>())
 //		{
-//			Shader* s = e->getComponent<MeshComponent>().getShader<Shader>();
+//			BaseShader* s = e->getComponent<MeshComponent>().getShader<BaseShader>();
 //
 //			if (std::find(shaders.begin(), shaders.end(), s) == shaders.end())
 //			{
 //				shaders.push_back(s);
 //
-//				//bind shader target
+//				//bind BaseShader target
 //				s->useShader(true);
 //			}
 //			else
@@ -551,7 +582,7 @@ void MyApplication::Draw()
 	//\==============================================================================================
 	// RENDER
 	//\==============================================================================================
-	mRenderer->draw();
+	mBaseRenderer->draw();
 	mPostProcessing->draw();
 	mGUI->draw();
 }
@@ -562,8 +593,8 @@ void MyApplication::Destroy()
 
 	delete mLightVolumes;
 
-	mRenderer->destroy();
-	delete mRenderer;
+	mBaseRenderer->destroy();
+	delete mBaseRenderer;
 
 	mPostProcessing->destroy();
 	delete mPostProcessing;

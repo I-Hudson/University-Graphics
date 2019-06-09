@@ -1,11 +1,11 @@
 #include "Shader/ShadowMapShader.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 #include "Component/DirectionalLight.h"
 
 ShadowMapShader::ShadowMapShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount,
 	const char* aInputs[], unsigned int aOutputCount, const char* aOutputs[]) :
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 }
 
@@ -17,13 +17,13 @@ void ShadowMapShader::initBuffers()
 {
 	//create new gbuffer
 	mShadowMapBuffer = new GBuffer();
-	mShadowMapBuffer->setScreenSize(getRenderer()->getScreenSize());
+	mShadowMapBuffer->setScreenSize(getBaseRenderer()->getScreenSize());
 	mShadowMapBuffer->createFrameBuffer();
-	mShadowMapBuffer->attachTextureToFrameBuffer(0, GL_RGBA, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y, 0,
+	mShadowMapBuffer->attachTextureToFrameBuffer(0, GL_RGBA, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y, 0,
 		GL_RGBA, GL_UNSIGNED_BYTE, 0, GL_COLOR_ATTACHMENT0, "Shadow Map Colour Texture");
-	mShadowMapBuffer->attachTextureToFrameBuffer(0, GL_DEPTH_COMPONENT, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y, 0,
+	mShadowMapBuffer->attachTextureToFrameBuffer(0, GL_DEPTH_COMPONENT, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y, 0,
 		GL_DEPTH_COMPONENT, GL_FLOAT, 0, GL_DEPTH_ATTACHMENT, "Shadow Map Depth Texture");
-	mShadowMapBuffer->setScreenSize(glm::vec2(getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y));
+	mShadowMapBuffer->setScreenSize(glm::vec2(getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y));
 }
 
 void ShadowMapShader::destroy()
@@ -36,7 +36,7 @@ void ShadowMapShader::destroy()
 void ShadowMapShader::useShader(bool aClear)
 {
 	//get all lights
-	std::vector<DirectionalLight*> lights = getRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
+	std::vector<DirectionalLight*> lights = getBaseRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
 
 	//enable cull, depth test and depth write
 	glEnable(GL_CULL_FACE);
@@ -68,7 +68,7 @@ void ShadowMapShader::useShader(bool aClear)
 		setVec4("lightDir", *light->getLightDirection());
 
 		//render 
-		Shader::useShader(clear, false, light->entity);
+		BaseShader::useShader(clear, false, light->entity);
 
 		clear = false;
 	}
@@ -79,7 +79,7 @@ void ShadowMapShader::useShader(bool aClear)
 	glDisable(GL_CULL_FACE);
 	glDepthMask(GL_FALSE);
 
-	glViewport(0, 0, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y);
+	glViewport(0, 0, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y);
 }
 
 unsigned int * ShadowMapShader::getShadowTexture()

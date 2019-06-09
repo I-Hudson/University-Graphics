@@ -11,7 +11,7 @@
 #include <array>
 
 #include "imgui.h"
-#include "InSight/Shader/Shader.h"
+#include "InSight/Shader/BaseShader.h"
 
 class Component;
 class Entity;
@@ -50,8 +50,8 @@ public:
 	virtual void init() {}
 	virtual void update() {}
 	virtual void gui() {}
-	virtual void draw(Shader* aShader = nullptr, const bool& aBindTextures = true) { aShader; aBindTextures; }
-	virtual void draw(Shader* aShader = nullptr, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) { aShader; aModelMatrx; aBindTextures; }
+	virtual void draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true) { aShader; aBindTextures; }
+	virtual void draw(BaseShader* aShader = nullptr, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) { aShader; aModelMatrx; aBindTextures; }
 	virtual void destroy() {}
 	virtual ~Component() {}
 

@@ -16,7 +16,7 @@ Gizmos::Gizmos(unsigned int a_maxLines, unsigned int a_maxTris)
 {
 	int success = GL_FALSE;
 	//\==============================================================================================
-	//\ Create our Vertex Shader from a char array
+	//\ Create our Vertex BaseShader from a char array
 	const char* vsSource = "#version 150\n \
 					 in vec4 Position; \
 					 in vec4 Colour; \
@@ -27,7 +27,7 @@ Gizmos::Gizmos(unsigned int a_maxLines, unsigned int a_maxTris)
 	m_vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(m_vertexShader, 1, (const char**)&vsSource, 0);
 	glCompileShader(m_vertexShader);
-	//Test our shader for succesful compiliation
+	//Test our BaseShader for succesful compiliation
 	TestShaderStatus(m_vertexShader, GL_COMPILE_STATUS, success, "Vertex");
 
 	const char* fsSource = "#version 150\n \
@@ -534,11 +534,11 @@ void Gizmos::TestShaderStatus(const unsigned int& a_uiShaderId, unsigned int a_u
 		std::ostringstream ssError;
 		if (a_uiStatus == GL_LINK_STATUS)
 		{
-			ssError << "Error: Failed to  link shader!\n" << log;
+			ssError << "Error: Failed to  link BaseShader!\n" << log;
 		}
 		else
 		{
-			ssError << "Error: Failed to compile " << a_shaderType << "shader!\n" << log;
+			ssError << "Error: Failed to compile " << a_shaderType << "BaseShader!\n" << log;
 		}
 		Error::RuntimeError(ssError.str());
 		free(log);

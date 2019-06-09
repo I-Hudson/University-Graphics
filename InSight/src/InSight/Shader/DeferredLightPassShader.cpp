@@ -1,7 +1,7 @@
 #include "Shader/DeferredLightPassShader.h"
 #include <glm/ext.hpp>
 #include "Component/PointLight.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 #include "Component/CameraComponent.h"
 
 DeferredLightPassShader::DeferredLightPassShader()
@@ -11,7 +11,7 @@ DeferredLightPassShader::DeferredLightPassShader()
 DeferredLightPassShader::DeferredLightPassShader(const char * aVertexPath, const char * aControlpath, const char * aEvaluationpath, 
 									 const char * aGeometryPath, const char * aFragmentPath, unsigned int aInputCount,
 									 const char * aInputs[], unsigned int aOutputCount, const char * aOutputs[]) : 
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 	//create line and tri array
 	mLines = new  Line[32728];
@@ -43,7 +43,7 @@ DeferredLightPassShader::DeferredLightPassShader(const char * aVertexPath, const
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-	//stencil shader
+	//stencil BaseShader
 	const char* szInputsFS1[] = { "Position" };
 	 mStencilShader = new  VertexShader(
 		"./shaders/deferred/vertex_stenicl.glsl",
@@ -54,9 +54,9 @@ DeferredLightPassShader::DeferredLightPassShader(const char * aVertexPath, const
 		1, szInputsFS1, 0, nullptr
 	);
 
-	 //post lighting pass shader
+	 //post lighting pass BaseShader
 	 const char* postLightInputs[] = { "Position" };
-	 mPostLightShader = new Shader(
+	 mPostLightShader = new BaseShader(
 		 "./shaders/vertex_postLight.glsl",
 		 "",
 		 "",
@@ -95,7 +95,7 @@ void DeferredLightPassShader::destroy()
 	mPostLightShader->destroy();
 	delete mPostLightShader;
 
-	Shader::destroy();
+	BaseShader::destroy();
 }
 
 void DeferredLightPassShader::useShader(bool aClear)
@@ -103,7 +103,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	aClear;
 	setVec2("screenSize", *mGBuffer->getScreenSize());
 
-	//need deferred shader depth buffer
+	//need deferred BaseShader depth buffer
 	mGBuffer->bindBuffer();
 	//mGBuffer->setDrawBuffers();
 
@@ -216,7 +216,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 
 	glUseProgram(mPostLightShader->getShader());
 	mPostLightShader->setMat4("ProjectionView",
-	*getRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>()->getProjectionViewMatrix(),
+	*getBaseRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>()->getProjectionViewMatrix(),
 		true);
 	for (auto& kv : *mLightVolumes->getAllVolumes())
 	{
@@ -328,9 +328,9 @@ void DeferredLightPassShader::addTri(glm::vec4 aP0, glm::vec4 aP1, glm::vec4 aP2
 //	addTri(vertexData[1].Position, vertexData[3].Position, vertexData[2].Position);
 //}
 
-Shader* DeferredLightPassShader::getStencilShader()
+BaseShader* DeferredLightPassShader::getStencilShader()
 {
-	//return pointer to stencil shader
+	//return pointer to stencil BaseShader
 	return mStencilShader;
 }
 

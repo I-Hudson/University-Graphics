@@ -4,12 +4,12 @@
 #define __SHADOW_SHADER_H__
 
 #include <vector>
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "GBuffer.h"
 
 class LightComponent;
 
-class ShadowShader : public Shader
+class ShadowShader : public BaseShader
 {
 public:
 	//Constructors

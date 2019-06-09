@@ -1,5 +1,5 @@
 #include "Shader/TessShader.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 
 TessShader::TessShader()
 {
@@ -8,7 +8,7 @@ TessShader::TessShader()
 TessShader::TessShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath, 
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount, 
 	const char* aInputs[], unsigned int aOutputCount, const char* aOutputs[]) : 
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 	//set uniforms 
 	setFloat("TessHighDetailDist", mTessHighDetailDistance);
@@ -56,7 +56,7 @@ void TessShader::useShader(bool aClear)
 	glDisable(GL_BLEND);
 
 	//draw objects
-	Shader::useShader(aClear, GL_PATCHES);
+	BaseShader::useShader(aClear, GL_PATCHES);
 
 	//disable depth writing and testing
 	glDepthMask(GL_FALSE);
@@ -66,7 +66,7 @@ void TessShader::useShader(bool aClear)
 	if (mGBuffer != nullptr)
 	{
 		mGBuffer->unBindBuffer();
-		glViewport(0, 0, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y);
+		glViewport(0, 0, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y);
 	}
 
 	//reset the polygon mode 

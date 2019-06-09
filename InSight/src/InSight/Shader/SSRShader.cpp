@@ -1,6 +1,6 @@
 #include "Shader/SSRShader.h"
 #include "Component/CameraComponent.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 #include "Component/MeshComponent.h"
 
 SSRShader::SSRShader()
@@ -10,7 +10,7 @@ SSRShader::SSRShader()
 SSRShader::SSRShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount /*= 3*/,
 	const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[] /*= nullptr*/) :
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 	//generate buffers
 	generateBuffers();
@@ -41,10 +41,10 @@ void SSRShader::useShader(bool aClear)
 
 	//bind buffer
 	mSSRBuffer->bindBuffer();
-	CameraComponent* camera = getRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>();
+	CameraComponent* camera = getBaseRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>();
 	MeshComponent* mesh = getMeshComponent();
 
-	Shader::useShaderPP(true);
+	BaseShader::useShaderPP(true);
 
 	//normal matrix
 	glm::mat4 normalMatrix = glm::transpose(glm::inverse(*camera->getViewMatrix() * glm::mat4()));
@@ -71,7 +71,7 @@ void SSRShader::destroy()
 	mSSRBuffer->destroy();
 	delete mSSRBuffer;
 
-	Shader::destroy();
+	BaseShader::destroy();
 }
 
 void SSRShader::renderQuad()

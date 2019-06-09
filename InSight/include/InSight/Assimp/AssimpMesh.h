@@ -4,7 +4,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 
 #include <string>
 #include <fstream>
@@ -68,9 +68,9 @@ public:
 	AssimpMesh(std::vector<AssimpVertex> aVertices, std::vector<unsigned int> aIndices);
 
 	//Draw the mesh
-	void Draw(Shader* aShader = nullptr, const bool& aBindTextures = true);
-	void Draw(unsigned int& aProgram, Shader* aShader = nullptr, const bool& aBindTextures = true);
-	void Draw(const int& aDrawMode, Shader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(unsigned int& aProgram, BaseShader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(const int& aDrawMode, BaseShader* aShader = nullptr, const bool& aBindTextures = true);
 	//unload the mesh
 	void unloadMesh();
 

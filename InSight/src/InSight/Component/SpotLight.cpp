@@ -1,5 +1,5 @@
 #include "Component/SpotLight.h"
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Gizmos.h"
 #include "Component/TransformComponent.h"
 
@@ -31,7 +31,7 @@ void SpotLight::init()
 	mQuadratic = 0.14f;
 }
 
-void SpotLight::draw(Shader* aShader, const bool& aBindTextures)
+void SpotLight::draw(BaseShader* aShader, const bool& aBindTextures)
 {
 	//check if we have a mesh
 	if (!meshGenerated())
@@ -206,7 +206,7 @@ void SpotLight::createConeMesh()
 	addTri(endPoint, v1, v2);
 }
 
-void SpotLight::setUniforms(Shader* aShader)
+void SpotLight::setUniforms(BaseShader* aShader)
 {
 	//set uniforms
 	aShader->setVec4("sLight.Direction", mLightDir, true);

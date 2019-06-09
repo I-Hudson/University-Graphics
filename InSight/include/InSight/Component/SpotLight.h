@@ -16,7 +16,7 @@ public:
 	~SpotLight();
 
 	void		init()override;
-	void		draw(Shader* aShader, const bool& aBindTextures = true) override;
+	void		draw(BaseShader* aShader, const bool& aBindTextures = true) override;
 	void		update() override;
 	void		gui()override;
 
@@ -24,7 +24,7 @@ private:
 	//create the cone mesh for the light volume
 	void		createConeMesh();
 	//set all the uniforms for this light
-	void		setUniforms(Shader* aShader);
+	void		setUniforms(BaseShader* aShader);
 
 	//cutoff for the inner edge of the spot light
 	float mInnerCutoff;

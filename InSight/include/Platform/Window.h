@@ -48,8 +48,9 @@ public:
 	virtual void SetVSync(bool aEnabled) = 0;
 	//is vsync on or off
 	virtual bool IsVSync() const = 0;
-	//get the glfw window pointer
-	virtual GLFWwindow* GetWindow() const = 0;
+
+	//get the window pointer
+	virtual void* GetNativeWindow() const = 0;
 
 	//create window
 	static Window* Create(const WindowProps& aProps = WindowProps());

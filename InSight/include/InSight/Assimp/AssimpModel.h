@@ -28,9 +28,9 @@ public:
 	AssimpModel(std::vector<AssimpVertex> aVertices, std::vector<unsigned int> aIndices);
 
 	//draw the mesh
-	void Draw(Shader* aShader = nullptr, const bool& aBindTextures = true);
-	void Draw(unsigned int& aProgram, Shader* aShader = nullptr, const bool& aBindTextures = true);
-	void Draw(const int& aDrawMode, Shader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(unsigned int& aProgram, BaseShader* aShader = nullptr, const bool& aBindTextures = true);
+	void Draw(const int& aDrawMode, BaseShader* aShader = nullptr, const bool& aBindTextures = true);
 
 	//destroy the model
 	void Destroy();

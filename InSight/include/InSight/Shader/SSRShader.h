@@ -3,11 +3,11 @@
 #ifndef __SSR_SHADRE_H__
 #define __SSR_SHADRE_H__
 
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "GBuffer.h"
 
 
-class SSRShader : public Shader
+class SSRShader : public BaseShader
 {
 public:
 	//Constructors
@@ -18,7 +18,7 @@ public:
 	//Destructor
 	~SSRShader();
 
-	//use this shader
+	//use this BaseShader
 	void useShader(bool aClear) override;
 	//destroy override
 	void destroy() override;

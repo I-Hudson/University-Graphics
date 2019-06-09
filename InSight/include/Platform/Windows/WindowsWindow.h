@@ -1,11 +1,9 @@
 #pragma once
 
-#ifndef __WINDOWS_WINDOW_H__
-#define __WINDOWS_WINDOW_H__
-
 #include "Platform/Window.h"
 
-#include <glad/glad.h>
+#include "InSight/Renderer/GraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 class WindowsWindow : public Window
@@ -30,8 +28,8 @@ public:
 	void SetVSync(bool aEnabled) override;
 	//is vsync on or off
 	bool IsVSync() const override;
-	//get the glfw window pointer
-	GLFWwindow* GetWindow() const { return mWindow; }
+
+	inline virtual void* GetNativeWindow() const { return mWindow; };
 
 private:
 	//init func
@@ -41,6 +39,7 @@ private:
 
 	//glfww window pointer
 	GLFWwindow* mWindow;
+	InSight::GraphicsContext* mContext;
 
 	//window data
 	struct WindowData
@@ -59,5 +58,3 @@ private:
 	//Window data
 	WindowData mData;
 };
-
-#endif // __WINDOWS_WINDOW_H__

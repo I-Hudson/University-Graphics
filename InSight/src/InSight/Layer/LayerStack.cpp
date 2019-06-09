@@ -2,7 +2,6 @@
 
 LayerStack::LayerStack()
 {
-	mLayerInsert = mLayers.begin();
 }
 
 LayerStack::~LayerStack()
@@ -15,7 +14,8 @@ LayerStack::~LayerStack()
 
 void LayerStack::PushLayer(Layer* aLayer)
 {
-	mLayerInsert = mLayers.emplace(mLayerInsert, aLayer);
+	mLayers.emplace(mLayers.begin() + mLayerInsertIndex, aLayer);
+	mLayerInsertIndex++;
 }
 
 void LayerStack::PushOverlay(Layer* aOverlay)
@@ -29,7 +29,7 @@ void LayerStack::PopLayer(Layer* aLayer)
 	if (it != mLayers.end())
 	{
 		mLayers.erase(it);
-		mLayerInsert--;
+		mLayerInsertIndex--;
 	}
 }
 

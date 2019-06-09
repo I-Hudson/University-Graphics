@@ -40,7 +40,7 @@ float Utility::getTotalTime()
 	return s_totalTime;
 }
 
-// loads a shader from a file and creates it for the specified stage
+// loads a BaseShader from a file and creates it for the specified stage
 unsigned int Utility::loadShader(const char* a_filename, unsigned int a_type)
 {
 	int success = GL_FALSE;
@@ -70,7 +70,7 @@ unsigned int Utility::loadShader(const char* a_filename, unsigned int a_type)
 		if (log != nullptr)
 		{
 
-			log->addLog(LOG_LEVEL::LOG_ERROR, "Error: Failed to compile shader!\n : %s %s", infoLog, a_filename);
+			log->addLog(LOG_LEVEL::LOG_ERROR, "Error: Failed to compile BaseShader!\n : %s %s", infoLog, a_filename);
 		}
 		delete[] infoLog;
 		return 0;
@@ -79,14 +79,14 @@ unsigned int Utility::loadShader(const char* a_filename, unsigned int a_type)
 	return handle;
 }
 
-// creates a shader program, links the specified shader stages to it, and binds the specified input/output attributes
+// creates a BaseShader program, links the specified BaseShader stages to it, and binds the specified input/output attributes
 unsigned int Utility::createProgram(unsigned int a_vertexShader, unsigned int a_controlShader, unsigned int a_evaluationShader, unsigned int a_geometryShader, unsigned int a_fragmentShader,
 								  unsigned int a_inputAttributeCount /* = 0 */, const char** a_inputAttributes /* = nullptr */,
 								  unsigned int a_outputAttributeCount /* = 0 */, const char** a_outputAttributes /* = nullptr */)
 {
 	int success = GL_FALSE;
 
-	// create a shader program and attach the shaders to it
+	// create a BaseShader program and attach the shaders to it
 	unsigned int handle = glCreateProgram();
 	glAttachShader(handle, a_vertexShader);
 	glAttachShader(handle, a_controlShader);
@@ -98,7 +98,7 @@ unsigned int Utility::createProgram(unsigned int a_vertexShader, unsigned int a_
 	for ( unsigned int i = 0 ; i < a_inputAttributeCount ; ++i )
 		glBindAttribLocation(handle, i, a_inputAttributes[i]);
 
-	// specify fragment shader outputs
+	// specify fragment BaseShader outputs
 	for ( unsigned int i = 0 ; i < a_outputAttributeCount ; ++i )
 		glBindFragDataLocation(handle, i, a_outputAttributes[i]);
 
@@ -117,7 +117,7 @@ unsigned int Utility::createProgram(unsigned int a_vertexShader, unsigned int a_
 		Application_Log* log = Application_Log::Create();
 		if (log != nullptr)
 		{
-			log->addLog(LOG_LEVEL::LOG_ERROR, "Error: Failed to link shader program!\n : %s", infoLog);
+			log->addLog(LOG_LEVEL::LOG_ERROR, "Error: Failed to link BaseShader program!\n : %s", infoLog);
 		}
 		delete[] infoLog;
 		return 0;
@@ -263,11 +263,11 @@ void Utility::TestShaderStatus(const unsigned int& a_uiShaderId, unsigned int a_
 		std::ostringstream ssError;
 		if (a_uiStatus == GL_LINK_STATUS)
 		{
-			ssError << "Error: Failed to  link shader!\n" << log;
+			ssError << "Error: Failed to  link BaseShader!\n" << log;
 		}
 		else
 		{
-			ssError << "Error: Failed to compile " << a_shaderType << "shader!\n" << log;
+			ssError << "Error: Failed to compile " << a_shaderType << "BaseShader!\n" << log;
 		}
 		Error::RuntimeError(ssError.str());
 		free(log);
@@ -310,7 +310,7 @@ void Utility::loadTextureFromFile(const char* aFileName, unsigned int& aTexture)
 
 		if (channels == 1)//if the texture has one channel
 		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_R, width, height, 0, GL_R, GL_UNSIGNED_BYTE, imageData);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, width, height, 0, GL_RED, GL_UNSIGNED_BYTE, imageData);
 		}
 		else if (channels == 2)
 		{

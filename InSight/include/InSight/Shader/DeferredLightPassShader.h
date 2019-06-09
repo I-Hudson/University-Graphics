@@ -1,16 +1,13 @@
 #pragma once
 
-#ifndef __DEFERRED_LIGHT_PASS_H__
-#define __DEFERRED_LIGHT_PASS_H__
-
-#include "Shader/Shader.h"
+#include "Shader/BaseShader.h"
 #include "Shader/DeferredShader.h"
 #include "Shader/VertexShader.h"
 #include "LightVolumeManager.h"
 
 #include <vector>
 
-class DeferredLightPassShader : public Shader
+class DeferredLightPassShader : public BaseShader
 {
 public:
 
@@ -26,22 +23,22 @@ public:
 	//destroy
 	void				destroy() override;
 
-	//use this shader (Bind, clear, setUnifroms, draw)
+	//use this BaseShader (Bind, clear, setUnifroms, draw)
 	void				useShader(bool aClear = false) override;
 	//void				useShader(bool aClear = false, PointLight* aP = nullptr);
 
-	//return thr stencil shader
-	Shader*				getStencilShader();
-	//set the deferred shader
+	//return thr stencil BaseShader
+	BaseShader*				getStencilShader();
+	//set the deferred BaseShader
 	//void				setDeferredShader(DeferredShader* aShader);
 
 	//override setLightManager function
 	void				setLightVolumeManager(LightVolumeManager* aManager) override;
 
-	//set the hdr state for the light shader
+	//set the hdr state for the light BaseShader
 	void setHDRState(bool aState);
 
-	//get the hdr state for the light shader
+	//get the hdr state for the light BaseShader
 	bool getHDRState();
 
 protected:
@@ -66,10 +63,10 @@ private:
 
 	bool mHDRState;
 
-	//Stencil shader
+	//Stencil BaseShader
 	VertexShader* mStencilShader;
-	//Post light shader to render point lights
-	Shader* mPostLightShader;
+	//Post light BaseShader to render point lights
+	BaseShader* mPostLightShader;
 
 	//Line struct
 	struct Line
@@ -110,4 +107,3 @@ private:
 	//Fullscreen quad count
 	unsigned int mFSQuadCount;
 };
-#endif // !__DEFERRED_LIGHT_PASS_H__

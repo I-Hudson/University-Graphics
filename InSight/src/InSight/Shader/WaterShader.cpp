@@ -1,6 +1,6 @@
 #include "Shader/WaterShader.h"
 #include "Utilities.h"
-#include "Renderer.h"
+#include "BaseRenderer.h"
 
 WaterShader::WaterShader()
 {
@@ -9,7 +9,7 @@ WaterShader::WaterShader()
 WaterShader::WaterShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount /*= 3*/,
 	const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[] /*= nullptr*/) :
-	Shader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
+	BaseShader(aVertexPath, aControlpath, aEvaluationpath, aGeometryPath, aFragmentPath, aInputCount, aInputs, aOutputCount, aOutputs)
 {
 	//load shaders
 	unsigned int vertexShader = Utility::loadShader("./shaders/water/vertex_ClipPlane.glsl", GL_VERTEX_SHADER);
@@ -50,7 +50,7 @@ void WaterShader::initBuffers()
 {
 	//create reflection buffer
 	mReflectionBuffer = new GBuffer();
-	mReflectionBuffer->setScreenSize(getRenderer()->getScreenSize());
+	mReflectionBuffer->setScreenSize(getBaseRenderer()->getScreenSize());
 	mReflectionBuffer->createFrameBuffer();
 	mReflectionBuffer->attachTextureToFrameBuffer(0, GL_RGBA, mReflectionBuffer->getScreenSize()->x, mReflectionBuffer->getScreenSize()->y, 0,
 		GL_RGBA, GL_UNSIGNED_BYTE, 0, GL_COLOR_ATTACHMENT0, "Water Reflection Texture");
@@ -59,7 +59,7 @@ void WaterShader::initBuffers()
 
 	//create refraction buffer
 	mRefractionBuffer = new GBuffer();
-	mRefractionBuffer->setScreenSize(getRenderer()->getScreenSize());
+	mRefractionBuffer->setScreenSize(getBaseRenderer()->getScreenSize());
 	mRefractionBuffer->createFrameBuffer();
 	mRefractionBuffer->attachTextureToFrameBuffer(0, GL_RGBA, mRefractionBuffer->getScreenSize()->x, mRefractionBuffer->getScreenSize()->y, 0,
 		GL_RGBA, GL_UNSIGNED_BYTE, 0, GL_COLOR_ATTACHMENT0, "Water Refraction Texture");
@@ -81,7 +81,7 @@ void WaterShader::destroy()
 	glDeleteTextures(1, &mDUDVMap);
 	glDeleteTextures(1, &mNormalMap);
 
-	Shader::destroy();
+	BaseShader::destroy();
 }
 
 void WaterShader::useShader(bool aClear)
@@ -191,7 +191,7 @@ void WaterShader::useShader(bool aClear)
 	//bind buffer
 	mGBuffer->bindBuffer();
 	//mGBuffer->setDrawBuffers();
-	glViewport(0, 0, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y);
+	glViewport(0, 0, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y);
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE);
 	glDisable(GL_CULL_FACE);
@@ -242,6 +242,6 @@ void WaterShader::useShader(bool aClear)
 	glDisable(GL_BLEND);
 	glDepthMask(GL_FALSE);
 	glDisable(GL_DEPTH_TEST);
-	glViewport(0, 0, getRenderer()->getScreenSize().x, getRenderer()->getScreenSize().y);
+	glViewport(0, 0, getBaseRenderer()->getScreenSize().x, getBaseRenderer()->getScreenSize().y);
 	mGBuffer->unBindBuffer();
 }
