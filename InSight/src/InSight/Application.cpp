@@ -67,6 +67,9 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 }
 #endif
 
+//Vulkan TUT
+//https://vulkan-tutorial.com/Drawing_a_triangle
+
 namespace InSight
 {
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)

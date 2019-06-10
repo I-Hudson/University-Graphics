@@ -45,6 +45,9 @@ void WindowsWindow::Init(const WindowProps& aProps)
 		sGLFWInitialized = true;
 	}
 
+	int success = glfwVulkanSupported();
+	EN_CORE_ASSERT(success, "Vulkan not supported!");
+
 	mWindow = glfwCreateWindow((int)aProps.Width, (int)aProps.Height, mData.Title.c_str(), nullptr, nullptr);
 
 	mContext = new InSight::OpenGLContext(mWindow);

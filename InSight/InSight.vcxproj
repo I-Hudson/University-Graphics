@@ -187,14 +187,14 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)deps/spdlog/include;$(SolutionDir)deps/assimp/include;$(SolutionDir)deps\fbx_loader\include;$(ProjectDir)include/InSight;$(ProjectDir)include;$(SolutionDir)deps/vulkan/include;$(SolutionDir)deps/glfw/include;$(SolutionDir)deps/glad/include;$(SolutionDir)deps/stb;$(SolutionDir)deps/glm;$(SolutionDir)deps/imgui;$(SolutionDir)deps/imgui/include;$(SolutionDir)deps/imgui/impl</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>IMGUI_IMPL_OPENGL_LOADER_GLAD;_CRT_SECURE_NO_WARNINGS;GLM_FORCE_SWIZZLE;GLM_FORCE_RADIANS;GLM_FORCE_PURE;GLM_ENABLE_EXPERIMENTAL;GLEW_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4201;4310;4099;</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib;$(SolutionDir)deps\fbx_loader\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp.lib;FBX_Loader.lib;OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\vulkan\lib\$(Platform)\$(Configuration);$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib;$(SolutionDir)deps\fbx_loader\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;assimp.lib;FBX_Loader.lib;OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
