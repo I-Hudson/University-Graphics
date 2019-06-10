@@ -4,6 +4,8 @@
 #include "Log.h"
 #include "Component/CameraComponent.h"
 
+#include "imgui_fileDialog.h"
+
 MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
 {
 	if (aLoadType == LoadType::AssimpLoader)
@@ -123,6 +125,11 @@ MeshComponent::~MeshComponent()
 
 void MeshComponent::draw(BaseShader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
 {
+	if (model == nullptr)
+	{
+		return;
+	}
+
 	//bing our BaseShader program
 	//glUseProgram(mProgrmID);
 	//bind our vertex array object
@@ -165,6 +172,11 @@ void MeshComponent::draw(BaseShader* aShader, const glm::mat4& aModelMatrx, cons
 
 void MeshComponent::draw(BaseShader* aShader, unsigned int& aProgram, const glm::mat4 & aModelMatrx, const bool & aBindTextures)
 {
+	if (model == nullptr)
+	{
+		return;
+	}
+
 	//check for transform. If null get transform from entity
 	if (mTransform == nullptr)
 	{
@@ -202,6 +214,11 @@ void MeshComponent::draw(BaseShader* aShader, unsigned int& aProgram, const glm:
 
 void MeshComponent::draw(const int& aDrawMode, BaseShader* aShader, const glm::mat4& aModelMatrx, const bool& aBindTextures)
 {
+	if (model == nullptr)
+	{
+		return;
+	}
+
 	//check for transform. If null get transform from entity
 	if (mTransform == nullptr)
 	{
@@ -235,11 +252,39 @@ void MeshComponent::draw(const int& aDrawMode, BaseShader* aShader, const glm::m
 
 void MeshComponent::gui()
 {
-	if (ImGui::CollapsingHeader("Model Component"))
+	if (ImGui::TreeNode("Model Component"))
 	{
-		ImGui::Text(std::string("Model Path :" + *model->getModelFileName()).c_str());
+		ImGui::Text(std::string("Model Path :" + (model != nullptr ? *model->getModelFileName() : "")).c_str());
+		if (ImGui::Button("Load Model"))
+		{
+			mShowFileExplorer = true;
+		}
 
-		if(ImGui::CollapsingHeader("BaseShader Properties"))
+		if (mShowFileExplorer)
+		{
+			if (ImGuiFileDialog::Instance()->FileDialog("File Explorer", ".obj\0.fbx", "."))
+			{
+				if (ImGuiFileDialog::Instance()->IsOk == true)
+				{
+					std::string modelPath = ImGuiFileDialog::Instance()->GetFilepathName();
+					model = new AssimpModel(modelPath.c_str(), true);
+				}
+				mShowFileExplorer = false;
+			}
+		}
+		ImGui::SameLine();		
+		if (ImGui::Button("Unload Model"))
+		{
+			if (model != nullptr)
+			{
+				//destroy model
+				model->Destroy();
+				delete model;
+				model = nullptr;
+			}
+		}
+
+		if(ImGui::TreeNode("BaseShader Properties"))
 		{
 			mShader->gui();
 			/*for (auto& s : mShaders)
@@ -249,15 +294,20 @@ void MeshComponent::gui()
 					s->gui();
 				}
 			}*/
+			ImGui::TreePop();
 		}
+		ImGui::TreePop();
 	}
 }
 
 void MeshComponent::destroy()
 {
-	//destroy model
-	model->Destroy();
-	delete model;
+	if (model != nullptr)
+	{
+		//destroy model
+		model->Destroy();
+		delete model;
+	}
 }
 
 void MeshComponent::setMesh()

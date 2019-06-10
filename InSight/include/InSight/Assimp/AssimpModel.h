@@ -23,7 +23,7 @@ public:
 	*/
 	AssimpModel() {}
 	~AssimpModel();
-	AssimpModel(const char* aPath);
+	AssimpModel(const char* aPath, const bool aLoadAtRuntime = false);
 	AssimpModel(AssimpMesh aPath);
 	AssimpModel(std::vector<AssimpVertex> aVertices, std::vector<unsigned int> aIndices);
 
@@ -53,7 +53,7 @@ private:
 	/*
 		Functions
 	*/
-	void loadModel(const char* aPath);
+	void loadModel(const char* aPath, const bool aLoadAtRuntime);
 	void processNode(aiNode* aNode, const aiScene* aScene);
 	AssimpMesh processMesh(aiMesh* aMesh, const aiScene* aScene);
 	std::vector<AssimpTexture> loadMaterialTextures(aiMaterial* aMaterial, aiTextureType aType,

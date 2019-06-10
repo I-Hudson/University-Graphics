@@ -57,18 +57,21 @@ namespace InSight
 			ImGui::EndMenu();
 		}
 
-		if (ImGui::BeginMenu("Components"))
+		if (mGUIHierarchy->getActiveEntitiy() != nullptr)
 		{
-			if (ImGui::MenuItem("Add Transform Component"))
+			if (ImGui::BeginMenu("Components"))
 			{
-				mGUIHierarchy->getActiveEntitiy()->addComponent<TransformComponent>();
-			}
+				if (ImGui::MenuItem("Add Transform Component"))
+				{
+					mGUIHierarchy->getActiveEntitiy()->addComponent<TransformComponent>();
+				}
 
-			if (ImGui::MenuItem("Add Point Light Component"))
-			{
-				mGUIHierarchy->getActiveEntitiy()->addComponent<PointLight>();
+				if (ImGui::MenuItem("Add Point Light Component"))
+				{
+					mGUIHierarchy->getActiveEntitiy()->addComponent<PointLight>();
+				}
+				ImGui::EndMenu();
 			}
-			ImGui::EndMenu();
 		}
 
 		ImGui::EndMainMenuBar();

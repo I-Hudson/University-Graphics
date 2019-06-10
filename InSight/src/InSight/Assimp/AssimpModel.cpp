@@ -7,11 +7,11 @@ AssimpModel::~AssimpModel()
 {
 }
 
-AssimpModel::AssimpModel(const char* aPath)
+AssimpModel::AssimpModel(const char* aPath, const bool aLoadAtRuntime)
 {
 	//std::thread t1(&AssimpModel::loadModel, aPath);
 	//load model
-	loadModel(aPath);
+	loadModel(aPath, aLoadAtRuntime);
 	//t1.join();
 }
 
@@ -73,7 +73,7 @@ std::string* AssimpModel::getModelFileName()
 	return &mDirectory;
 }
 
-void AssimpModel::loadModel(const char* aPath)
+void AssimpModel::loadModel(const char* aPath, const bool aLoadAtRuntime)
 {
 	//get the assimp importer, load the model from file
 	Assimp::Importer importer;
@@ -87,7 +87,14 @@ void AssimpModel::loadModel(const char* aPath)
 		std::cout << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
 		return;
 	}
-	mDirectory = std::string(aPath).substr(0, std::string(aPath).find_last_of('/'));
+	if (!aLoadAtRuntime)
+	{
+		mDirectory = std::string(aPath).substr(0, std::string(aPath).find_last_of('/'));
+	}
+	else
+	{
+		mDirectory = std::string(aPath).substr(0, std::string(aPath).find_last_of('\\'));
+	}
 	//process scene root node
 	processNode(scene->mRootNode, scene);
 }

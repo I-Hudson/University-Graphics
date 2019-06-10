@@ -105,6 +105,8 @@ private:
 	//unsigned int mIBO;
 	//unsigned int indicsSize;
 
+	bool mShowFileExplorer;
+
 	//Meshes render mode. Is this object opaque or transparent
 	RenderMode mRenderMode;
 

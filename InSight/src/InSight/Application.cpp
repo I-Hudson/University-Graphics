@@ -368,7 +368,7 @@ namespace InSight
 
 	void Application::showFrameData(bool a_showFrameData)
 	{
-		return;
+
 		m_showFrameData = a_showFrameData;
 		const float DISTANCE = 10.0f;
 		static int corner = 0;
