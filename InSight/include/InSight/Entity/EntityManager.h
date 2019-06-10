@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef __ENTIT_MANAGER_H__
-#define __ENTIT_MANAGER_H__
-
 #include <vector>
 #include <memory>
 #include "InSight/Entity/Entity.h"
@@ -21,6 +18,8 @@ public:
 	void						update();
 	void						draw();
 
+	inline static EntityManager& Get() { return *sInstance; }
+
 	//get all entities
 	std::vector<Entity*> const& getEntities() const;
 
@@ -38,12 +37,15 @@ public:
 	{
 		std::vector<T*> tempV;
 
-		for (auto& e : mEntities)
+		if (mEntities.size() > 0)
 		{
-			if (e->hasComponent<T>())
+			for (auto& e : mEntities)
 			{
-				T* tempT = e->getComponent<T>();
-				tempV.push_back(tempT);
+				if (e->hasComponent<T>())
+				{
+					T* tempT = e->getComponent<T>();
+					tempV.push_back(tempT);
+				}
 			}
 		}
 		return tempV;
@@ -58,5 +60,3 @@ private:
 
 	static EntityManager* sInstance;
 };
-
-#endif // !__ENTIT_MANAGER_H__

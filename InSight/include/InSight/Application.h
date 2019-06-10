@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glad/glad.h>
+#include <glm/common.hpp>
 #include "Debug.h"
 #include "Platform/Window.h"
 #include "Layer/LayerStack.h"
@@ -39,6 +40,28 @@ namespace InSight
 
 		void	showFrameData(bool a_showFrameData);
 
+		struct Vertex
+		{
+			glm::vec4 Position;
+			glm::vec4 Colour;
+			glm::vec4 Normal;
+			glm::vec2 TexCoord1;
+
+			Vertex(const glm::vec4& aPosition, const glm::vec4& aColour, const glm::vec4& aNormal, const glm::vec2& aTexCoord1)
+				:Position(aPosition), Colour(aColour), Normal(aNormal), TexCoord1(aTexCoord1)
+			{}
+
+			Vertex(const float& aPositionX, const float& aPositionY, const float& aPositionZ, const float& aPositionW,
+				const float& aColourR, const float& aColourG, const float& aColourB, const float& aColourA,
+				const float& aNormalX, const float& aNormalY, const float& aNormalZ, const float& aNormalW,
+				const float& aTexCoord1X, const float& aTexCoord1Y)
+				: Position(glm::vec4(aPositionX, aPositionY, aPositionZ, aPositionW)),
+				Colour(glm::vec4(aColourR, aColourG, aColourB, aColourA)),
+				Normal(glm::vec4(aNormalX, aNormalY, aNormalZ, aNormalW)),
+				TexCoord1(glm::vec2(aTexCoord1X, aTexCoord1Y))
+			{}
+		};
+
 	protected:
 		bool OnWindowClose(WindowCloseEvent& aEvent);
 		std::unique_ptr<Window> mWindow;
@@ -49,7 +72,6 @@ namespace InSight
 		std::unique_ptr<InSight::VertexBuffer> mVertexBuffer;
 		std::unique_ptr<InSight::IndexBuffer> mIndexB;
 		std::unique_ptr<InSight::Shader> mShader;
-
 
 		virtual bool	onCreate() = 0;
 		virtual void	Update(float a_deltaTime) = 0;

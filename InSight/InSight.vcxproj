@@ -43,6 +43,7 @@
     <ClInclude Include="include\InSight\GUI\GUIBase.h" />
     <ClInclude Include="include\InSight\GUI\GUIHierarchy.h" />
     <ClInclude Include="include\InSight\GUI\GUIInspector.h" />
+    <ClInclude Include="include\InSight\GUI\GUIToolBar.h" />
     <ClInclude Include="include\InSight\Input\Input.h" />
     <ClInclude Include="include\InSight\Input\KeyCodes.h" />
     <ClInclude Include="include\InSight\Input\MouseButtonCodes.h" />
@@ -107,6 +108,7 @@
     <ClCompile Include="src\InSight\GUI\GUIBase.cpp" />
     <ClCompile Include="src\InSight\GUI\GUIHierarchy.cpp" />
     <ClCompile Include="src\InSight\GUI\GUIInspector.cpp" />
+    <ClCompile Include="src\InSight\GUI\GUIToolBar.cpp" />
     <ClCompile Include="src\InSight\Layer\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\InSight\Layer\Layer.cpp" />
     <ClCompile Include="src\InSight\Layer\LayerStack.cpp" />

@@ -35,12 +35,16 @@ void GUIHierarchy::draw()
 	//begin next gui element
 	ImGui::Begin("GUI Hierarchy");
 
+	ImGui::TextColored(ImVec4(0, 170, 0, 1), "Entity List:");
+
 	//for each entitiy in scene add here
 	if (mEntityManager != nullptr)
 	{
+		int i = 0;
+		ImGui::BeginChild("Scrolling");
 		for (auto& entity : mEntityManager->getEntities())
 		{
-			if (ImGui::Button(entity->getID().c_str(), ImVec2(mSize.x * 1.0f, mSize.y * 0.15f)))
+			/*if (ImGui::Button(entity->getID().c_str(), ImVec2(mSize.x * 1.0f, mSize.y * 0.15f)))
 			{
 				if (mActiveEntity != entity)
 				{
@@ -49,8 +53,22 @@ void GUIHierarchy::draw()
 					log += mActiveEntity->getID();
 					EN_TRACE(log);
 				}
+			}*/
+			bool isSelected = false;
+			if (mActiveEntity != entity)
+			{
+				isSelected = true;
 			}
+
+			ImGui::PushID(i);
+			if (ImGui::Selectable(entity->getID().c_str(), isSelected))
+			{
+				mActiveEntity = entity;
+			}
+			ImGui::PopID();
+			i++;
 		}
+		ImGui::EndChild();
 	}
 	else
 	{

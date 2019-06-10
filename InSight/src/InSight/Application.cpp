@@ -67,8 +67,6 @@ void APIENTRY glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum seve
 }
 #endif
 
-
-
 namespace InSight
 {
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -95,6 +93,34 @@ namespace InSight
 		return 0;
 	}
 
+	float* VertexToFloatArray(const Application::Vertex* aVertex, const int& aCount)
+	{
+		int count = aCount;
+		float* vertices = new float[aCount * 14];
+		for (int i = 0; i < count; i++)
+		{
+			vertices[i * 14 + 0] = aVertex[i].Position.x;
+			vertices[i * 14 + 1] = aVertex[i].Position.y;
+			vertices[i * 14 + 2] = aVertex[i].Position.z;
+			vertices[i * 14 + 3] = aVertex[i].Position.w;
+						 
+			vertices[i * 14 + 4] = aVertex[i].Colour.r;
+			vertices[i * 14 + 5] = aVertex[i].Colour.g;
+			vertices[i * 14 + 6] = aVertex[i].Colour.b;
+			vertices[i * 14 + 7] = aVertex[i].Colour.a;
+						 
+			vertices[i * 14 + 8] =  aVertex[i].Normal.x;
+			vertices[i * 14 + 9] =  aVertex[i].Normal.y;
+			vertices[i * 14 + 10] = aVertex[i].Normal.z;
+			vertices[i * 14 + 11] = aVertex[i].Normal.w;
+						 
+			vertices[i * 14 + 12] = aVertex[i].TexCoord1.x;
+			vertices[i * 14 + 13] = aVertex[i].TexCoord1.y;
+		}
+
+		return &vertices[0];
+	}
+
 	Application::Application()
 		: m_running(false)
 	{
@@ -116,20 +142,31 @@ namespace InSight
 		glGenVertexArrays(1, &mVertexArray);
 		glBindVertexArray(mVertexArray);
 
-		float vertices[3 * 7] =
+		//float vertices[3 * 14] =
+		//{
+		//	-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f,
+		//	0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f,
+		//	0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f
+		//};
+
+		Vertex vertices[3] = 
 		{
-			-0.5, -0.5, 0.0f,	/*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f,
-			0.5f, -0.5f, 0.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f,
-			0.0f, 0.5f, 0.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f
+			Vertex(-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f),
+			Vertex(0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f),
+			Vertex(0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f),
 		};
 
-		mVertexBuffer.reset(InSight::VertexBuffer::Create(vertices, sizeof(vertices)));
+		float* verticesP = VertexToFloatArray(&vertices[0], 3);
+ 		mVertexBuffer.reset(InSight::VertexBuffer::Create(verticesP, sizeof(vertices)));
+		delete[] verticesP;
 
 		{
 			BufferLayout layout =
 			{
-				{ShaderDataType::Float3, "aPosition"},
+				{ShaderDataType::Float4, "aPosition"},
 				{ShaderDataType::Float4, "aColour"},
+				{ShaderDataType::Float4, "aNormal", true},
+				{ShaderDataType::Float2, "aTexCoord1", true},
 			};
 			mVertexBuffer->SetLayout(layout);
 		}
@@ -153,30 +190,32 @@ namespace InSight
 		std::string vertexSrc = R"(
 		#version 330
 
-		layout(location = 0) in vec3 aPosition;		
+		layout(location = 0) in vec4 aPosition;		
 		layout(location = 1) in vec4 aColour;		
+		layout(location = 2) in vec4 aNormal;		
+		layout(location = 3) in vec2 aTexCoord1;		
 		
-		out vec3 vPosition;
+		out vec4 vPosition;
 		out vec4 vColour;
 
 		void main()
 		{
 			vPosition = aPosition;
 			vColour = aColour;
-			gl_Position = vec4(aPosition, 1.0);
+			gl_Position = vec4(aPosition.xyz, 1.0);
 		}
 	)";
 
 		std::string fragSrc = R"(
 		#version 330
 
-		in vec3 vPosition;
+		in vec4 vPosition;
 		in vec4 vColour;
 		layout(location = 0) out vec4 outColour;		
 
 		void main()
 		{
-			outColour = vec4(vPosition * 0.5 + 0.5, 1.0);
+			outColour = vec4(vPosition.xyz * 0.5 + 0.5, 1.0);
 			outColour = vColour;
 		}
 	)";
@@ -250,12 +289,12 @@ namespace InSight
 #else
 				mImGuiLayer->Begin();
 
-				//mShader->Bind();
-				//glBindVertexArray(mVertexArray);
-				//glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
+				mShader->Bind();
+				glBindVertexArray(mVertexArray);
+				glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 				//ImGui Set up Framerate window
-				showFrameData(true);
+				showFrameData(false);
 
 				Update(deltaTime);
 
@@ -329,6 +368,7 @@ namespace InSight
 
 	void Application::showFrameData(bool a_showFrameData)
 	{
+		return;
 		m_showFrameData = a_showFrameData;
 		const float DISTANCE = 10.0f;
 		static int corner = 0;

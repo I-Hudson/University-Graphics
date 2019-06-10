@@ -18,7 +18,7 @@ LightVolumeManager::~LightVolumeManager()
 void LightVolumeManager::update()
 {
 	//update all light volumes
-	for (auto kv : mLightVolumes)
+	for (auto kv : mEntityManager->getAllEntityComponents<LightComponent>())
 	{
 		kv->update();
 	}

@@ -4,6 +4,8 @@
 #include "BaseRenderer.h"
 #include "Component/CameraComponent.h"
 
+#include "Entity/EntityManager.h"
+
 DeferredLightPassShader::DeferredLightPassShader()
 {
 }
@@ -120,7 +122,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	glEnable(GL_STENCIL_TEST);
 
 	//Stencil render pass
-	for (auto& kv : *mLightVolumes->getAllVolumes())
+	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
 	{
 		LightType lt = kv->getLightType();
 		if (lt == LightType::Directional)
@@ -198,7 +200,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	glBlendFunc(GL_ONE, GL_ONE);
 
 	//find directional light and draw it
-	for (auto& kv : *mLightVolumes->getAllVolumes())
+	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
 	{
 		if (kv->getLightType() == LightType::Directional)
 		{
@@ -218,7 +220,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	mPostLightShader->setMat4("ProjectionView",
 	*getBaseRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>()->getProjectionViewMatrix(),
 		true);
-	for (auto& kv : *mLightVolumes->getAllVolumes())
+	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
 	{
 		kv->PostLight(mPostLightShader);
 	}

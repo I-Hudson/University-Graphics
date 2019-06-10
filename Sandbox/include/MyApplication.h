@@ -37,6 +37,7 @@
 #include "InSight/GUI/GUI.h"
 #include "InSight/GUI/GUIHierarchy.h"
 #include "InSight/GUI/GUIInspector.h"
+#include "InSight/GUI/GUIToolBar.h"
 
 #include "Layer/LayerStack.h"
 #include "Layer/Layer.h"

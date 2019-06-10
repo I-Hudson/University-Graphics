@@ -29,10 +29,17 @@ void GUIInspector::draw()
 	ImGui::SetNextWindowSize(mSize);
 
 	//begin next gui element
-	ImGui::Begin("GUI Inspector");
+	ImGui::Begin("GUI Inspector", 0, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
+
+	ImGui::TextColored(ImVec4(170, 0, 0, 1), "Selected Entity:");
 
 	if (mHierarchy != nullptr && mHierarchy->getActiveEntitiy() != nullptr)
 	{
+		char text[32] = "Test Text";
+		std::strcpy(text, mHierarchy->getActiveEntitiy()->getID().c_str());
+		ImGui::InputText("Name", text, IM_ARRAYSIZE(text));
+		mHierarchy->getActiveEntitiy()->setID(text);
+
 		for (auto& component : *mHierarchy->getActiveEntitiy()->getAllComponents())
 		{
 			component->gui();

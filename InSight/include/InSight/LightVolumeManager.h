@@ -49,9 +49,13 @@ public:
 	//add new light volumes
 	void addLightVolume(LightComponent* aComponent);
 
+	EntityManager* mEntityManager;
+
 private:
 	//light volumes
 	std::vector<LightComponent*> mLightVolumes;
+
+
 };
 
 #endif // __LIGHT_VOLUME_MANAGER_H__

@@ -318,6 +318,9 @@
     <ClInclude Include="include\InSight\Renderer\Renderer.h">
       <Filter>Header Files\InSight\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="include\InSight\GUI\GUIToolBar.h">
+      <Filter>Header Files\InSight\GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -490,6 +493,9 @@
     </ClCompile>
     <ClCompile Include="src\InSight\Renderer\Renderer.cpp">
       <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\GUI\GUIToolBar.cpp">
+      <Filter>Source Files\InSight\GUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -65,17 +65,17 @@ namespace InSight
 
 	void ImGuiLayer::OnEvent(Event & aEvent)
 	{
-		EventDispatcher dispatcher(aEvent);
-		dispatcher.Dispatch<MouseButtonPressedEvent>(EN_BIND_EVENT_FN(OnMouseButtonPressedEvent));
-		dispatcher.Dispatch<MouseButtonReleasedEvent>(EN_BIND_EVENT_FN(OnMouseButtonReleasedEvent));
-		dispatcher.Dispatch<MouseMovedEvent>(EN_BIND_EVENT_FN(OnMouseMoveEvent));
-		dispatcher.Dispatch<MouseScrolledEvent>(EN_BIND_EVENT_FN(OnMouseScolledEvent));
+		//EventDispatcher dispatcher(aEvent);
+		//dispatcher.Dispatch<MouseButtonPressedEvent>(EN_BIND_EVENT_FN(OnMouseButtonPressedEvent));
+		//dispatcher.Dispatch<MouseButtonReleasedEvent>(EN_BIND_EVENT_FN(OnMouseButtonReleasedEvent));
+		//dispatcher.Dispatch<MouseMovedEvent>(EN_BIND_EVENT_FN(OnMouseMoveEvent));
+		//dispatcher.Dispatch<MouseScrolledEvent>(EN_BIND_EVENT_FN(OnMouseScolledEvent));
 
-		dispatcher.Dispatch<KeyPressedEvent>(EN_BIND_EVENT_FN(OnKeyPressedEvent));
-		dispatcher.Dispatch<KeyReleasedEvent>(EN_BIND_EVENT_FN(OnKeyReleasedEvent));
-		dispatcher.Dispatch<KeyTypedEvent>(EN_BIND_EVENT_FN(OnKeyTypedEvent));
+		//dispatcher.Dispatch<KeyPressedEvent>(EN_BIND_EVENT_FN(OnKeyPressedEvent));
+		//dispatcher.Dispatch<KeyReleasedEvent>(EN_BIND_EVENT_FN(OnKeyReleasedEvent));
+		//dispatcher.Dispatch<KeyTypedEvent>(EN_BIND_EVENT_FN(OnKeyTypedEvent));
 
-		dispatcher.Dispatch<WindowResizeEvent>(EN_BIND_EVENT_FN(OnWindowResizeEvent));
+		//dispatcher.Dispatch<WindowResizeEvent>(EN_BIND_EVENT_FN(OnWindowResizeEvent));
 	}
 
 	void ImGuiLayer::Begin()
@@ -160,7 +160,7 @@ namespace InSight
 
 		if (keycode > 0 && keycode < 0x10000)
 		{
-			io.AddInputCharacter((unsigned short)keycode);
+			//io.AddInputCharacter((unsigned short)keycode);
 		}
 
 		return false;
