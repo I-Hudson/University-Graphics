@@ -13,6 +13,8 @@
 #include "InSight/Renderer/Shader.h"
 #include "InSight/Renderer/Buffer.h"
 
+#include "InSight/Scene/SceneManager.h"
+
 struct GLFWwindow;
 
 namespace InSight

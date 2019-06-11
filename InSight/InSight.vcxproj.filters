@@ -109,6 +109,12 @@
     <Filter Include="Source Files\InSight\Renderer">
       <UniqueIdentifier>{e42ce2df-f7c8-402c-8d56-b2ce363976f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\InSight\Scene">
+      <UniqueIdentifier>{5aa8fb50-5d01-4d8d-988a-fbb8ed84cd9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\InSight\Scene">
+      <UniqueIdentifier>{f9b43ca6-df32-4ba6-a6ef-37be28ae9d15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\deps\glad\include\glad\glad.h">
@@ -321,6 +327,9 @@
     <ClInclude Include="include\InSight\GUI\GUIToolBar.h">
       <Filter>Header Files\InSight\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="include\InSight\Scene\SceneManager.h">
+      <Filter>Header Files\InSight\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -496,6 +505,9 @@
     </ClCompile>
     <ClCompile Include="src\InSight\GUI\GUIToolBar.cpp">
       <Filter>Source Files\InSight\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Scene\SceneManager.cpp">
+      <Filter>Source Files\InSight\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

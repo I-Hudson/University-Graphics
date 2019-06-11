@@ -2,19 +2,28 @@
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
   e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(184): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(186): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(134): warning C4100: 'a_bFullscreen': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(306): warning C4189: 'layer': local variable is initialized but not referenced
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(339): warning C4100: 'aEvent': unreferenced formal parameter
-  WindowsWindow.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(308): warning C4189: 'layer': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(341): warning C4100: 'aEvent': unreferenced formal parameter
+  ImGuiLayer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
   e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(104): warning C4100: 'mos': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(104): warning C4100: 'scancode': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(134): warning C4100: 'mods': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(48): warning C4189: 'success': local variable is initialized but not referenced
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(42): warning C4189: 'success': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(66): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(92): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(158): warning C4189: 'io': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(172): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  SceneManager.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(21): warning C4100: 'aSceneName': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(26): warning C4100: 'aSceneName': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(31): warning C4100: 'aScenePath': unreferenced formal parameter
+  WindowsInput.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
   Generating Code...
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(18): warning C4172: returning address of local variable or temporary: scenes
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
