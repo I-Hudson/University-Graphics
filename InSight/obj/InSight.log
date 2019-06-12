@@ -1,11 +1,101 @@
-﻿  Application.cpp
+﻿  glad.c
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  Application.cpp
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
   e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(186): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(184): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(134): warning C4100: 'a_bFullscreen': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(308): warning C4189: 'layer': local variable is initialized but not referenced
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(341): warning C4100: 'aEvent': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(306): warning C4189: 'layer': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\application.cpp(339): warning C4100: 'aEvent': unreferenced formal parameter
+  Application_Log.cpp
+  AssimpMesh.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  AssimpModel.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\assimp\assimpmodel.cpp(262): warning C4100: 'gamma': unreferenced formal parameter
+  AudioManager.cpp
+  AmbientLight.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  CameraComponent.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  DirectionalLight.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  LightComponent.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\lightcomponent.cpp(230): warning C4100: 'aShader': unreferenced formal parameter
+  MeshComponent.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(162): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(162): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(208): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(208): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(244): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(244): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(248): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(248): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(398): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(400): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(379): warning C4189: 'widthF': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(380): warning C4189: 'lengthF': local variable is initialized but not referenced
+  PointLight.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  SpotLight.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\spotlight.cpp(34): warning C4100: 'aBindTextures': unreferenced formal parameter
+  TransformComponent.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  Entity.cpp
+  EntityManager.cpp
+  Error.cpp
+  GBuffer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gbuffer.cpp(77): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gbuffer.cpp(122): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gbuffer.cpp(166): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Gizmos.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(138): warning C4100: 'a_vertexCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(138): warning C4100: 'vertexData': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(213): warning C4100: 'a_vertexCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(268): warning C4100: 'a_vertexCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(268): warning C4100: 'vertexData': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(300): warning C4100: 'a_vertexCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(300): warning C4100: 'vertexData': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(373): warning C4018: '<': signed/unsigned mismatch
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(365): warning C4100: 'aInnerCutoff': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gizmos.cpp(365): warning C4100: 'aSegments': unreferenced formal parameter
+  Generating Code...
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\gbuffer.cpp(90): warning C4172: returning address of local variable or temporary: fbo
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\assimp\assimpmodel.cpp(288): warning C4701: potentially uninitialized local variable 'format' used
+  Compiling...
+  GUI.cpp
+  GUIBase.cpp
+  GUIHierarchy.cpp
+  GUIInspector.cpp
+  GUIToolBar.cpp
   ImGuiLayer.cpp
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
@@ -14,16 +104,169 @@ e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(92): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(158): warning C4189: 'io': local variable is initialized but not referenced
 e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\layer\imgui\imguilayer.cpp(172): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  Layer.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
+  LayerStack.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
+  LightVolumeManager.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  Log.cpp
+  PostProcessing.cpp
+  PPBloom.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\pp\ppbloom.cpp(91): warning C4189: 'vClear': local variable is initialized but not referenced
+  PPBlur.cpp
+  PPEffect.cpp
+  PPScreenOverlay.cpp
+  BaseRenderer.cpp
+  Buffer.cpp
+  GraphicsContext.cpp
+  Renderer.cpp
+  Shader.cpp
+  Generating Code...
+  Compiling...
   SceneManager.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(21): warning C4100: 'aSceneName': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(26): warning C4100: 'aSceneName': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(31): warning C4100: 'aScenePath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(22): warning C4100: 'aSceneName': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(27): warning C4100: 'aSceneName': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(32): warning C4100: 'aScenePath': unreferenced formal parameter
+  DeferredLightPassShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\deferredlightpassshader.cpp(115): warning C4458: declaration of 'drawBuffers' hides class member
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\shader\baseshader.h(197): note: see declaration of 'BaseShader::drawBuffers'
+  DeferredShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\deferredshader.cpp(52): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  FullScreenShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\fullscreenshader.cpp(58): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::vec2' to 'glm::vec2 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\fullscreenshader.cpp(58): note: A non-const reference may only be bound to an lvalue
+  BaseShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(127): warning C4244: '=': conversion from 'int' to 'short', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(167): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(423): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(492): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(565): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(565): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(565): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(585): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(585): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(585): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(585): warning C4100: 'name': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(605): warning C4100: 'w': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(605): warning C4100: 'z': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(605): warning C4100: 'y': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(605): warning C4100: 'x': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\baseshader.cpp(605): warning C4100: 'name': unreferenced formal parameter
+  ShadowMapShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowmapshader.cpp(22): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowmapshader.cpp(24): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowmapshader.cpp(82): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowmapshader.cpp(36): warning C4100: 'aClear': unreferenced formal parameter
+  ShadowShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowshader.cpp(11): warning C4100: 'aFragmentPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowshader.cpp(11): warning C4100: 'aVertexPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\shadowshader.cpp(30): warning C4100: 'aClear': unreferenced formal parameter
+  SSAOShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\ssaoshader.cpp(90): warning C4100: 'aClear': unreferenced formal parameter
+  SSRShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\ssrshader.cpp(52): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
+  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\ssrshader.cpp(52): note: A non-const reference may only be bound to an lvalue
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\ssrshader.cpp(30): warning C4100: 'aClear': unreferenced formal parameter
+  TessShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\tessshader.cpp(69): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  VertexShader.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(10): warning C4100: 'aOutputs': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(10): warning C4100: 'aOutputCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(10): warning C4100: 'aInputs': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(9): warning C4100: 'aInputCount': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(9): warning C4100: 'aGeometryPath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(8): warning C4100: 'aEvaluationpath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(8): warning C4100: 'aControlpath': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(16): warning C4189: 'szInputs': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\vertexshader.cpp(52): warning C4100: 'aClear': unreferenced formal parameter
+  WaterShader.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(55): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(57): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(64): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(66): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(194): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\shader\watershader.cpp(245): warning C4244: 'argument': conversion from 'T' to 'GLsizei', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Utilities.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\utilities.cpp(48): warning C4130: '==': logical operation on address of string constant
+  OpenGLContext.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\opengl\openglcontext.cpp(17): warning C4189: 'gladStatus': local variable is initialized but not referenced
+  OpenGLBuffer.cpp
+  Window.cpp
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\window.cpp(3): warning C4100: 'aProps': unreferenced formal parameter
   WindowsInput.cpp
 e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
   e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+  WindowsWindow.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(104): warning C4100: 'mos': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(104): warning C4100: 'scancode': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(134): warning C4100: 'mods': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(48): warning C4189: 'success': local variable is initialized but not referenced
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\windows\windowswindow.cpp(42): warning C4189: 'success': local variable is initialized but not referenced
   Generating Code...
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(18): warning C4172: returning address of local variable or temporary: scenes
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\scene\scenemanager.cpp(19): warning C4172: returning address of local variable or temporary: scenes
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored

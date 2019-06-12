@@ -1,4 +1,3 @@
-#include "Debug.h"
 #include "MyApplication.h"
 #include "Sandbox.h"
 
@@ -10,7 +9,6 @@
 // main that controls the creation/destruction of an application
 int main(int argc, char* argv[])
 {
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	if (!PreMadeScene)
 	{
 		Sandbox* app = new Sandbox();
