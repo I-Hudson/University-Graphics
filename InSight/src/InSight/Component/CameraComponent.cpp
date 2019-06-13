@@ -144,3 +144,13 @@ void CameraComponent::printCameraMatrix()
 
 	std::cout << ss.str() << std::endl;
 }
+
+void CameraComponent::Save(std::ofstream& aFile)
+{
+	aFile << "	CameraComponent:\n";
+	aFile << "		ProjectionMatrixX:" << mPorjectionMatrix[0].x << "," << mPorjectionMatrix[0].y << "," << mPorjectionMatrix[0].z << "," << mPorjectionMatrix[0].w << "\n";
+	aFile << "		ProjectionMatrixY:" << mPorjectionMatrix[1].x << "," << mPorjectionMatrix[1].y << "," << mPorjectionMatrix[1].z << "," << mPorjectionMatrix[1].w << "\n";
+	aFile << "		ProjectionMatrixZ:" << mPorjectionMatrix[2].x << "," << mPorjectionMatrix[2].y << "," << mPorjectionMatrix[2].z << "," << mPorjectionMatrix[2].w << "\n";
+	aFile << "		ProjectionMatrixW:" << mPorjectionMatrix[3].x << "," << mPorjectionMatrix[3].y << "," << mPorjectionMatrix[3].z << "," << mPorjectionMatrix[3].w << "\n";
+	aFile << "!\n";
+}

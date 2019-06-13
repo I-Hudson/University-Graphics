@@ -153,6 +153,20 @@ void SpotLight::gui()
 	}
 }
 
+void SpotLight::Save(std::ofstream& aFile)
+{
+	aFile << "	SpotLightComponent:\n";
+	aFile << "		InnerCutoff:"		<< mInnerCutoff << "\n";
+	aFile << "		OuterCutoff:"		<< mOuterCutoff << "\n";
+	aFile << "		Length:"			<< mLength << "\n";
+	aFile << "		Constant:"			<< mConstant << "\n";
+	aFile << "		Linear:"			<< mLinear << "\n";
+	aFile << "		Quadratic:"			<< mQuadratic << "\n";
+	aFile << "		DiffuseColour:"		<< getDiffuse()->x << "," << getDiffuse()->y << "," << getDiffuse()->z << "," << getDiffuse()->w << "\n";
+	aFile << "		SpecularColour:"	<< getSpecular()->x << "," << getSpecular()->y << "," << getSpecular()->z << "," << getSpecular()->w << "\n";
+	aFile << "!\n";
+}
+
 void SpotLight::createConeMesh()
 {
 	//create cone mesh

@@ -25,6 +25,8 @@ public:
 	void			draw(BaseShader* aShader, const bool& aBindTextures = true) override;
 	void			gui()override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 	//call when the light pass has finished
 	void			PostLight(BaseShader* aShader) override;
 

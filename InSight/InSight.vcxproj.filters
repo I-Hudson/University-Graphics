@@ -330,6 +330,9 @@
     <ClInclude Include="include\InSight\Scene\SceneManager.h">
       <Filter>Header Files\InSight\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="include\InSight\Scene\Scene.h">
+      <Filter>Header Files\InSight\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -507,6 +510,9 @@
       <Filter>Source Files\InSight\GUI</Filter>
     </ClCompile>
     <ClCompile Include="src\InSight\Scene\SceneManager.cpp">
+      <Filter>Source Files\InSight\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Scene\Scene.cpp">
       <Filter>Source Files\InSight\Scene</Filter>
     </ClCompile>
   </ItemGroup>

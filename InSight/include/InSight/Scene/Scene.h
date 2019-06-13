@@ -2,18 +2,26 @@
 
 #include <vector>
 #include "InSight/Entity/Entity.h"
+
 namespace InSight
 {
 	class Scene
 	{
 	public: 
-		Scene();
+		Scene(const std::string& aName);
 		~Scene();
 
 		void AddEntity();
+		void AddEntity(Entity* aEntity);
 		void DeleteEntity();
 
+		void Update();
+
+		void Save();
+		void Load();
+
 	private:
+		std::string mName;
 		std::vector<Entity*> mEntities;
 	};
 }

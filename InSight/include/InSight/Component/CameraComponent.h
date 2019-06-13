@@ -42,6 +42,8 @@ public:
 	//print matrix
 	void printCameraMatrix();
 
+	virtual void Save(std::ofstream& aFile) override;
+
 private:
 	//camera Matrix (pos, rot)
 	TransformComponent* mTransoform;

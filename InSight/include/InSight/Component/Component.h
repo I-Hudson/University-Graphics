@@ -55,6 +55,8 @@ public:
 	virtual void destroy() {}
 	virtual ~Component() {}
 
+	virtual void Save(std::ofstream& aFile) = 0;
+
 	//draw wireframe
 	void drawWireFrame(bool aDrawWireFrame) { mDrawWireFrame = aDrawWireFrame; }
 	//get wireframe status 

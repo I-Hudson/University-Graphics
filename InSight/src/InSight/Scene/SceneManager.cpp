@@ -1,4 +1,5 @@
 #include "InSight/Scene/SceneManager.h"
+#include "InSight/Scene/Scene.h"
 #include "Log.h"
 
 namespace InSight
@@ -11,6 +12,7 @@ namespace InSight
 
 	SceneManager::~SceneManager()
 	{
+
 	}
 
 	std::vector<Scene*> const& SceneManager::GetAllScenes() const
@@ -21,12 +23,20 @@ namespace InSight
 
 	Scene* SceneManager::AddScene(const std::string& aSceneName)
 	{
-		return nullptr;
+		Scene* scene = new Scene(aSceneName);
+		mScenes.push_back(scene);
+		mActiveScene = scene;
+		return scene;
 	}
 
 	Scene* SceneManager::GetScene(const std::string& aSceneName)
 	{
 		return nullptr;
+	}
+
+	Scene* SceneManager::GetActiveScene() const
+	{
+		return mActiveScene;
 	}
 
 	void SceneManager::LoadSceneFromFile(const std::string& aScenePath)
@@ -35,5 +45,11 @@ namespace InSight
 
 	void SceneManager::Destroy()
 	{
+		for (auto& scene : mScenes)
+		{
+			scene->Save();
+			delete scene;
+		}
+		mScenes.clear();
 	}
 }

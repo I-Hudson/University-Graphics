@@ -19,6 +19,8 @@ public:
 	void			init() override;
 	void			gui() override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 private:
 };
 

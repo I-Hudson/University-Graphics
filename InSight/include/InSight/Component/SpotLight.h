@@ -20,6 +20,8 @@ public:
 	void		update() override;
 	void		gui()override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 private:
 	//create the cone mesh for the light volume
 	void		createConeMesh();

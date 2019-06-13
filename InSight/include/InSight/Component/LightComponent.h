@@ -38,6 +38,8 @@ public:
 	//Draw all gui 
 	void					gui()override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 	//Set the position of this light
 	void					setPosition(const glm::vec4 aPosition);
 	//Set the diffuse colour this light emits

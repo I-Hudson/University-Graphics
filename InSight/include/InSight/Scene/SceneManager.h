@@ -2,10 +2,10 @@
 
 #include <vector>
 
-class Scene;
-
 namespace InSight
 {
+	class Scene;
+
 	class SceneManager
 	{
 	public:
@@ -18,6 +18,7 @@ namespace InSight
 
 		Scene* AddScene(const std::string& aSceneName);
 		Scene* GetScene(const std::string& aSceneName);
+		Scene* GetActiveScene() const;
 
 		void LoadSceneFromFile(const std::string& aScenePath);
 

@@ -103,6 +103,14 @@ void DirectionalLight::gui()
 	}
 }
 
+void DirectionalLight::Save(std::ofstream& aFile)
+{
+	aFile << "	DirectionalLightComponent:\n";
+	aFile << "		DiffuseColour:" << getDiffuse()->x << "," << getDiffuse()->y << "," << getDiffuse()->z << "," << getDiffuse()->w << "\n";
+	aFile << "		SpecularColour:" << getSpecular()->x << "," << getSpecular()->y << "," << getSpecular()->z << "," << getSpecular()->w << "\n";
+	aFile << "!\n";
+}
+
 void DirectionalLight::setTargetPosition(const glm::vec4 & aTargetPosition)
 {
 	//set target position

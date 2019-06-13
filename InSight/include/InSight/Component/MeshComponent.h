@@ -51,6 +51,8 @@ public:
 	//Destroy this component
 	void		destroy() override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 	//setMesh
 	void		setMesh();
 

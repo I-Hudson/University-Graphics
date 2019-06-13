@@ -2,6 +2,9 @@
 #include "Entity/Entity.h"
 #include <iostream>
 
+#include "InSight/Scene/SceneManager.h"
+#include "InSight/Scene/Scene.h"
+
 EntityManager* EntityManager::sInstance = nullptr;
 
 EntityManager::EntityManager()
@@ -49,6 +52,7 @@ Entity* EntityManager::addEntity()
 	//add a new entity
 	Entity *e = new Entity(this);
 	mEntities.emplace_back(e);
+	InSight::SceneManager::Get().GetActiveScene()->AddEntity(e);
 	return e;
 }
 

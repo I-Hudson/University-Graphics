@@ -4,6 +4,7 @@
 #include "Log.h"
 #include "Component/CameraComponent.h"
 
+#include <string>
 #include "imgui_fileDialog.h"
 
 MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
@@ -308,6 +309,16 @@ void MeshComponent::destroy()
 		model->Destroy();
 		delete model;
 	}
+}
+
+void MeshComponent::Save(std::ofstream& aFile)
+{
+	std::string modelFilePath(model->getModelFileName()->c_str());
+
+	aFile << "	MeshComponent:\n";
+	aFile << "		ModelPath:" << (modelFilePath != "" ? modelFilePath : "null") << "\n";
+	aFile << "		RenderMode:" << mRenderMode << "\n";
+	aFile << "!\n";
 }
 
 void MeshComponent::setMesh()

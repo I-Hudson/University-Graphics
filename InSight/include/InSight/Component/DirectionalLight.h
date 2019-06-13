@@ -20,6 +20,8 @@ public:
 	void			update() override;
 	void			gui() override;
 
+	virtual void Save(std::ofstream& aFile) override;
+
 	//setter
 	void			setTargetPosition(const glm::vec4& aTargetPosition);
 	

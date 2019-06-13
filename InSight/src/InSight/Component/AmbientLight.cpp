@@ -39,3 +39,11 @@ void AmbientLight::gui()
 		}
 	}
 }
+
+void AmbientLight::Save(std::ofstream& aFile)
+{
+	aFile << "	AmbientLightComponent:\n";
+	aFile << "		DiffuseColour:" << getDiffuse()->x << "," << getDiffuse()->y << "," << getDiffuse()->z << "," << getDiffuse()->w << "\n";
+	aFile << "		SpecularColour:" << getSpecular()->x << "," << getSpecular()->y << "," << getSpecular()->z << "," << getSpecular()->w << "\n";
+	aFile << "!\n";
+}

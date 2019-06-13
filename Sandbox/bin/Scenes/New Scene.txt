@@ -1,0 +1,114 @@
+---
+Scene Settings:
+	SceneName:New Scene
+---
+Entity:
+	EntityName:Main Camera
+Components:
+	TransformComponent:
+		MatrixX:0.707107,-0,-0.707107,-0
+		MatrixY:-0.408248,0.816497,-0.408248,0
+		MatrixZ:0.57735,0.57735,0.57735,-0
+		MatrixW:10,10,10,1
+!
+	CameraComponent:
+		ProjectionMatrixX:1.358,0,0,0
+		ProjectionMatrixY:0,2.41421,0,0
+		ProjectionMatrixZ:0,0,-1.0002,-1
+		ProjectionMatrixW:0,0,-0.20002,0
+!
+---
+Entity:
+	EntityName:Tank Model
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:0,0,0,1
+!
+	MeshComponent:
+		ModelPath:./models/ruinedtank
+		RenderMode:0
+!
+---
+Entity:
+	EntityName:Wave
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:0,0.25,0,1
+!
+	MeshComponent:
+		ModelPath:null
+		RenderMode:1
+!
+---
+Entity:
+	EntityName:Spot Light
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:11,8.5,10,1
+!
+	SpotLightComponent:
+		InnerCutoff:7
+		OuterCutoff:60
+		Length:10
+		Constant:1
+		Linear:0.7
+		Quadratic:0.14
+		DiffuseColour:0,1,0,1
+		SpecularColour:1,1,1,1
+!
+---
+Entity:
+	EntityName:Point Light
+Components:
+	PointLightComponent:
+		Radius:7
+		Constant:1
+		Linear:0.14
+		Quadratic:0.014
+		DiffuseColour:1,1,1,1
+		SpecularColour:1,1,1,1
+!
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:-5,2.5,-2,1
+!
+---
+Entity:
+	EntityName:Direcational Light
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:6.69294,11.1785,21.3318,0.447142
+!
+	DirectionalLightComponent:
+		DiffuseColour:1,1,1,1
+		SpecularColour:1,1,1,1
+!
+---
+Entity:
+	EntityName:Ambient Light
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:0,0,0,1
+!
+	AmbientLightComponent:
+		DiffuseColour:0,0,0,0
+		SpecularColour:0,0,0,0
+!
+---

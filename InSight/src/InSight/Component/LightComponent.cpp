@@ -72,6 +72,10 @@ void LightComponent::gui()
 	}
 }
 
+void LightComponent::Save(std::ofstream& aFile)
+{
+}
+
 //Setters
 void LightComponent::setPosition(const glm::vec4 aPosition)
 {

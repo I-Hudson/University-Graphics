@@ -1,6 +1,9 @@
 #include "MyApplication.h"
 #include "Sandbox.h"
 
+#include <iostream>
+#include <fstream>
+
 #define DEFAULT_SCREENWIDTH 1920
 #define DEFAULT_SCREENHEIGHT 1080
 
@@ -26,6 +29,17 @@ int main(int argc, char* argv[])
 		// explicitly control the destruction of our application
 		delete app;
 	}
+
+	std::ofstream file;
+	file.open("text.txt");
+	if (!file.is_open())
+	{
+		file.open("text.txt", std::ios::out);
+	}
+	file.open("text.txt", std::ios::in | std::ios::out);
+	file << "Test Data!!!\n";
+
+	file.close();
 
 	return 0;
 }

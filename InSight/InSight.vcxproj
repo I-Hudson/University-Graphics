@@ -64,6 +64,7 @@
     <ClInclude Include="include\InSight\Renderer\GraphicsContext.h" />
     <ClInclude Include="include\InSight\Renderer\Renderer.h" />
     <ClInclude Include="include\InSight\Renderer\Shader.h" />
+    <ClInclude Include="include\InSight\Scene\Scene.h" />
     <ClInclude Include="include\InSight\Scene\SceneManager.h" />
     <ClInclude Include="include\InSight\Shader\DeferredLightPassShader.h" />
     <ClInclude Include="include\InSight\Shader\DeferredShader.h" />
@@ -125,6 +126,7 @@
     <ClCompile Include="src\InSight\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\InSight\Renderer\Renderer.cpp" />
     <ClCompile Include="src\InSight\Renderer\Shader.cpp" />
+    <ClCompile Include="src\InSight\Scene\Scene.cpp" />
     <ClCompile Include="src\InSight\Scene\SceneManager.cpp" />
     <ClCompile Include="src\InSight\Shader\DeferredLightPassShader.cpp" />
     <ClCompile Include="src\InSight\Shader\DeferredShader.cpp" />

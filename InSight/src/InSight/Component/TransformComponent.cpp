@@ -27,6 +27,16 @@ void TransformComponent::gui()
 	}
 }
 
+void TransformComponent::Save(std::ofstream& aFile)
+{
+	aFile << "	TransformComponent:\n";
+	aFile << "		MatrixX:" << mTransformMatrix[0].x << "," << mTransformMatrix[0].y << "," << mTransformMatrix[0].z << "," << mTransformMatrix[0].w << "\n";
+	aFile << "		MatrixY:" << mTransformMatrix[1].x << "," << mTransformMatrix[1].y << "," << mTransformMatrix[1].z << "," << mTransformMatrix[1].w << "\n";
+	aFile << "		MatrixZ:" << mTransformMatrix[2].x << "," << mTransformMatrix[2].y << "," << mTransformMatrix[2].z << "," << mTransformMatrix[2].w << "\n";
+	aFile << "		MatrixW:" << mTransformMatrix[3].x << "," << mTransformMatrix[3].y << "," << mTransformMatrix[3].z << "," << mTransformMatrix[3].w << "\n";
+	aFile << "!\n";
+}
+
 //setters
 void TransformComponent::setTransformMatrix(glm::mat4& aMatrix)
 {

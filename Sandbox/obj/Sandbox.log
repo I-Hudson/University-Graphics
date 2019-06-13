@@ -1,32 +1,4 @@
-﻿  MyApplication.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\myapplication.cpp(101): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
-  e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\myapplication.cpp(101): note: A non-const reference may only be bound to an lvalue
-  Sandbox.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\include\sandbox.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\include\sandbox.h(20): warning C4100: 'a_deltaTime': unreferenced formal parameter
-  main.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\include\insight\layer\layer.h(19): warning C4100: 'aEvent': unreferenced formal parameter
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\include\sandbox.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\include\sandbox.h(20): warning C4100: 'a_deltaTime': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\main.cpp(11): warning C4100: 'argv': unreferenced formal parameter
-e:\users\documents\sourcecontrol\github\insight-engine\sandbox\src\main.cpp(11): warning C4100: 'argc': unreferenced formal parameter
-  Generating Code...
-InSight.lib(osmesa_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(osmesa_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
+﻿InSight.lib(osmesa_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(osmesa_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
 InSight.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(egl_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
 InSight.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(wgl_context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
 InSight.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(win32_window.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info

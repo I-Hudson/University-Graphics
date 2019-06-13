@@ -61,6 +61,8 @@ bool MyApplication::onCreate()
 {
 	EN_TRACE("Project Init");
 
+	InSight::SceneManager::Get().AddScene("New Scene");
+
 	mBaseRenderer = new BaseRenderer();
 	mBaseRenderer->setScreenSize(glm::vec2(mWindow->GetWidth(), mWindow->GetHeight()));
 	mPostProcessing = new PostProcessing();
@@ -602,11 +604,12 @@ void MyApplication::Destroy()
 	mPostProcessing->destroy();
 	delete mPostProcessing;
 
+	InSight::SceneManager::Get().Destroy();
+
 	mEntityManager->destroy();
 	delete mEntityManager;
 
 	//delete GUI 
 	delete mGUI;
-
 }
 

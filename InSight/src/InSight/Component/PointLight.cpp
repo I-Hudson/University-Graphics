@@ -271,6 +271,18 @@ void PointLight::gui()
 	}
 }
 
+void PointLight::Save(std::ofstream& aFile)
+{
+	aFile << "	PointLightComponent:\n";
+	aFile << "		Radius:"			<< mRadius << "\n";
+	aFile << "		Constant:"			<< mConstant << "\n";
+	aFile << "		Linear:"			<< mLinear << "\n";
+	aFile << "		Quadratic:"			<< mQuadratic << "\n";
+	aFile << "		DiffuseColour:"		<< getDiffuse()->x << "," << getDiffuse()->y << "," << getDiffuse()->z << "," << getDiffuse()->w << "\n";
+	aFile << "		SpecularColour:"	<< getSpecular()->x << "," << getSpecular()->y << "," << getSpecular()->z << "," << getSpecular()->w << "\n";
+	aFile << "!\n";
+}
+
 void PointLight::PostLight(BaseShader* aShader)
 {
 	aShader->setVec4("colour", *getDiffuse(), true);

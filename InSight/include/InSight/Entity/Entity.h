@@ -93,6 +93,9 @@ public:
 		return dynamic_cast<T*>(ptr);*/
 	}
 
+	void						Save(std::ofstream& aFile);
+	void						Load();
+
 private:
 	//pointer to entity manager
 	EntityManager* mEntityManager;

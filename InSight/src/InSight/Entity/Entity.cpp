@@ -58,3 +58,20 @@ EntityManager* Entity::getEntityManger()
 	//get entity manager
 	return mEntityManager;
 }
+
+void Entity::Save(std::ofstream& aFile)
+{
+	aFile << "---\n";
+	aFile << "Entity:\n";
+	aFile << "	EntityName:" << getID().c_str() << "\n";
+	aFile << "Components:\n";
+
+	for (auto& com : mComponents)
+	{
+		com->Save(aFile);
+	}
+}
+
+void Entity::Load()
+{
+}
