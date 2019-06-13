@@ -2,11 +2,15 @@
 
 #include "Application.h"
 
+#include "Renderer/Renderer.h"
+
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
+#include "imgui_impl_vulkan.h"
 #include "imgui_impl_glfw.h"
 
 #include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
 
 namespace InSight
 {
@@ -48,8 +52,17 @@ namespace InSight
 
 		const char* glsl_version = "#version 400";
 		// Setup Platform/BaseRenderer bindings
-		ImGui_ImplGlfw_InitForOpenGL(window, true);
-		ImGui_ImplOpenGL3_Init(glsl_version);
+
+		if (Renderer::GetAPI() == RendererAPI::OpenGL)
+		{
+			ImGui_ImplGlfw_InitForOpenGL(window, true);
+			ImGui_ImplOpenGL3_Init(glsl_version);
+		}
+		else if (Renderer::GetAPI() == RendererAPI::Vulkan)
+		{
+
+			ImGui_ImplGlfw_InitForVulkan(window, true);
+		}
 	}
 
 	void ImGuiLayer::OnDetach()

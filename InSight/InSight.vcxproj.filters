@@ -115,6 +115,12 @@
     <Filter Include="Source Files\InSight\Scene">
       <UniqueIdentifier>{f9b43ca6-df32-4ba6-a6ef-37be28ae9d15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Platform\Vulkan">
+      <UniqueIdentifier>{bbd03083-a960-4e38-a366-cef7222b6041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Platform\Vulkan">
+      <UniqueIdentifier>{22411cf7-f73f-4793-9817-d304ced56bfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\deps\glad\include\glad\glad.h">
@@ -333,6 +339,12 @@
     <ClInclude Include="include\InSight\Scene\Scene.h">
       <Filter>Header Files\InSight\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="include\Platform\Vulkan\VulkanBuffer.h">
+      <Filter>Header Files\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform\Vulkan\VulkanContext.h">
+      <Filter>Header Files\Platform\Vulkan</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -514,6 +526,12 @@
     </ClCompile>
     <ClCompile Include="src\InSight\Scene\Scene.cpp">
       <Filter>Source Files\InSight\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Vulkan\VulkanBuffer.cpp">
+      <Filter>Source Files\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Vulkan\VulkanContext.cpp">
+      <Filter>Source Files\Platform\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

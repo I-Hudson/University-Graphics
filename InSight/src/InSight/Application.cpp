@@ -18,6 +18,8 @@
 #include "Gizmos.h"
 #include "Platform/Windows/WindowsInput.h"
 
+#include "Renderer/Renderer.h"
+
 #define BUILD_VERSION_MAJOR 1
 #define BUILD_VERSION_MINOR 1
 #define BULID_VERSION_REVISION 1
@@ -139,58 +141,61 @@ namespace InSight
 		mWindow = std::unique_ptr<Window>(Window::Create(WindowProps(a_name, a_width, a_height)));
 		mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
-		mImGuiLayer = new InSight::ImGuiLayer();
-		PushOverlay(mImGuiLayer);
-
-		glGenVertexArrays(1, &mVertexArray);
-		glBindVertexArray(mVertexArray);
-
-		//float vertices[3 * 14] =
-		//{
-		//	-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f,
-		//	0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f,
-		//	0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f
-		//};
-
-		Vertex vertices[3] = 
+		if (Renderer::GetAPI() == RendererAPI::OpenGL)
 		{
-			Vertex(-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f),
-			Vertex(0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f),
-			Vertex(0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f),
-		};
+			mImGuiLayer = new InSight::ImGuiLayer();
+			PushOverlay(mImGuiLayer);
 
-		float* verticesP = VertexToFloatArray(&vertices[0], 3);
- 		mVertexBuffer.reset(InSight::VertexBuffer::Create(verticesP, sizeof(vertices)));
-		delete[] verticesP;
+			glGenVertexArrays(1, &mVertexArray);
+			glBindVertexArray(mVertexArray);
 
-		{
-			BufferLayout layout =
+			//float vertices[3 * 14] =
+			//{
+			//	-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f,
+			//	0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f,
+			//	0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f
+			//};
+
+
+			Vertex vertices[3] =
 			{
-				{ShaderDataType::Float4, "aPosition"},
-				{ShaderDataType::Float4, "aColour"},
-				{ShaderDataType::Float4, "aNormal", true},
-				{ShaderDataType::Float2, "aTexCoord1", true},
+				Vertex(-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f),
+				Vertex(0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f),
+				Vertex(0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f),
 			};
-			mVertexBuffer->SetLayout(layout);
-		}
 
-		uint32_t index = 0;
-		const auto& layout = mVertexBuffer->GetLayout();
-		for (auto& element : layout)
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(index, element.GetComponentCount(), 
-									ShaderDataTypeToOpenGLBaseType(element.Type), 
-									element.Normalized ? GL_TRUE : GL_FALSE, layout.GetStride(), (const void*)element.Offset);
-			index++;
-		}
+			float* verticesP = VertexToFloatArray(&vertices[0], 3);
+			mVertexBuffer.reset(InSight::VertexBuffer::Create(verticesP, sizeof(vertices)));
+			delete[] verticesP;
+
+			{
+				BufferLayout layout =
+				{
+					{ShaderDataType::Float4, "aPosition"},
+					{ShaderDataType::Float4, "aColour"},
+					{ShaderDataType::Float4, "aNormal", true},
+					{ShaderDataType::Float2, "aTexCoord1", true},
+				};
+				mVertexBuffer->SetLayout(layout);
+			}
+
+			uint32_t index = 0;
+			const auto& layout = mVertexBuffer->GetLayout();
+			for (auto& element : layout)
+			{
+				glEnableVertexAttribArray(index);
+				glVertexAttribPointer(index, element.GetComponentCount(),
+					ShaderDataTypeToOpenGLBaseType(element.Type),
+					element.Normalized ? GL_TRUE : GL_FALSE, layout.GetStride(), (const void*)element.Offset);
+				index++;
+			}
 
 
-		uint32_t indices[3] = { 0,1,2 };
+			uint32_t indices[3] = { 0,1,2 };
 
-		mIndexB.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+			mIndexB.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 
-		std::string vertexSrc = R"(
+			std::string vertexSrc = R"(
 		#version 330
 
 		layout(location = 0) in vec4 aPosition;		
@@ -209,7 +214,7 @@ namespace InSight
 		}
 	)";
 
-		std::string fragSrc = R"(
+			std::string fragSrc = R"(
 		#version 330
 
 		in vec4 vPosition;
@@ -223,7 +228,8 @@ namespace InSight
 		}
 	)";
 
-		mShader.reset(new InSight::Shader(vertexSrc, fragSrc));
+			mShader.reset(new InSight::Shader(vertexSrc, fragSrc));
+		}
 
 #if DRAFT_ENABLED
 		//Set Up IMGUI
@@ -262,7 +268,10 @@ namespace InSight
 			m_running = true;
 			do
 			{
-				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+				if (Renderer::GetAPI() == RendererAPI::OpenGL)
+				{
+					glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+				}
 
 				float deltaTime = Utility::tickTimer();
 
@@ -290,30 +299,36 @@ namespace InSight
 				ImGui::Render();
 				ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 #else
-				mImGuiLayer->Begin();
+				if (Renderer::GetAPI() == RendererAPI::OpenGL)
+				{
+					mImGuiLayer->Begin();
 
-				mShader->Bind();
-				glBindVertexArray(mVertexArray);
-				glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
+					mShader->Bind();
+					glBindVertexArray(mVertexArray);
+					glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
 
-				//ImGui Set up Framerate window
-				showFrameData(false);
+					//ImGui Set up Framerate window
+					showFrameData(false);
+				}
 
 				Update(deltaTime);
 
 				Draw();
 
-				for (Layer* layer : mLayerStack)
+				if (Renderer::GetAPI() == RendererAPI::OpenGL)
 				{
-					//layer->OnUpdate();
-				}
+					for (Layer* layer : mLayerStack)
+					{
+						//layer->OnUpdate();
+					}
 
-				for (Layer* layer : mLayerStack)
-				{
-					layer->OnImGuiRender();
-				}
+					for (Layer* layer : mLayerStack)
+					{
+						layer->OnImGuiRender();
+					}
 
-				mImGuiLayer->End();
+					mImGuiLayer->End();
+				}
 #endif
 
 				mWindow->OnUpdate();
@@ -328,9 +343,12 @@ namespace InSight
 		Application_Log::Destroy();
 		Gizmos::destroy();
 
-		ImGui_ImplOpenGL3_Shutdown();
-		ImGui_ImplGlfw_Shutdown();
-		ImGui::DestroyContext();
+		if (Renderer::GetAPI() == RendererAPI::OpenGL)
+		{
+			ImGui_ImplOpenGL3_Shutdown();
+			ImGui_ImplGlfw_Shutdown();
+			ImGui::DestroyContext();
+		}
 
 		//glfwDestroyWindow(mWindow->GetWindow());
 		//glfwTerminate();

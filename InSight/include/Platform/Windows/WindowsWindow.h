@@ -5,6 +5,7 @@
 #include "InSight/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
 
 class WindowsWindow : public Window
 {

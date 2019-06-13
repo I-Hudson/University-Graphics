@@ -80,6 +80,8 @@
     <ClInclude Include="include\InSight\Utilities.h" />
     <ClInclude Include="include\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="include\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="include\Platform\Vulkan\VulkanBuffer.h" />
+    <ClInclude Include="include\Platform\Vulkan\VulkanContext.h" />
     <ClInclude Include="include\Platform\Window.h" />
     <ClInclude Include="include\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="include\Platform\Windows\WindowsWindow.h" />
@@ -142,6 +144,8 @@
     <ClCompile Include="src\InSight\Utilities.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\VulkanBuffer.cpp" />
+    <ClCompile Include="src\Platform\Vulkan\VulkanContext.cpp" />
     <ClCompile Include="src\Platform\Window.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />

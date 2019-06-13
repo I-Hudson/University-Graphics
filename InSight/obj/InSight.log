@@ -1,45 +1,9 @@
-﻿  AmbientLight.cpp
+﻿  VulkanContext.cpp
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-  CameraComponent.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-  DirectionalLight.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-  MeshComponent.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(301): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(302): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(303): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(304): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(305): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(306): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\deps\fbx_loader\include\fbxfile.h(307): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(163): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
-  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(163): note: A non-const reference may only be bound to an lvalue
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(209): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
-  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(209): note: A non-const reference may only be bound to an lvalue
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(245): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
-  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(245): note: A non-const reference may only be bound to an lvalue
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(249): warning C4239: nonstandard extension used: 'argument': conversion from 'glm::tmat4x4<float,0>' to 'glm::mat4 &'
-  e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(249): note: A non-const reference may only be bound to an lvalue
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(409): warning C4018: '<': signed/unsigned mismatch
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(411): warning C4018: '<': signed/unsigned mismatch
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(390): warning C4189: 'widthF': local variable is initialized but not referenced
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\meshcomponent.cpp(391): warning C4189: 'lengthF': local variable is initialized but not referenced
-  PointLight.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-  SpotLight.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\component\spotlight.cpp(34): warning C4100: 'aBindTextures': unreferenced formal parameter
-  TransformComponent.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
-  e:\users\documents\sourcecontrol\github\insight-engine\deps\glad\include\glad\glad.h(32): note: see previous definition of 'APIENTRY'
-  Generating Code...
+  e:\users\documents\sourcecontrol\github\insight-engine\deps\glfw\include\glfw\glfw3.h(104): note: see previous definition of 'APIENTRY'
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\vulkan\vulkancontext.cpp(33): warning C4100: 'pUserData': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\vulkan\vulkancontext.cpp(31): warning C4100: 'messageType': unreferenced formal parameter
+e:\users\documents\sourcecontrol\github\insight-engine\insight\src\platform\vulkan\vulkancontext.cpp(30): warning C4100: 'messageSeverity': unreferenced formal parameter
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 FBX_Loader.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
