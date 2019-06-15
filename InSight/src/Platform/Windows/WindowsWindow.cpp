@@ -67,7 +67,7 @@ void WindowsWindow::Init(const WindowProps& aProps)
 			EN_CORE_ASSERT(success, "Failed to initailize GLFW!");
 			sGLFWInitialized = true;
 		}
-
+		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 		glfwWindowHint(GLFW_RESIZABLE , GLFW_FALSE);
 
 		mWindow = glfwCreateWindow((int)aProps.Width, (int)aProps.Height, mData.Title.c_str(), nullptr, nullptr);
@@ -177,6 +177,7 @@ void WindowsWindow::Shutdown()
 {
 	if (InSight::Renderer::GetAPI() == InSight::RendererAPI::Vulkan)
 	{
+		static_cast<InSight::VulkanContext*>(mContext)->ShutDown();
 		delete mContext;
 	}
 
