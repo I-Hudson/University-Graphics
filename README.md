@@ -31,7 +31,7 @@ Deleaker is being used to help find memory issue within the code. This includes 
 ### Disclaimer 
 The engine is currently being rebuilt for better compatibility with other render APIs. It is also having new features added like a layer system and event system.
 
-![alt text](https://github.com/I-Hudson/Insight-Engine/blob/master/demoImage.png "Demo Image")
+![alt text](https://github.com/I-Hudson/Insight-Engine/blob/dev/demoImage.png "Demo Image")
 
 [Demo video](https://youtu.be/mpf4T3wIzJ4)
 
