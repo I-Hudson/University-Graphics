@@ -5,3 +5,6 @@ Sandbox/obj/
 
 # Ignore files
 *.pdb
+*.db
+*.exp
+*.exe
