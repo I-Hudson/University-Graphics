@@ -13,5 +13,4 @@ InSight.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'I
 InSight.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(input.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
 InSight.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(init.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
 InSight.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'InSight.lib(context.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\glfw.pdb'; linking object as if no debug info
-InSight.lib(FBXFile.obj) : warning LNK4099: PDB 'FBX_Loader.pdb' was not found with 'InSight.lib(FBXFile.obj)' or at 'E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\FBX_Loader.pdb'; linking object as if no debug info
   Sandbox.vcxproj -> E:\Users\Documents\SourceControl\Github\Insight-Engine\Sandbox\bin\InSight.exe

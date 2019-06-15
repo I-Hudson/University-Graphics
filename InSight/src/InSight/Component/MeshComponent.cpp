@@ -1,5 +1,4 @@
 #include "Component/MeshComponent.h"
-#include "FBXFile.h"
 #include "Utilities.h"
 #include "Log.h"
 #include "Component/CameraComponent.h"

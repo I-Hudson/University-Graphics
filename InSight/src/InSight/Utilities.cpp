@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
+
+#define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 
 #include "Error.h"

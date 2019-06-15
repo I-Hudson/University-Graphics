@@ -14,7 +14,6 @@
 #include "InSight/Component/TransformComponent.h"
 #include "InSight/Component/CameraComponent.h"
 #include "InSight/Component/MeshComponent.h"
-#include "FBXFile.h"
 
 #include "InSight/Application_Log.h"
 

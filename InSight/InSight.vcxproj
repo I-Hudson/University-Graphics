@@ -201,8 +201,8 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)deps\vulkan\lib\$(Platform)\$(Configuration);$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib;$(SolutionDir)deps\fbx_loader\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;assimp.lib;FBX_Loader.lib;OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)deps\vulkan\lib\$(Platform)\$(Configuration);$(SolutionDir)deps\glfw\lib-vc2015\$(Platform)\$(Configuration);$(SolutionDir)deps\imgui\lib;$(SolutionDir)deps\assimp/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vulkan-1.lib;assimp.lib;OpenGL32.lib;glfw3.lib;Imgui_$(Configuration)_$(Platform).lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

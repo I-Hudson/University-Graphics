@@ -2,3 +2,6 @@
 .vs/
 InSight/obj/
 Sandbox/obj/
+
+# Ignore files
+*.pdb
