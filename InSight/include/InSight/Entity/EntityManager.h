@@ -31,6 +31,9 @@ public:
 	*/
 	Entity*						getEntity(std::string aID);
 
+	//Delete Entity
+	void						DeleteEntity(Entity* aEntity);
+
 	//get compoent on all entities
 	template<typename T>
 	std::vector<T*> getAllEntityComponents()

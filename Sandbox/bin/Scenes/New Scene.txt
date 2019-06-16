@@ -6,10 +6,10 @@ Entity:
 	EntityName:Main Camera
 Components:
 	TransformComponent:
-		MatrixX:0.707107,-0,-0.707107,-0
-		MatrixY:-0.408248,0.816497,-0.408248,0
-		MatrixZ:0.57735,0.57735,0.57735,-0
-		MatrixW:10,10,10,1
+		MatrixX:-0.180278,-9.8953e-10,-0.983616,0
+		MatrixY:-0.562524,0.820327,0.1031,0
+		MatrixZ:0.806887,0.571894,-0.147887,0
+		MatrixW:12.4305,8.68083,-0.487441,1
 !
 	CameraComponent:
 		ProjectionMatrixX:1.358,0,0,0
@@ -69,6 +69,12 @@ Components:
 Entity:
 	EntityName:Point Light
 Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:-5,2.5,-2,1
+!
 	PointLightComponent:
 		Radius:7
 		Constant:1
@@ -76,12 +82,6 @@ Components:
 		Quadratic:0.014
 		DiffuseColour:1,1,1,1
 		SpecularColour:1,1,1,1
-!
-	TransformComponent:
-		MatrixX:1,0,0,0
-		MatrixY:0,1,0,0
-		MatrixZ:0,0,1,0
-		MatrixW:-5,2.5,-2,1
 !
 ---
 Entity:
@@ -91,7 +91,7 @@ Components:
 		MatrixX:1,0,0,0
 		MatrixY:0,1,0,0
 		MatrixZ:0,0,1,0
-		MatrixW:6.69294,11.1785,21.3318,0.447142
+		MatrixW:12.5846,11.1786,18.4788,0.447144
 !
 	DirectionalLightComponent:
 		DiffuseColour:1,1,1,1
@@ -110,5 +110,23 @@ Components:
 	AmbientLightComponent:
 		DiffuseColour:0,0,0,0
 		SpecularColour:0,0,0,0
+!
+---
+Entity:
+	EntityName:Defulat
+Components:
+	TransformComponent:
+		MatrixX:1,0,0,0
+		MatrixY:0,1,0,0
+		MatrixZ:0,0,1,0
+		MatrixW:0,2,0,1
+!
+	PointLightComponent:
+		Radius:18.82
+		Constant:1
+		Linear:0.14
+		Quadratic:0.014
+		DiffuseColour:1,0,0,1
+		SpecularColour:1,1,1,1
 !
 ---

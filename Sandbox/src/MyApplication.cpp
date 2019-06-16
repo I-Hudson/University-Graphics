@@ -447,8 +447,8 @@ void MyApplication::Update(float a_deltaTime)
 	//\====================================================
 	// ImGui render view to show what is held in the fbo texture position
 	//\====================================================
-	/*ImGui::SetNextWindowPos(ImVec2(mWindow->GetWidth() - (mWindow->GetWidth() * 0.25f), mWindow->GetHeight() - (mWindow->GetHeight() * 0.5f)));
-	ImGui::SetNextWindowSize(ImVec2(mWindow->GetWidth() * 0.25f, mWindow->GetHeight() * 0.5f));
+	ImGui::SetNextWindowPos(ImVec2(mWindow->GetWidth() - (mWindow->GetWidth() * 0.5f), mWindow->GetHeight() - (mWindow->GetHeight() * 0.5f)));
+	ImGui::SetNextWindowSize(ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f));
 	ImGui::Begin("Framebuffers");
 	ImGui::SliderFloat("Exp", &mPostProcessing->mExposure, 0.1f, 15.0f);
 	ImGui::SliderFloat("Gamma", &mPostProcessing->mGamma, 0.1f, 15.0f);
@@ -527,7 +527,7 @@ void MyApplication::Update(float a_deltaTime)
 		ImGui::EndTabItem();
 	}
 	ImGui::EndTabBar();
-	ImGui::End();*/
+	ImGui::End();
 
 	static bool show_demo_window = false;
 	//ImGui::ShowDemoWindow(&show_demo_window);

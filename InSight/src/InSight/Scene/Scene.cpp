@@ -46,8 +46,16 @@ namespace InSight
 		mEntities.push_back(aEntity);
 	}
 
-	void Scene::DeleteEntity()
+	void Scene::DeleteEntity(Entity* aEntity)
 	{
+		for (int i = 0; i < mEntities.size(); i++)
+		{
+			if (mEntities[i] == aEntity)
+			{
+				mEntities.erase(mEntities.begin() + i);
+				return;
+			}
+		}
 	}
 
 	void Scene::Update()
@@ -82,6 +90,7 @@ namespace InSight
 		}
 
 		file << "---\n";
+
 		file.close();
 	}
 

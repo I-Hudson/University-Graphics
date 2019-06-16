@@ -2,6 +2,7 @@
 #include "Entity/Entity.h"
 #include <iostream>
 
+#include "Component/TransformComponent.h"
 #include "InSight/Scene/SceneManager.h"
 #include "InSight/Scene/Scene.h"
 
@@ -51,6 +52,7 @@ Entity* EntityManager::addEntity()
 {
 	//add a new entity
 	Entity *e = new Entity(this);
+	e->addComponent<TransformComponent>();
 	mEntities.emplace_back(e);
 	InSight::SceneManager::Get().GetActiveScene()->AddEntity(e);
 	return e;
@@ -72,6 +74,20 @@ Entity* EntityManager::getEntity(std::string aID)
 		}
 	}
 	return nullptr;
+}
+
+void EntityManager::DeleteEntity(Entity* aEntity)
+{
+	for (int i = 0; i < mEntities.size(); i++)
+	{
+		if (mEntities[i] == aEntity)
+		{
+			delete mEntities[i];
+			mEntities.erase(mEntities.begin() + i);
+			InSight::SceneManager::Get().GetActiveScene()->DeleteEntity(aEntity);
+			return;
+		}
+	}
 }
 
 void EntityManager::destroy()

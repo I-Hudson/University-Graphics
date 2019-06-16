@@ -64,15 +64,19 @@ public:
 	template <typename T, typename... TArgs>
 	T*							addComponent(TArgs&&... mArgs)
 	{
-		T* c = new T(std::forward<TArgs>(mArgs)...);
-		c->entity = this;
-		mComponents.emplace_back(c);
+		if (mComponents.size() < 2 && !hasComponent<T>())
+		{
+			T* c = new T(std::forward<TArgs>(mArgs)...);
+			c->entity = this;
+			mComponents.emplace_back(c);
 
-		//componentArray[getComponentTypeID<T>()] = c;
-		//componentBitset[getComponentTypeID<T>()] = true;
+			//componentArray[getComponentTypeID<T>()] = c;
+			//componentBitset[getComponentTypeID<T>()] = true;
 
-		c->init();
-		return c;
+			c->init();
+			return c;
+		}
+		return nullptr;
 	}
 
 	//get a component from this entity

@@ -13,7 +13,7 @@ namespace InSight
 
 		void AddEntity();
 		void AddEntity(Entity* aEntity);
-		void DeleteEntity();
+		void DeleteEntity(Entity* aEntity);
 
 		void Update();
 

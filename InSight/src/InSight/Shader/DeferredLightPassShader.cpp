@@ -171,6 +171,10 @@ void DeferredLightPassShader::useShader(bool aClear)
 		//set progeam and set uniforms
 		glUseProgram(mShaderID);
 		setUniforms();
+		if (kv->getLightType() == LightType::Ambient)
+		{
+			setVec4("AmbientColour", *kv->getDiffuse(), true);
+		}
 
 		//draw light volume
 		kv->draw(this);
@@ -191,6 +195,14 @@ void DeferredLightPassShader::useShader(bool aClear)
 		//mLightBuffer->setDrawBuffers();
 		glUseProgram(mShaderID);
 		setUniforms();
+		for (auto& light : EntityManager::Get().getAllEntityComponents<LightComponent>())
+		{
+			if (light->getLightType() == LightType::Ambient)
+			{
+				setVec4("AmbientColour", *light->getDiffuse(), true);
+				break;
+			}
+		}
 	}
 
 	//disable depth test, enable blend, set blend func
@@ -340,7 +352,7 @@ void DeferredLightPassShader::setLightVolumeManager(LightVolumeManager* aManager
 {
 	//set light volume manager
 	mLightVolumes = aManager;
-	for (auto& light : *mLightVolumes->getAllVolumes())
+	for (auto& light : EntityManager::Get().getAllEntityComponents<LightComponent>())
 	{
 		if (light->getLightType() == LightType::Ambient)
 		{

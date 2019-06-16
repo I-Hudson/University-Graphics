@@ -18,9 +18,10 @@ void DirectionalLight::init()
 {
 	//set position, diffuse, specular
 	LightComponent::init();
-	setPosition(glm::vec4(0, 0, 0, 1));
+	setPosition(glm::vec4(11.0f, 8.5f, 10.0f, 1.0f));
 	setDiffuse(glm::vec4(1, 1, 1, 1));
 	setSpecular(glm::vec4(1, 1, 1, 1));
+	addShadowMap();
 }
 
 void DirectionalLight::draw(BaseShader* aShader, const bool& aBindTextures)

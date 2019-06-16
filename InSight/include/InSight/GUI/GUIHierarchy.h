@@ -28,6 +28,8 @@ public:
 	//get current active entitiy in hierarchy 
 	Entity* getActiveEntitiy();
 
+	void	SetActiveEntityToNull() { mActiveEntity = nullptr; }
+
 private:
 	//entity manager refernce
 	EntityManager* mEntityManager;

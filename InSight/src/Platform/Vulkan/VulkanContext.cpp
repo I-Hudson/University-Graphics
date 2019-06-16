@@ -146,7 +146,6 @@ namespace InSight
 		presentInfo.pImageIndices = &imageIndex;
 
 		vkQueuePresentKHR(mPresentQueue, &presentInfo);
-
 	}
 
 	void VulkanContext::ShutDown()
