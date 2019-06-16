@@ -2,5 +2,5 @@
 
 namespace InSight
 {
-	RendererAPI Renderer::sRendererAPI = RendererAPI::Vulkan;
+	RendererAPI Renderer::sRendererAPI = RendererAPI::OpenGL;
 }
