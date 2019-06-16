@@ -35,4 +35,4 @@ The engine is currently being rebuilt for better compatibility with other render
 
 [Demo video](https://youtu.be/mpf4T3wIzJ4)
 
-Current Build 1.1
+Current Build 1.2
