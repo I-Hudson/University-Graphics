@@ -1,6 +1,4 @@
-﻿  Utilities.cpp
-e:\users\documents\sourcecontrol\github\insight-engine\insight\src\insight\utilities.cpp(50): warning C4130: '==': logical operation on address of string constant
-assimp.lib(assimp-vc140-mt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
+﻿assimp.lib(assimp-vc140-mt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
 assimp.lib(assimp-vc140-mt.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 OpenGL32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in vulkan-1.lib(vulkan-1.dll); second definition ignored
 OpenGL32.lib(OPENGL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
