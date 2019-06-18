@@ -5,10 +5,10 @@
 #include "Entity/EntityManager.h"
 #include "Entity/Entity.h"
 
-class GUIHierarchy;
-
-namespace InSight
+namespace InSight::GUI
 {
+	class GUIHierarchy;
+
 	class GUIToolBar : public GUIBase
 	{
 	public:

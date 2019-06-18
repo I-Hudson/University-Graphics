@@ -5,6 +5,12 @@
 
 namespace InSight
 {
+	struct SceneData
+	{
+		std::string Name;
+		std::vector<int> Entities;
+	};
+
 	class Scene
 	{
 	public: 
@@ -18,7 +24,7 @@ namespace InSight
 		void Update();
 
 		void Save();
-		void Load();
+		SceneData Load(const std::string& aFileName);
 
 	private:
 		std::string mName;

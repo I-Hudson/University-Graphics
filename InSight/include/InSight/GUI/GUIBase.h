@@ -1,42 +1,40 @@
 #pragma once
 
-#ifndef __GUI_BASE_H__
-#define __GUI_BASE_H__
-
 #include "imgui.h"
 #include "Log.h"
 #include <glm/glm.hpp>
 
-class GUI;
-
-class GUIBase
+namespace InSight::GUI
 {
-public:
-	//constructor
-	GUIBase();
-	GUIBase(const glm::vec2& aPosition, const glm::vec2& aSize);
-	//destructor
-	~GUIBase();
+	class GUI;
 
-	//overrides
-	virtual void init(GUI* aGUI);
-	virtual void draw();
-	virtual void destroy();
+	class GUIBase
+	{
+	public:
+		//constructor
+		GUIBase();
+		GUIBase(const glm::vec2& aPosition, const glm::vec2& aSize);
+		//destructor
+		~GUIBase();
 
-	//set parent gui
-	void setGUI(GUI* aGUI);
+		//overrides
+		virtual void init(GUI* aGUI);
+		virtual void draw();
+		virtual void destroy();
 
-	//get parent gui
-	GUI* getGUI();
+		//set parent gui
+		void setGUI(GUI* aGUI);
 
-protected:
-	//position and size
-	ImVec2 mPosition;
-	ImVec2 mSize;
+		//get parent gui
+		GUI* getGUI();
 
-private:
-	//parnet gui
-	GUI* mGUI;
-};
+	protected:
+		//position and size
+		ImVec2 mPosition;
+		ImVec2 mSize;
 
-#endif // !__GUI_BASE_H__
+	private:
+		//parnet gui
+		GUI* mGUI;
+	};
+}

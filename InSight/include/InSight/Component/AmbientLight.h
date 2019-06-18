@@ -1,27 +1,31 @@
 #pragma once
 
-#ifndef __AMBIENT_LIGHT_H__
-#define __AMBIENT_LIGHT_H__
-
 #include <glm/glm.hpp>
 #include "Component/LightComponent.h"
 
-class AmbientLight : public LightComponent
+namespace InSight
 {
-public:
-	//constructor
-	AmbientLight();
-	AmbientLight(const glm::vec4& aAmbientLight);
-	//destructor
-	~AmbientLight();
+	class AmbientLightData : public ComponentData
+	{
+	public:
 
-	//overrides
-	void			init() override;
-	void			gui() override;
+	};
 
-	virtual void Save(std::ofstream& aFile) override;
+	class AmbientLight : public LightComponent
+	{
+	public:
+		//constructor
+		AmbientLight();
+		AmbientLight(const glm::vec4& aAmbientLight);
+		//destructor
+		~AmbientLight();
 
-private:
-};
+		//overrides
+		void			init() override;
+		void			gui() override;
 
-#endif // __AMBIENT_LIGHT_H__
+		virtual int Save() override;
+
+	private:
+	};
+}

@@ -6,14 +6,15 @@
 #include "Component/MeshComponent.h"
 #include <glm/ext.hpp>
 
+using namespace::InSight;
+
 void BaseShader::setLightVolumeManager(LightVolumeManager * aManager)
 {
 	//set light volume manager
 	mLightVolumes = aManager;
 }
 
-BaseShader::BaseShader() : 
-	mShaderPriority(ShaderPriority::PRI_0)
+BaseShader::BaseShader()
 {
 	//set gbuffer and mode to render
 	mGBuffer = nullptr;
@@ -22,7 +23,6 @@ BaseShader::BaseShader() :
 
 BaseShader::BaseShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath, const char* aGeometryPath, const char* aFragmentPath,
 	unsigned int aInputCount /*= 3*/, const char* aInputs[] /*= nullptr*/, unsigned int aOutputCount /*= 1*/, const char* aOutputs[]/*= nullptr*/)
-	: mShaderPriority(ShaderPriority::PRI_0)
 {
 	//load all shaders 
 	unsigned int vertex = Utility::loadShader(aVertexPath, GL_VERTEX_SHADER);
@@ -437,7 +437,7 @@ unsigned int BaseShader::attachTextureToFrameBuffer(int aLevel, int aInternalFor
 	return fbo;
 }
 
-void BaseShader::setMeshComponent(MeshComponent* aMeshComponent)
+void BaseShader::setMeshComponent(InSight::MeshComponent* aMeshComponent)
 {
 	//set mesh component
 	mMeshComponent = aMeshComponent;
@@ -460,17 +460,6 @@ GBuffer* BaseShader::getGBuffer()
 {
 	//get pointer to gbuffer
 	return mGBuffer;
-}
-
-void BaseShader::setShaderPriority(ShaderPriority a_shaderPriority /*= ShaderPriority::PRI_5*/)
-{
-	//set priority
-	mShaderPriority = a_shaderPriority;
-}
-
-ShaderPriority BaseShader::getShaderPriority()
-{
-	return mShaderPriority;
 }
 
 unsigned int* BaseShader::getTexture(int aIndex)

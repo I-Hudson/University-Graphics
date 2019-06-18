@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef __LIGHT_VOLUME_MANAGER_H__
-#define __LIGHT_VOLUME_MANAGER_H__
-
 #include <vector>
 #include "Component/LightComponent.h"
 #include "Entity/Entity.h"
@@ -44,18 +41,16 @@ public:
 	void update();
 
 	//get all light volumes
-	std::vector<LightComponent*>* getAllVolumes();
+	std::vector<InSight::LightComponent*>* getAllVolumes();
 
 	//add new light volumes
-	void addLightVolume(LightComponent* aComponent);
+	void addLightVolume(InSight::LightComponent* aComponent);
 
-	EntityManager* mEntityManager;
+	InSight::EntityManager* mEntityManager;
 
 private:
 	//light volumes
-	std::vector<LightComponent*> mLightVolumes;
+	std::vector<InSight::LightComponent*> mLightVolumes;
 
 
 };
-
-#endif // __LIGHT_VOLUME_MANAGER_H__

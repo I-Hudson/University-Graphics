@@ -3,6 +3,10 @@
 #include "BaseRenderer.h"
 #include "Component/MeshComponent.h"
 
+#include "InSight/Entity/EntityManager.h"
+
+using namespace InSight;
+
 SSRShader::SSRShader()
 {
 }
@@ -41,7 +45,7 @@ void SSRShader::useShader(bool aClear)
 
 	//bind buffer
 	mSSRBuffer->bindBuffer();
-	CameraComponent* camera = getBaseRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>();
+	CameraComponent* camera = EntityManager::Get().getEntity("Main Camera")->getComponent<CameraComponent>();
 	MeshComponent* mesh = getMeshComponent();
 
 	BaseShader::useShaderPP(true);

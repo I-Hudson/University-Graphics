@@ -74,25 +74,25 @@ protected:
 	//post process
 	PostProcessing* mPostProcessing;
 	//entity manager
-	EntityManager* mEntityManager;
+	InSight::EntityManager* mEntityManager;
 
 	//Models
-	Entity* mTankModel;
+	InSight::Entity* mTankModel;
 	//Entity* mChair1;
 	//Entity* mChair2;
 	//Entity* mChair3;
-	Entity* mWaveModel;
+	InSight::Entity* mWaveModel;
 	//Entity* nanoSuitModel;
 	//Entity* mModel;
 
 	//Lights
-	Entity* mAmbientLight;
-	Entity* mDirLight;
-	Entity* mSpotLight;
-	Entity* mPointLight;
+	InSight::Entity* mAmbientLight;
+	InSight::Entity* mDirLight;
+	InSight::Entity* mSpotLight;
+	InSight::Entity* mPointLight;
 
 	//Cmaera
-	Entity* mMainCamera;
+	InSight::Entity* mMainCamera;
 
 
 	//light volumes manager
@@ -110,7 +110,7 @@ protected:
 	FullScreenShader* mFullScreenShader;
 
 	//GUI
-	GUI* mGUI;
+	InSight::GUI::GUI* mGUI;
 };
 
 #endif // __Application_H_

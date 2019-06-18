@@ -2,6 +2,10 @@
 #include "BaseRenderer.h"
 #include "Component/DirectionalLight.h"
 
+#include "InSight/Entity/EntityManager.h"
+
+using namespace InSight;
+
 ShadowMapShader::ShadowMapShader(const char* aVertexPath, const char* aControlpath, const char* aEvaluationpath,
 	const char* aGeometryPath, const char* aFragmentPath, unsigned int aInputCount,
 	const char* aInputs[], unsigned int aOutputCount, const char* aOutputs[]) :
@@ -36,7 +40,7 @@ void ShadowMapShader::destroy()
 void ShadowMapShader::useShader(bool aClear)
 {
 	//get all lights
-	std::vector<DirectionalLight*> lights = getBaseRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
+	std::vector<DirectionalLight*> lights = EntityManager::Get().getAllEntityComponents<DirectionalLight>();
 
 	//enable cull, depth test and depth write
 	glEnable(GL_CULL_FACE);

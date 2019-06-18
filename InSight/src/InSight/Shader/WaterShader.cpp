@@ -2,6 +2,8 @@
 #include "Utilities.h"
 #include "BaseRenderer.h"
 
+using namespace InSight;
+
 WaterShader::WaterShader()
 {
 }

@@ -33,7 +33,7 @@ public:
 	GBuffer* mRefractionBuffer;
 
 	//main camera pointer
-	Entity* mMainCamera;
+	InSight::Entity* mMainCamera;
 private:
 	//clip plane program
 	unsigned int mClipPlaneProgram;

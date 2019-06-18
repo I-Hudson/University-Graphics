@@ -1,36 +1,39 @@
 #pragma once
 
-#ifndef __DIRECTIONAL_LIGHT__
-#define __DIRECTIONAL_LIGHT__
-
 #include <glm/glm.hpp>
 #include "Component/LightComponent.h"
 
-class DirectionalLight : public LightComponent
+namespace InSight
 {
-public:
-	//constructor
-	DirectionalLight(const glm::vec4& aTargetPosition = glm::vec4(0,0,0,1));
-	//destructor
-	~DirectionalLight();
+	class DirectioanlLightData : public ComponentData
+	{
+	public:
 
-	//overrides
-	void			init() override;
-	void			draw(BaseShader* aShader, const bool& aBindTextures = true) override;
-	void			update() override;
-	void			gui() override;
+	};
 
-	virtual void Save(std::ofstream& aFile) override;
+	class DirectionalLight : public LightComponent
+	{
+	public:
+		//constructor
+		DirectionalLight(const glm::vec4& aTargetPosition = glm::vec4(0, 0, 0, 1));
+		//destructor
+		~DirectionalLight();
 
-	//setter
-	void			setTargetPosition(const glm::vec4& aTargetPosition);
-	
-private:
-	//create a quad mesh
-	void createQuadMesh();
-	//set uniforms 
-	void setUniforms(BaseShader* aShader);
-};
+		//overrides
+		void			init() override;
+		void			draw(BaseShader* aShader, const bool& aBindTextures = true) override;
+		void			update() override;
+		void			gui() override;
 
+		virtual int Save() override;
 
-#endif // __DIRECTIONAL_LIGHT__
+		//setter
+		void			setTargetPosition(const glm::vec4& aTargetPosition);
+
+	private:
+		//create a quad mesh
+		void createQuadMesh();
+		//set uniforms 
+		void setUniforms(BaseShader* aShader);
+	};
+}

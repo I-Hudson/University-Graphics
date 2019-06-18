@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 
+#include "InSight/Component/TransformComponent.h"
+
 namespace InSight
 {
 	Scene::Scene(const std::string& aName)
@@ -72,29 +74,31 @@ namespace InSight
 		filePath.append(mName);
 		filePath.append(".txt");
 
-		std::ofstream file;
-		file.open(filePath.c_str(), std::ios::out);
-		if (!file.fail())
+		std::ofstream oFile(filePath, std::ios::binary);
+
+		SceneData data = {};
+		data.Name = mName;
+
+		for (auto& e : mEntities)
 		{
-			//file.open(fileName, std::ios::out);
-			EN_CORE_INFO("File created: {0}!", filePath.c_str());
+			data.Entities.push_back(e->Save());
 		}
-
-		file << "---\n";
-		file << "Scene Settings:\n";
-		file << "	SceneName:" << mName.c_str() << "\n";
-
-		for (auto& entity : mEntities)
-		{
-			entity->Save(file);
-		}
-
-		file << "---\n";
-
-		file.close();
+	
+		oFile.write((char*)&data, sizeof(data));
+		oFile.close();
 	}
 
-	void Scene::Load()
+	SceneData Scene::Load(const std::string& aFileName)
 	{
+		std::string filePath("Scenes/");
+		filePath.append(aFileName);
+		filePath.append(".txt");
+
+		std::ifstream iFile(filePath, std::ios::binary);
+		SceneData loadData;
+		iFile.read((char*)&loadData, sizeof(loadData));
+		iFile.close();
+
+		return loadData;
 	}
 }

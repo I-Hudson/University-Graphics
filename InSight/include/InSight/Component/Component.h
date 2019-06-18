@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef __COMPONENT_H__
-#define __COMPONENT_H__
-
 #include <iostream>
 #include <vector>
 #include <memory>
@@ -12,9 +9,6 @@
 
 #include "imgui.h"
 #include "InSight/Shader/BaseShader.h"
-
-class Component;
-class Entity;
 
 //ID is standard size t
 //using ComponentID = std::size_t;
@@ -40,31 +34,54 @@ class Entity;
 //using ComponentBitSet = std::bitset<maxComponents>;
 //using ComponentArray = std::array<Component*, maxComponents>;
 
-class Component
+namespace InSight
 {
-public:
-	//Owner
-	Entity* entity;
+	class Entity;
 
-	//virtual functions
-	virtual void init() {}
-	virtual void update() {}
-	virtual void gui() {}
-	virtual void draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true) { aShader; aBindTextures; }
-	virtual void draw(BaseShader* aShader = nullptr, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) { aShader; aModelMatrx; aBindTextures; }
-	virtual void destroy() {}
-	virtual ~Component() {}
+	enum ComponentType
+	{
+		AMBIENT_LIGHT,
+		CAMERA,
+		DIRECTIONAL_LIGHT,
+		MESH,
+		POINT_LIGHT,
+		SPOT_LIGHT,
+		TRANSFORM
+	};
 
-	virtual void Save(std::ofstream& aFile) = 0;
+	class ComponentData
+	{
+	public:
+		ComponentType Type;
+	};
 
-	//draw wireframe
-	void drawWireFrame(bool aDrawWireFrame) { mDrawWireFrame = aDrawWireFrame; }
-	//get wireframe status 
-	bool* wireFrameStatus() { return &mDrawWireFrame; }
+	class Component
+	{
+	public:
+		//Owner
+		Entity* entity;
 
-private:
-	//wireframe
-	bool mDrawWireFrame = false;
-};
+		//virtual functions
+		virtual void init() { mUniqueID = 0; }
+		virtual void update() {}
+		virtual void gui() {}
+		virtual void draw(BaseShader* aShader = nullptr, const bool& aBindTextures = true) { aShader; aBindTextures; }
+		virtual void draw(BaseShader* aShader = nullptr, const glm::mat4& aModelMatrx = glm::mat4(), const bool& aBindTextures = true) { aShader; aModelMatrx; aBindTextures; }
+		virtual void destroy() {}
+		virtual ~Component() {}
 
-#endif // __COMPONENT_H__
+		virtual int Save() = 0;
+
+		//draw wireframe
+		void drawWireFrame(bool aDrawWireFrame) { mDrawWireFrame = aDrawWireFrame; }
+		//get wireframe status 
+		bool* wireFrameStatus() { return &mDrawWireFrame; }
+
+		int GetUnqiueID() { return mUniqueID; }
+
+	private:
+		//wireframe
+		bool mDrawWireFrame = false;
+		int mUniqueID;
+	};
+}

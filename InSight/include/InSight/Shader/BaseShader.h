@@ -13,11 +13,14 @@
 #include <memory>
 #include <map>
 
-class Entity;
-class MeshComponent;
 class AssimpMesh;
 class LightVolumeManager;
 class BaseRenderer;
+namespace InSight
+{
+	class Entity;
+	class MeshComponent;
+}
 
 enum ShaderPriority
 {
@@ -56,9 +59,9 @@ public:
 	virtual void			destroy();
 
 	//Add a mesh to render
-	void					addMesh(MeshComponent* aMesh);
+	void					addMesh(InSight::MeshComponent* aMesh);
 	//Remove a mesh to render
-	void					removeMesh(MeshComponent* aMesh);
+	void					removeMesh(InSight::MeshComponent* aMesh);
 
 	//Sort the meshes list
 	void					sortMeshOrder();
@@ -68,12 +71,12 @@ public:
 	//Draw the meshes which have been added to the mMeshes vector
 	void					drawMeshes(const bool& aBindTextures = true, const glm::mat4& aModelMatrx = glm::mat4());
 	//Draw the meshes from aMeshes vector
-	void					drawMeshes(std::vector<MeshComponent*>& aMeshes, const bool& aBindTextures = true, const glm::mat4& aModelMatrx = glm::mat4());
+	void					drawMeshes(std::vector<InSight::MeshComponent*>& aMeshes, const bool& aBindTextures = true, const glm::mat4& aModelMatrx = glm::mat4());
 
 	//gui
 	virtual void			gui();
 	//use this BaseShader (Bind, clear, setUnifroms, draw)
-	virtual void			useShader(bool aClear, const bool& aActiveTextures, Entity* aE);
+	virtual void			useShader(bool aClear, const bool& aActiveTextures, InSight::Entity* aE);
 	virtual void			useShader(bool aClear, const bool& aActiveTextures);
 	virtual void			useShader(bool aClear, const int& aDrawMode);
 	virtual void			useShader(bool aClear = false);
@@ -102,19 +105,14 @@ public:
 	BaseRenderer* getBaseRenderer();
 
 	//set the entity this BaseShader is attahced to
-	void					setMeshComponent(MeshComponent* aMeshComponent);
+	void					setMeshComponent(InSight::MeshComponent* aMeshComponent);
 	//get the mesh component 
-	MeshComponent*			getMeshComponent();
+	InSight::MeshComponent*			getMeshComponent();
 
 	//set a gbuffer for this BaseShader
 	void					setGBuffer(GBuffer* aGBuffer);
 	//return a pointer for the gbuffer 
 	GBuffer*				getGBuffer();
-		
-	//set this BaseShader's priority
-	void					setShaderPriority(ShaderPriority a_shaderPriority = ShaderPriority::PRI_5);
-	//get this BaseShader's priority
-	ShaderPriority			getShaderPriority();
 
 	//get a render target from the framebuffer
 	unsigned int*			getTexture(int aIndex);
@@ -163,20 +161,17 @@ protected:
 	//gbuffer
 	GBuffer* mGBuffer;
 	//all BaseShader meshes
-	std::vector<MeshComponent*> mMeshes;
+	std::vector<InSight::MeshComponent*> mMeshes;
 
 private:
 	//BaseRenderer pointers
 	BaseRenderer* mBaseRenderer;
 
 	//mesh component pointer 
-	MeshComponent* mMeshComponent;
+	InSight::MeshComponent* mMeshComponent;
 
 	//Which mode to render
 	RenderMode mModeToRender;
-
-	//BaseShader Priority
-	ShaderPriority mShaderPriority;
 
 	//all render targets
 	std::vector<FBTexture> mFrameBufferTextures;

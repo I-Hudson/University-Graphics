@@ -86,18 +86,6 @@ void BaseRenderer::destroy()
 	mShadersToRender.clear();
 }
 
-void BaseRenderer::setEntityManager(EntityManager* aEntityManager)
-{
-	//set entiy manager
-	mEntityManager = aEntityManager;
-}
-
-EntityManager* BaseRenderer::getEntityManager() const
-{
-	//get entity manager
-	return mEntityManager;
-}
-
 void BaseRenderer::setScreenSize(const glm::vec2& aScreenSize)
 {
 	//set screen size

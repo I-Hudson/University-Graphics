@@ -122,7 +122,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	glEnable(GL_STENCIL_TEST);
 
 	//Stencil render pass
-	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
+	for (auto& kv : InSight::EntityManager::Get().getAllEntityComponents<InSight::LightComponent>())
 	{
 		LightType lt = kv->getLightType();
 		if (lt == LightType::Directional)
@@ -195,7 +195,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 		//mLightBuffer->setDrawBuffers();
 		glUseProgram(mShaderID);
 		setUniforms();
-		for (auto& light : EntityManager::Get().getAllEntityComponents<LightComponent>())
+		for (auto& light : InSight::EntityManager::Get().getAllEntityComponents<InSight::LightComponent>())
 		{
 			if (light->getLightType() == LightType::Ambient)
 			{
@@ -212,7 +212,7 @@ void DeferredLightPassShader::useShader(bool aClear)
 	glBlendFunc(GL_ONE, GL_ONE);
 
 	//find directional light and draw it
-	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
+	for (auto& kv : InSight::EntityManager::Get().getAllEntityComponents<InSight::LightComponent>())
 	{
 		if (kv->getLightType() == LightType::Directional)
 		{
@@ -230,9 +230,9 @@ void DeferredLightPassShader::useShader(bool aClear)
 
 	glUseProgram(mPostLightShader->getShader());
 	mPostLightShader->setMat4("ProjectionView",
-	*getBaseRenderer()->getEntityManager()->getEntity("Main Camera")->getComponent<CameraComponent>()->getProjectionViewMatrix(),
+	*InSight::EntityManager::Get().getEntity("Main Camera")->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix(),
 		true);
-	for (auto& kv : EntityManager::Get().getAllEntityComponents<LightComponent>())
+	for (auto& kv : InSight::EntityManager::Get().getAllEntityComponents<InSight::LightComponent>())
 	{
 		kv->PostLight(mPostLightShader);
 	}
@@ -352,7 +352,7 @@ void DeferredLightPassShader::setLightVolumeManager(LightVolumeManager* aManager
 {
 	//set light volume manager
 	mLightVolumes = aManager;
-	for (auto& light : EntityManager::Get().getAllEntityComponents<LightComponent>())
+	for (auto& light : InSight::EntityManager::Get().getAllEntityComponents<InSight::LightComponent>())
 	{
 		if (light->getLightType() == LightType::Ambient)
 		{

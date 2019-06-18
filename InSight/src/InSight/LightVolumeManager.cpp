@@ -18,19 +18,19 @@ LightVolumeManager::~LightVolumeManager()
 void LightVolumeManager::update()
 {
 	//update all light volumes
-	for (auto kv : mEntityManager->getAllEntityComponents<LightComponent>())
+	for (auto kv : mEntityManager->getAllEntityComponents<InSight::LightComponent>())
 	{
 		kv->update();
 	}
 }
 
-void LightVolumeManager::addLightVolume(LightComponent* aComponent)
+void LightVolumeManager::addLightVolume(InSight::LightComponent* aComponent)
 {
 	//add light volume
 	mLightVolumes.emplace_back(aComponent);
 }
 
-std::vector<LightComponent*>* LightVolumeManager::getAllVolumes()
+std::vector<InSight::LightComponent*>* LightVolumeManager::getAllVolumes()
 {
 	//get pointer to vector for all light volume
 	return &mLightVolumes;

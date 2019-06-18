@@ -1,42 +1,46 @@
 #pragma once
 
-#ifndef __TRANSFORM_COMPONENT_H__
-#define __TRANSFORM_COMPONENT_H__
-
 #include "Entity/ECS.h"
 #include <glm/ext.hpp>
 
-class TransformComponent : public Component
+namespace InSight
 {
-public:
-	//overrides
-	void init() override;
-	void gui() override;
+	class TransformData : public ComponentData
+	{
+	public:
+		float Matrix[16];
+	};
 
-	virtual void Save(std::ofstream& aFile) override;
+	class TransformComponent : public Component
+	{
+	public:
+		//overrides
+		void init() override;
+		void gui() override;
 
-	//transofmr matrix functions
-	void setTransformMatrix(glm::mat4& aMatrix);
-	void setPosition(glm::vec4 aPosition);
-	void setScale(const glm::vec3& aScale);
-	void setScale(const float& aScale);
+		virtual int Save() override;
 
-	//invert pitch
-	void invertPitch();
+		//transofmr matrix functions
+		void setTransformMatrix(glm::mat4& aMatrix);
+		void setPosition(glm::vec4 aPosition);
+		void setScale(const glm::vec3& aScale);
+		void setScale(const float& aScale);
 
-	//get transform matrix and position
-	glm::mat4* getTransformMatrix();
-	glm::vec4* getPosition();
+		//invert pitch
+		void invertPitch();
 
-	//has this component been updated
-	bool& getHasChanged();
-private:
-	//transform matrix
-	glm::mat4 mTransformMatrix;
-	//position
-	glm::vec4 mPosition;
-	//component updated
-	bool mHasChanged;
-};
+		//get transform matrix and position
+		glm::mat4* getTransformMatrix();
+		glm::vec4* getPosition();
 
-#endif // !__TRANSFORM_COMPONENT_H__
+		//has this component been updated
+		bool& getHasChanged();
+	private:
+		//transform matrix
+		glm::mat4 mTransformMatrix;
+		//position
+		glm::vec4 mPosition;
+		//component updated
+		bool mHasChanged;
+	};
+}

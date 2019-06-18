@@ -4,8 +4,6 @@
 
 #include <vector>
 
-class EntityManager;
-
 class BaseRenderer
 {
 public:
@@ -34,11 +32,6 @@ public:
 	//destroy
 	void destroy();
 
-	//set entity manager
-	void setEntityManager(EntityManager* aEntityManager);
-	//get entity manager
-	EntityManager* getEntityManager() const;
-
 	//set the screen size
 	void setScreenSize(const glm::vec2& aScreenSize);
 	//get the screen size
@@ -52,7 +45,4 @@ private:
 
 	//store screen size
 	glm::vec2 mScreenSize;
-
-	//pointer to entit manager
-	EntityManager* mEntityManager;
 };

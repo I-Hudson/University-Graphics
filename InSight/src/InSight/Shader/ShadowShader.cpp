@@ -4,6 +4,10 @@
 #include "Component/DirectionalLight.h"
 #include "Component/MeshComponent.h"
 
+#include "InSight/Entity/EntityManager.h"
+
+using namespace InSight;
+
 ShadowShader::ShadowShader()
 {
 }
@@ -30,9 +34,9 @@ void ShadowShader::destroy()
 void ShadowShader::useShader(bool aClear)
 {
 	//get all lights
-	std::vector<DirectionalLight*> lights = getBaseRenderer()->getEntityManager()->getAllEntityComponents<DirectionalLight>();
+	std::vector<DirectionalLight*> lights = EntityManager::Get().getAllEntityComponents<DirectionalLight>();
 	//get all meshes
-	std::vector<MeshComponent*> allMeshes = getBaseRenderer()->getEntityManager()->getAllEntityComponents<MeshComponent>();
+	std::vector<MeshComponent*> allMeshes = EntityManager::Get().getAllEntityComponents<MeshComponent>();
 
 	//bind BaseShader
 	glUseProgram(mShaderID);

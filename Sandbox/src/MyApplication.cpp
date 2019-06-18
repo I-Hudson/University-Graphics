@@ -65,21 +65,19 @@ bool MyApplication::onCreate()
 	mBaseRenderer = new BaseRenderer();
 	mBaseRenderer->setScreenSize(glm::vec2(mWindow->GetWidth(), mWindow->GetHeight()));
 	mPostProcessing = new PostProcessing();
-	mEntityManager = new EntityManager();
-
-	mBaseRenderer->setEntityManager(mEntityManager);
+	mEntityManager = new InSight::EntityManager();
 
 	//Setup GUi
-	mGUI = new GUI();
-	mGUI->addGUIElement<GUIHierarchy>(mEntityManager, 
+	mGUI = new InSight::GUI::GUI();
+	mGUI->addGUIElement<InSight::GUI::GUIHierarchy>(mEntityManager,
 		glm::vec2(mWindow->GetWidth() * 0.8f, 0.0f),
 		glm::vec2(mWindow->GetWidth() * 0.2f, mWindow->GetHeight() * 0.2f));
 
-	mGUI->addGUIElement<GUIInspector>(
+	mGUI->addGUIElement<InSight::GUI::GUIInspector>(
 		glm::vec2(mWindow->GetWidth() * 0.8f, mWindow->GetHeight() * 0.2f),
 		glm::vec2(mWindow->GetWidth() * 0.2f, mWindow->GetHeight() * 0.3f));
 
-	mGUI->addGUIElement<InSight::GUIToolBar>(mEntityManager,
+	mGUI->addGUIElement<InSight::GUI::GUIToolBar>(mEntityManager,
 		glm::vec2(0.0f, 0.0f),
 		glm::vec2(mWindow->GetWidth(), mWindow->GetHeight() * 0.05f));
 
@@ -97,12 +95,10 @@ bool MyApplication::onCreate()
 	//Setup the main camera
 	mMainCamera = mEntityManager->addEntity();
 	mMainCamera->setID("Main Camera");
-	mMainCamera->addComponent<TransformComponent>();
-	mMainCamera->addComponent<CameraComponent>();
-	mMainCamera->getComponent<CameraComponent>()->setCameraMatrix(glm::inverse(glm::lookAt(glm::vec3(10, 10, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0))));
-	mMainCamera->getComponent<CameraComponent>()->setCameraPropertiesPre(0.25f, (float)mWindow->GetWidth() / (float)mWindow->GetHeight(), 0.1f, 1000.0f);
-	//mMainCamera->addComponent<SpotLight>();
-	//mMainCamera->getComponent<SpotLight>().setPosition(*mMainCamera->getComponent<TransformComponent>().getPosition());
+	mMainCamera->addComponent<InSight::CameraComponent>();
+	mMainCamera->addComponent<InSight::TransformComponent>();
+	mMainCamera->getComponent<InSight::CameraComponent>()->setCameraMatrix(glm::inverse(glm::lookAt(glm::vec3(10, 10, 10), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0))));
+	mMainCamera->getComponent<InSight::CameraComponent>()->setCameraPropertiesPre(0.25f, (float)mWindow->GetWidth() / (float)mWindow->GetHeight(), 0.1f, 1000.0f);
 
 	//\==============================================================================================
 	// DEFERRED GBUFFER BaseShader
@@ -150,7 +146,7 @@ bool MyApplication::onCreate()
 		"",
 		"./shaders/deferred/fragment_def.glsl",
 		3, nullptr, 4, szOutputsGoem);
-	mDeferedShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
+	mDeferedShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
 	mDeferedShader->setGBuffer(gbuffer);
 
 	//\==============================================================================================
@@ -163,8 +159,8 @@ bool MyApplication::onCreate()
 		"",
 		"./shaders/tess/fragment_tess.glsl",
 		3, nullptr, 3, szOutputsGoem);
-	mTessShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
-	mTessShader->setVec4("CameraPos", *mMainCamera->getComponent<TransformComponent>()->getPosition());
+	mTessShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
+	mTessShader->setVec4("CameraPos", *mMainCamera->getComponent<InSight::TransformComponent>()->getPosition());
 	mTessShader->setGBuffer(gbuffer);
 
 	//\==============================================================================================
@@ -182,13 +178,13 @@ bool MyApplication::onCreate()
 	mSSRShader->setUnsignedIntUniforms("texture_wPosition", *gbuffer->getTexture(2));
 	mSSRShader->setUnsignedIntUniforms("texture_normal", *gbuffer->getTexture(1));
 	mSSRShader->setUnsignedIntUniforms("texture_depth", *gbuffer->getTexture(4));
-	mSSRShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
-	mSSRShader->setVec4("CameraPos", *mMainCamera->getComponent<TransformComponent>()->getPosition());
+	mSSRShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
+	mSSRShader->setVec4("CameraPos", *mMainCamera->getComponent<InSight::TransformComponent>()->getPosition());
 
-	mSSRShader->setMat4("Projection", *mMainCamera->getComponent<CameraComponent>()->getProjectionMatrix());
-	mSSRShader->setMat4("view", *mMainCamera->getComponent<CameraComponent>()->getViewMatrix());
-	mSSRShader->setMat4("invProjection", *mMainCamera->getComponent<CameraComponent>()->getInvprojectionMatrix());
-	mSSRShader->setMat4("invView", *mMainCamera->getComponent<CameraComponent>()->getInvViewMatrix());
+	mSSRShader->setMat4("Projection", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionMatrix());
+	mSSRShader->setMat4("view", *mMainCamera->getComponent<InSight::CameraComponent>()->getViewMatrix());
+	mSSRShader->setMat4("invProjection", *mMainCamera->getComponent<InSight::CameraComponent>()->getInvprojectionMatrix());
+	mSSRShader->setMat4("invView", *mMainCamera->getComponent<InSight::CameraComponent>()->getInvViewMatrix());
 
 	//\==============================================================================================
 	// WATER BaseShader
@@ -202,8 +198,8 @@ bool MyApplication::onCreate()
 	);
 	mWaterShader->initBuffers();
 	mWaterShader->setGBuffer(gbuffer);
-	mWaterShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
-	mWaterShader->setVec4("cameraPos", *mMainCamera->getComponent<TransformComponent>()->getPosition());
+	mWaterShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
+	mWaterShader->setVec4("cameraPos", *mMainCamera->getComponent<InSight::TransformComponent>()->getPosition());
 	mWaterShader->mMainCamera = mMainCamera;
 
 	//\==============================================================================================
@@ -219,7 +215,7 @@ bool MyApplication::onCreate()
 		3, nullptr,
 		1, shadowOut
 		);
-	mShadowShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
+	mShadowShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
 	mShadowShader->setUnsignedIntUniforms("texture_worldPos", *gbuffer->getTexture(2));
 
 	//\==============================================================================================
@@ -233,7 +229,7 @@ bool MyApplication::onCreate()
 		"./shaders/shadows/fragment_shadow_map.glsl"
 	);
 	mShadowMapShader->initBuffers();
-	mShadowMapShader->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
+	mShadowMapShader->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
 	mShadowMapShader->setUnsignedIntUniforms("texture_worldPos", *gbuffer->getTexture(2));
 
 	//\==============================================================================================
@@ -271,12 +267,12 @@ bool MyApplication::onCreate()
 	mDeferredLight->setUnsignedIntUniforms("NormalTex", *mDeferedShader->getGBuffer()->getTexture(1));
 	mDeferredLight->setUnsignedIntUniforms("WPosTex", *mDeferedShader->getGBuffer()->getTexture(2));
 	mDeferredLight->setUnsignedIntUniforms("SpecTex", *mDeferedShader->getGBuffer()->getTexture(3));
-	mDeferredLight->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
-	mDeferredLight->setVec4("CameraPos", *mMainCamera->getComponent<TransformComponent>()->getPosition());
+	mDeferredLight->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
+	mDeferredLight->setVec4("CameraPos", *mMainCamera->getComponent<InSight::TransformComponent>()->getPosition());
 	mDeferredLight->setUnsignedIntUniforms("ShadowTex", *mShadowMapShader->getShadowTexture());
 
 	//Setup the deferred stencil pass
-	mDeferredLight->getStencilShader()->setMat4("ProjectionView", *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix());
+	mDeferredLight->getStencilShader()->setMat4("ProjectionView", *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix());
 	mDeferredLight->setGBuffer(gbuffer);
 
 	//\==============================================================================================
@@ -284,11 +280,11 @@ bool MyApplication::onCreate()
 	//\==============================================================================================
 	mTankModel = mEntityManager->addEntity();
 	mTankModel->setID("Tank Model");
-	mTankModel->addComponent<TransformComponent>();
-	mTankModel->getComponent<TransformComponent>()->setPosition(glm::vec4(0, 0, 0, 1));
-	mTankModel->addComponent<MeshComponent>("./models/ruinedtank/tank.fbx", LoadType::AssimpLoader);
-	mTankModel->getComponent<MeshComponent>()->addShader(mTessShader);
-	mTankModel->getComponent<MeshComponent>()->setRenderMode(RenderMode::Opaque);
+	mTankModel->addComponent<InSight::TransformComponent>();
+	mTankModel->getComponent<InSight::TransformComponent>()->setPosition(glm::vec4(0, 0, 0, 1));
+	mTankModel->addComponent<InSight::MeshComponent>("./models/ruinedtank/tank.fbx", LoadType::AssimpLoader);
+	mTankModel->getComponent<InSight::MeshComponent>()->addShader(mTessShader);
+	mTankModel->getComponent<InSight::MeshComponent>()->setRenderMode(RenderMode::Opaque);
 
 	//\==============================================================================================
 	// CHARACTER MODEL
@@ -306,13 +302,13 @@ bool MyApplication::onCreate()
 	//\==============================================================================================
 	mWaveModel = mEntityManager->addEntity();
 	mWaveModel->setID("Wave");
-	mWaveModel->addComponent<TransformComponent>();
-	mWaveModel->getComponent<TransformComponent>()->setPosition(glm::vec4(0, 0.25f, 0, 1));
-	mWaveModel->addComponent<MeshComponent>();
-	mWaveModel->getComponent<MeshComponent>()->setRenderMode(RenderMode::Transparent);
-	mWaveModel->getComponent<MeshComponent>()->addPlane(100, 100);
-	mWaveModel->getComponent<MeshComponent>()->addShader(mWaterShader);
-	mSSRShader->setMeshComponent(mWaveModel->getComponent<MeshComponent>());
+	mWaveModel->addComponent<InSight::TransformComponent>();
+	mWaveModel->getComponent<InSight::TransformComponent>()->setPosition(glm::vec4(0, 0.25f, 0, 1));
+	mWaveModel->addComponent<InSight::MeshComponent>();
+	mWaveModel->getComponent<InSight::MeshComponent>()->setRenderMode(RenderMode::Transparent);
+	mWaveModel->getComponent<InSight::MeshComponent>()->addPlane(100, 100);
+	mWaveModel->getComponent<InSight::MeshComponent>()->addShader(mWaterShader);
+	mSSRShader->setMeshComponent(mWaveModel->getComponent<InSight::MeshComponent>());
 
 	//\==============================================================================================
 	// FULLSCREEN BaseShader
@@ -335,70 +331,60 @@ bool MyApplication::onCreate()
 	mFullScreenShader->setUnsignedIntUniforms("FinalTex", *mDeferedShader->getGBuffer()->getTexture(5));
 	//mFullScreenShader->setMat4("ShadowProjectionView", *mLightVolumes->getLightVolume<mSpotLight>("Spot_Light_1")->getShadowProViewMatrix());
 	mFullScreenShader->setVec4("lightDir", mLightDir);
-	mFullScreenShader->setMat4("cameraMatrix", *mMainCamera->getComponent<CameraComponent>()->getCameraMatrix());
+	mFullScreenShader->setMat4("cameraMatrix", *mMainCamera->getComponent<InSight::CameraComponent>()->getCameraMatrix());
 
 	//\==============================================================================================
 	// SPOT LIGHT
 	//\=============================================================================================
 	mSpotLight = mEntityManager->addEntity();
 	mSpotLight->setID("Spot Light");
-	mSpotLight->addComponent<TransformComponent>();
-	mSpotLight->addComponent<SpotLight>();
+	mSpotLight->addComponent<InSight::TransformComponent>();
+	mSpotLight->addComponent<InSight::SpotLight>();
 
 	//\==============================================================================================
 	// POINT LIGHT 
 	//\==============================================================================================
 	mPointLight = mEntityManager->addEntity();
 	mPointLight->setID("Point Light");
-	mPointLight->addComponent<PointLight>();
-	mPointLight->getComponent<TransformComponent>()->setPosition(glm::vec4(-5.0f, 2.5f, -2.0f, 1.0f));
+	mPointLight->addComponent<InSight::PointLight>();
+	mPointLight->getComponent<InSight::TransformComponent>()->setPosition(glm::vec4(-5.0f, 2.5f, -2.0f, 1.0f));
 
 	//\==============================================================================================
 	// DIRECTIONAL LIGHT
 	//\==============================================================================================
 	mDirLight = mEntityManager->addEntity();
 	mDirLight->setID("Direcational Light");
-	mDirLight->addComponent<TransformComponent>();
-	mDirLight->addComponent<DirectionalLight>();
+	mDirLight->addComponent<InSight::TransformComponent>();
+	mDirLight->addComponent<InSight::DirectionalLight>();
 
 	//\==============================================================================================
 	// AMBIENT LIGHT
 	//\==============================================================================================
 	mAmbientLight = mEntityManager->addEntity();
 	mAmbientLight->setID("Ambient Light");
-	mAmbientLight->addComponent<TransformComponent>();
-	mAmbientLight->addComponent<AmbientLight>();
-
-	//\==============================================================================================
-	// ADD ALL LIGHTS TO LIGHT VOLUME
-	//\==============================================================================================
-	mLightVolumes->addLightVolume(mAmbientLight->getComponent<AmbientLight>());
-	mLightVolumes->addLightVolume(mDirLight->getComponent<DirectionalLight>());
-	mLightVolumes->addLightVolume(mPointLight->getComponent<PointLight>());
-	mLightVolumes->addLightVolume(mSpotLight->getComponent<SpotLight>());
-	mLightVolumes->mEntityManager = mEntityManager;
+	mAmbientLight->addComponent<InSight::TransformComponent>();
+	mAmbientLight->addComponent<InSight::AmbientLight>();
 
 	//\==============================================================================================
 	// SET SPOT LIGHT VALUES
 	//\==============================================================================================
-	mSpotLight->getComponent<SpotLight>()->setPosition(glm::vec4(11.0f, 8.5f, 10.0f, 1.0f));
-	mSpotLight->getComponent<SpotLight>()->setDiffuse(glm::vec4(0, 1, 0, 1));
-	mSpotLight->getComponent<SpotLight>()->addShadowMap();
+	mSpotLight->getComponent<InSight::SpotLight>()->setPosition(glm::vec4(11.0f, 8.5f, 10.0f, 1.0f));
+	mSpotLight->getComponent<InSight::SpotLight>()->setDiffuse(glm::vec4(0, 1, 0, 1));
+	mSpotLight->getComponent<InSight::SpotLight>()->addShadowMap();
 	//mShadowShader->addShadow(&mSpotLight->getComponent<SpotLight>());
 
 	//\==============================================================================================
 	// SET DIRECTIONAL LGIHT VALUES
 	//\==============================================================================================
-	mDirLight->getComponent<DirectionalLight>()->addShadowMap();
-	mDirLight->getComponent<DirectionalLight>()->setPosition(mLightPos);
-	mDirLight->getComponent<DirectionalLight>()->setShadowProViewMatrix(depthProjectionMatrix * depthViewMatrix);
+	mDirLight->getComponent<InSight::DirectionalLight>()->addShadowMap();
+	mDirLight->getComponent<InSight::DirectionalLight>()->setPosition(mLightPos);
+	mDirLight->getComponent<InSight::DirectionalLight>()->setShadowProViewMatrix(depthProjectionMatrix * depthViewMatrix);
 	//mShadowShader->addShadow(mDirLight->getComponent<DirectionalLight>());
 
 	//\==============================================================================================
 	// SET SHADOW MATRIX
 	//\==============================================================================================
-	mDeferedShader->setMat4("shadowMatrix", *mDirLight->getComponent<DirectionalLight>()->getShadowProViewMatrix());
-	mDeferredLight->setLightVolumeManager(mLightVolumes);
+	mDeferedShader->setMat4("shadowMatrix", *mDirLight->getComponent<InSight::DirectionalLight>()->getShadowProViewMatrix());
 
 	//\==============================================================================================
 	// TESS PATHCES
@@ -429,7 +415,6 @@ void MyApplication::Update(float a_deltaTime)
 	mLightDir = glm::normalize(glm::vec4(0.f, 0.f, 0.f, 1.f) - mLightPos);
 
 	mEntityManager->update();
-	mLightVolumes->update();
 	mGUI->update();
 
 	// add an identity matrix gizmo
@@ -498,13 +483,13 @@ void MyApplication::Update(float a_deltaTime)
 	}
 	if (ImGui::BeginTabItem("Dir Light Depth Buffer"))
 	{
-		ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<DirectionalLight>()->getShadowMap();
+		ImTextureID texID = (void*)(intptr_t)*mDirLight->getComponent<InSight::DirectionalLight>()->getShadowMap();
 		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
 		ImGui::EndTabItem();
 	}
 	if (ImGui::BeginTabItem("mSpotLight Light Depth Buffer"))
 	{
-		ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<SpotLight>()->getShadowMap();
+		ImTextureID texID = (void*)(intptr_t)*mSpotLight->getComponent<InSight::SpotLight>()->getShadowMap();
 		ImGui::Image(texID, ImVec2(mWindow->GetWidth() * 0.5f, mWindow->GetHeight() * 0.5f), ImVec2(0, 1), ImVec2(1, 0));
 		ImGui::EndTabItem();
 	}
@@ -580,8 +565,8 @@ void MyApplication::Update(float a_deltaTime)
 void MyApplication::Draw()
 {
 	// get the view matrix from the world-space camera matrix
-	glm::mat4 viewMatrix = *mMainCamera->getComponent<CameraComponent>()->getViewMatrix();
-	glm::mat4 projecMatrix = *mMainCamera->getComponent<CameraComponent>()->getProjectionViewMatrix();
+	glm::mat4 viewMatrix = *mMainCamera->getComponent<InSight::CameraComponent>()->getViewMatrix();
+	glm::mat4 projecMatrix = *mMainCamera->getComponent<InSight::CameraComponent>()->getProjectionViewMatrix();
 
 	//\==============================================================================================
 	// RENDER

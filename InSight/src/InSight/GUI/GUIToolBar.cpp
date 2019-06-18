@@ -10,7 +10,7 @@
 #include "InSight/Component/MeshComponent.h"
 #include "InSight/Component/SpotLight.h"
 
-namespace InSight
+namespace InSight::GUI
 {
 	GUIToolBar::GUIToolBar()
 	{
