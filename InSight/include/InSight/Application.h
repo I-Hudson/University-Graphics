@@ -12,6 +12,7 @@
 
 #include "InSight/Renderer/Shader.h"
 #include "InSight/Renderer/Buffer.h"
+#include "InSight/Renderer/VertexArray.h"
 
 #include "InSight/Scene/SceneManager.h"
 
@@ -70,10 +71,11 @@ namespace InSight
 		InSight::ImGuiLayer*  mImGuiLayer;
 		LayerStack mLayerStack;
 
-		unsigned int mVertexArray;
-		std::unique_ptr<InSight::VertexBuffer> mVertexBuffer;
-		std::unique_ptr<InSight::IndexBuffer> mIndexB;
-		std::unique_ptr<InSight::Shader> mShader;
+		std::shared_ptr<VertexArray> mVertexArray;
+		std::shared_ptr<InSight::Shader> mShader;
+
+		std::shared_ptr<VertexArray> mSquareVA;
+		std::shared_ptr<InSight::Shader> mShaderSquare;
 
 		virtual bool	onCreate() = 0;
 		virtual void	Update(float a_deltaTime) = 0;

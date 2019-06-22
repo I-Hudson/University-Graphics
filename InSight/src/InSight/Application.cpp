@@ -78,26 +78,6 @@ namespace InSight
 
 	Application* Application::sInstnace = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType aType)
-	{
-		switch (aType)
-		{
-			case InSight::ShaderDataType::Float:	return GL_FLOAT;
-			case InSight::ShaderDataType::Float2:	return GL_FLOAT;
-			case InSight::ShaderDataType::Float3:	return GL_FLOAT;
-			case InSight::ShaderDataType::Float4:	return GL_FLOAT;
-			case InSight::ShaderDataType::Mat3:		return GL_FLOAT;
-			case InSight::ShaderDataType::Mat4:		return GL_FLOAT;
-			case InSight::ShaderDataType::Int:		return GL_INT;
-			case InSight::ShaderDataType::Int2:		return GL_INT;
-			case InSight::ShaderDataType::Int3:		return GL_INT;
-			case InSight::ShaderDataType::Int4:		return GL_INT;
-			case InSight::ShaderDataType::Bool:		return GL_BOOL;
-		}
-		EN_CORE_ASSERT(false, "Unknown ShaderDataType!");
-		return 0;
-	}
-
 	float* VertexToFloatArray(const Application::Vertex* aVertex, const int& aCount)
 	{
 		int count = aCount;
@@ -146,8 +126,7 @@ namespace InSight
 			mImGuiLayer = new InSight::ImGuiLayer();
 			PushOverlay(mImGuiLayer);
 
-			glGenVertexArrays(1, &mVertexArray);
-			glBindVertexArray(mVertexArray);
+			mVertexArray.reset(VertexArray::Create());
 
 			//float vertices[3 * 14] =
 			//{
@@ -165,35 +144,78 @@ namespace InSight
 			};
 
 			float* verticesP = VertexToFloatArray(&vertices[0], 3);
-			mVertexBuffer.reset(InSight::VertexBuffer::Create(verticesP, sizeof(vertices)));
+			std::shared_ptr<VertexBuffer> vertexBuffer;
+			vertexBuffer.reset(InSight::VertexBuffer::Create(verticesP, sizeof(vertices)));
 			delete[] verticesP;
 
+			BufferLayout layout =
 			{
-				BufferLayout layout =
-				{
-					{ShaderDataType::Float4, "aPosition"},
-					{ShaderDataType::Float4, "aColour"},
-					{ShaderDataType::Float4, "aNormal", true},
-					{ShaderDataType::Float2, "aTexCoord1", true},
-				};
-				mVertexBuffer->SetLayout(layout);
-			}
-
-			uint32_t index = 0;
-			const auto& layout = mVertexBuffer->GetLayout();
-			for (auto& element : layout)
-			{
-				glEnableVertexAttribArray(index);
-				glVertexAttribPointer(index, element.GetComponentCount(),
-					ShaderDataTypeToOpenGLBaseType(element.Type),
-					element.Normalized ? GL_TRUE : GL_FALSE, layout.GetStride(), (const void*)element.Offset);
-				index++;
-			}
-
+				{ShaderDataType::Float4, "aPosition"},
+				{ShaderDataType::Float4, "aColour"},
+				{ShaderDataType::Float4, "aNormal", true},
+				{ShaderDataType::Float2, "aTexCoord1", true},
+			};
+			vertexBuffer->SetLayout(layout);
+			mVertexArray->AddVertexBuffer(vertexBuffer);
 
 			uint32_t indices[3] = { 0,1,2 };
 
-			mIndexB.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+			std::shared_ptr<IndexBuffer> indexBuffer;
+			indexBuffer.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+			mVertexArray->AddIndexBuffer(indexBuffer);
+
+
+
+
+			mSquareVA.reset(VertexArray::Create());
+			
+			float squareVertices[4 * 4] =
+			{
+			   -0.75f, -0.75f, 0.0f, 1.0f,
+				0.75f, -0.75f, 0.0f, 1.0f,
+				0.75f, 0.75f, 0.0f, 1.0f,
+			   -0.75f, 0.75f, 0.0f, 1.0f
+			};
+
+			std::shared_ptr<VertexBuffer> squareVB;
+			squareVB.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+			squareVB->SetLayout( { 
+				{ ShaderDataType::Float4, "aPosition" }
+				});
+			mSquareVA->AddVertexBuffer(squareVB);
+
+			uint32_t squareIndices[6] = { 0,1,2, 2, 3, 0 };
+			std::shared_ptr<IndexBuffer> squareIB;
+			squareIB.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+			mSquareVA->AddIndexBuffer(squareIB);
+
+			std::string vertexSrcSquare = R"(
+		#version 330
+
+		layout(location = 0) in vec4 aPosition;			
+		
+		out vec4 vPosition;
+
+		void main()
+		{
+			vPosition = aPosition;
+			gl_Position = vec4(aPosition.xyz, 1.0);
+		}
+	)";
+
+			std::string fragSrcSquare = R"(
+		#version 330
+
+		in vec4 vPosition;
+		layout(location = 0) out vec4 outColour;		
+
+		void main()
+		{
+			outColour = vec4(0.2, 0.3, 1.0, 1.0);
+		}
+	)";
+
+			mShaderSquare.reset(new InSight::Shader(vertexSrcSquare, fragSrcSquare));
 
 			std::string vertexSrc = R"(
 		#version 330
@@ -303,9 +325,14 @@ namespace InSight
 				{
 					mImGuiLayer->Begin();
 
+					mShaderSquare->Bind();
+					mSquareVA->Bind();
+					glDrawElements(GL_TRIANGLES, mSquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+
+
 					mShader->Bind();
-					glBindVertexArray(mVertexArray);
-					glDrawElements(GL_TRIANGLES, mIndexB->GetCount(), GL_UNSIGNED_INT, nullptr);
+					mVertexArray->Bind();
+					glDrawElements(GL_TRIANGLES, mVertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 					//ImGui Set up Framerate window
 					showFrameData(false);

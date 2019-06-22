@@ -64,6 +64,7 @@
     <ClInclude Include="include\InSight\Renderer\GraphicsContext.h" />
     <ClInclude Include="include\InSight\Renderer\Renderer.h" />
     <ClInclude Include="include\InSight\Renderer\Shader.h" />
+    <ClInclude Include="include\InSight\Renderer\VertexArray.h" />
     <ClInclude Include="include\InSight\Scene\Scene.h" />
     <ClInclude Include="include\InSight\Scene\SceneManager.h" />
     <ClInclude Include="include\InSight\Shader\DeferredLightPassShader.h" />
@@ -80,6 +81,7 @@
     <ClInclude Include="include\InSight\Utilities.h" />
     <ClInclude Include="include\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="include\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="include\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="include\Platform\Vulkan\VulkanBuffer.h" />
     <ClInclude Include="include\Platform\Vulkan\VulkanContext.h" />
     <ClInclude Include="include\Platform\Window.h" />
@@ -128,6 +130,7 @@
     <ClCompile Include="src\InSight\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\InSight\Renderer\Renderer.cpp" />
     <ClCompile Include="src\InSight\Renderer\Shader.cpp" />
+    <ClCompile Include="src\InSight\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\InSight\Scene\Scene.cpp" />
     <ClCompile Include="src\InSight\Scene\SceneManager.cpp" />
     <ClCompile Include="src\InSight\Shader\DeferredLightPassShader.cpp" />
@@ -144,6 +147,7 @@
     <ClCompile Include="src\InSight\Utilities.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Vulkan\VulkanBuffer.cpp" />
     <ClCompile Include="src\Platform\Vulkan\VulkanContext.cpp" />
     <ClCompile Include="src\Platform\Window.cpp" />
