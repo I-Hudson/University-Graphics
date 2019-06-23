@@ -48,7 +48,7 @@ namespace InSight
 		void CreateFramebuffers();
 		void CreateCommandPool();
 		void CreateCommandBuffers();
-		void CreateSemaphores();
+		void CreateSyncObjects();
 
 		bool CheckValidationLayerSupport();
 		std::vector<const char*> GetRequiredExtensions();
@@ -99,8 +99,12 @@ namespace InSight
 		VkCommandPool mCommandPool;
 		std::vector<VkCommandBuffer> mCommandBuffers;
 
-		VkSemaphore mImageAvailableSemaphore;
-		VkSemaphore mRenderFinishedSemaphore;
+		std::vector<VkSemaphore> mImageAvailableSemaphores;
+		std::vector<VkSemaphore> mRenderFinishedSemaphores;
+		std::vector<VkFence> mInFlightFences;
+		int mCurrentFrame = 0;
+
+		const int MAX_FRAMES_IN_FLIGHT = 2;
 
 		bool mValidationLayersEnabled = true;
 		std::vector<const char*> mValidationLayers = { "VK_LAYER_KHRONOS_validation" };
