@@ -2,5 +2,17 @@
 
 namespace InSight
 {
-	RendererAPI Renderer::sRendererAPI = RendererAPI::OpenGL;
+	void Renderer::BegineScene()
+	{
+	}
+
+	void Renderer::EndScene()
+	{
+	}
+
+	void Renderer::Submit(const std::shared_ptr<VertexArray>& aVertexArrray)
+	{
+		aVertexArrray->Bind();
+		RenderCommand::DrawIndexed(aVertexArrray);
+	}
 }

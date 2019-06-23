@@ -1,21 +1,20 @@
 #pragma once
 
+#include "Renderer/RenderCommand.h"
+
 namespace InSight
 {
-	enum class RendererAPI
-	{
-		None = 0,
-		OpenGL = 1,
-		Vulkan = 2
-	};
 
 	class Renderer
 	{
 	public:
-		inline static RendererAPI GetAPI() { return sRendererAPI; }
+		static void BegineScene();
+		static void EndScene();
 
-	private:
-		static RendererAPI sRendererAPI;
+		static void Submit(const std::shared_ptr<VertexArray>& aVertexArrray);
+
+
+		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 	};
 
 }

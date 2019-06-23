@@ -10,12 +10,12 @@ namespace InSight
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None:
+			case RendererAPI::API::None:
 				EN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");
 				return nullptr;
 
 
-			case RendererAPI::OpenGL:
+			case RendererAPI::API::OpenGL:
 				return new OpenGLVertexBuffer(aVertices, aSize);
 		}
 		EN_CORE_ASSERT(false, "Unknow RendererAPI!");
@@ -26,12 +26,12 @@ namespace InSight
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 			EN_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");
 			return nullptr;
 
 
-		case RendererAPI::OpenGL:
+		case RendererAPI::API::OpenGL:
 			return new OpenGLIndexBuffer(aIndices, aSize);
 		}
 		EN_CORE_ASSERT(false, "Unknow RendererAPI!");

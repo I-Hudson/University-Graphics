@@ -53,12 +53,12 @@ namespace InSight
 		const char* glsl_version = "#version 400";
 		// Setup Platform/BaseRenderer bindings
 
-		if (Renderer::GetAPI() == RendererAPI::OpenGL)
+		if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 		{
 			ImGui_ImplGlfw_InitForOpenGL(window, true);
 			ImGui_ImplOpenGL3_Init(glsl_version);
 		}
-		else if (Renderer::GetAPI() == RendererAPI::Vulkan)
+		else if (Renderer::GetAPI() == RendererAPI::API::Vulkan)
 		{
 
 			ImGui_ImplGlfw_InitForVulkan(window, true);

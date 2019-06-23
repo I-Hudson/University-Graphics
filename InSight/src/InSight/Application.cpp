@@ -6,6 +6,7 @@
 #include <iostream>
 //Include GLAD GL Extension defines
 #include <glad/glad.h>
+#include "Renderer/Renderer.h"
 
 //Dear ImGUI includes
 #include <imgui.h>
@@ -118,10 +119,10 @@ namespace InSight
 		//start the logger
 		Engine::Log::Init();
 
-		mWindow = std::unique_ptr<Window>(Window::Create(WindowProps(a_name, a_width, a_height)));
+		mWindow = std::unique_ptr<Window>(Window::Create(WindowProps((Renderer::GetAPI() == RendererAPI::API::OpenGL) ? "OpenGL" : "Vulkan", a_width, a_height)));
 		mWindow->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
-		if (Renderer::GetAPI() == RendererAPI::OpenGL)
+		if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 		{
 			mImGuiLayer = new InSight::ImGuiLayer();
 			PushOverlay(mImGuiLayer);
@@ -290,50 +291,25 @@ namespace InSight
 			m_running = true;
 			do
 			{
-				if (Renderer::GetAPI() == RendererAPI::OpenGL)
-				{
-					glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-				}
-
+				RenderCommand::SetClearColor({ 0.1, 0.1f, 0.1f, 1 });
+				RenderCommand::Clear();
+			
 				float deltaTime = Utility::tickTimer();
 
-				// Start the Dear ImGui frame
-#if DRAFT_ENABLED
-				ImGui_ImplOpenGL3_NewFrame();
-				ImGui_ImplGlfw_NewFrame();
-				ImGui::NewFrame();
-
-				//ImGui Set up Framerate window
-				showFrameData(true);
-
-				mImGuiLayer->Begin();
-
-				Update(deltaTime);
-
-				Draw();
-
-
-				for (Layer* layer : mLayerStack)
+				if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 				{
-					//layer->OnUpdate();
-				}
-
-				ImGui::Render();
-				ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-#else
-				if (Renderer::GetAPI() == RendererAPI::OpenGL)
-				{
-					mImGuiLayer->Begin();
+					Renderer::BegineScene();
 
 					mShaderSquare->Bind();
-					mSquareVA->Bind();
-					glDrawElements(GL_TRIANGLES, mSquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
-
+					Renderer::Submit(mSquareVA);
 
 					mShader->Bind();
-					mVertexArray->Bind();
-					glDrawElements(GL_TRIANGLES, mVertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+					Renderer::Submit(mVertexArray);
 
+					Renderer::EndScene();
+
+			
+					mImGuiLayer->Begin();
 					//ImGui Set up Framerate window
 					showFrameData(false);
 				}
@@ -342,7 +318,7 @@ namespace InSight
 
 				Draw();
 
-				if (Renderer::GetAPI() == RendererAPI::OpenGL)
+				if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 				{
 					for (Layer* layer : mLayerStack)
 					{
@@ -356,7 +332,6 @@ namespace InSight
 
 					mImGuiLayer->End();
 				}
-#endif
 
 				mWindow->OnUpdate();
 				//glfwSwapBuffers(m_window);
@@ -370,7 +345,7 @@ namespace InSight
 		Application_Log::Destroy();
 		Gizmos::destroy();
 
-		if (Renderer::GetAPI() == RendererAPI::OpenGL)
+		if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 		{
 			ImGui_ImplOpenGL3_Shutdown();
 			ImGui_ImplGlfw_Shutdown();

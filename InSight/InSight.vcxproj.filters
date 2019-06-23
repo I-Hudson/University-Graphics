@@ -351,6 +351,15 @@
     <ClInclude Include="include\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>Header Files\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\RendererAPI.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Renderer\RenderCommand.h">
+      <Filter>Header Files\InSight\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>Header Files\Platform\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -543,6 +552,15 @@
       <Filter>Source Files\InSight\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>Source Files\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\RendererAPI.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InSight\Renderer\RenderCommand.cpp">
+      <Filter>Source Files\InSight\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>Source Files\Platform\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>

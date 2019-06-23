@@ -40,7 +40,7 @@ void WindowsWindow::Init(const WindowProps& aProps)
 
 	EN_CORE_TRACE("Creating window {0} ({1}, {2})", aProps.Title, aProps.Width, aProps.Height);
 
-	if (InSight::Renderer::GetAPI() == InSight::RendererAPI::OpenGL)
+	if (InSight::Renderer::GetAPI() == InSight::RendererAPI::API::OpenGL)
 	{
 
 		if (!sGLFWInitialized)
@@ -59,7 +59,7 @@ void WindowsWindow::Init(const WindowProps& aProps)
 		mContext = new InSight::OpenGLContext(mWindow);
 		mContext->Init();
 	}
-	else if (InSight::Renderer::GetAPI() == InSight::RendererAPI::Vulkan)
+	else if (InSight::Renderer::GetAPI() == InSight::RendererAPI::API::Vulkan)
 	{
 		if (!sGLFWInitialized)
 		{
@@ -175,7 +175,7 @@ void WindowsWindow::Init(const WindowProps& aProps)
 
 void WindowsWindow::Shutdown()
 {
-	if (InSight::Renderer::GetAPI() == InSight::RendererAPI::Vulkan)
+	if (InSight::Renderer::GetAPI() == InSight::RendererAPI::API::Vulkan)
 	{
 		static_cast<InSight::VulkanContext*>(mContext)->ShutDown();
 		delete mContext;
