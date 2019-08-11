@@ -19,6 +19,8 @@
     <ClInclude Include="include\InSight\Assimp\AssimpMesh.h" />
     <ClInclude Include="include\InSight\Assimp\AssimpModel.h" />
     <ClInclude Include="include\InSight\Audio\AudioManager.h" />
+    <ClInclude Include="include\InSight\Camera\OrthographicCamera.h" />
+    <ClInclude Include="include\InSight\Camera\PerspectiveCamera.h" />
     <ClInclude Include="include\InSight\Component\AmbientLight.h" />
     <ClInclude Include="include\InSight\Component\CameraComponent.h" />
     <ClInclude Include="include\InSight\Component\Component.h" />

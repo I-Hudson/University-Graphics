@@ -10,7 +10,7 @@ namespace InSight
 	{
 		//set mTransoform and mPorjectionMatrix
 		mTransoform = entity->getComponent<TransformComponent>();
-		mPorjectionMatrix = glm::mat4();
+		mProjectionMatrix = glm::mat4();
 	}
 
 	void CameraComponent::update()
@@ -59,13 +59,30 @@ namespace InSight
 	{
 		//set mTransoform and mPorjectionViewMatrix
 		mTransoform->setTransformMatrix(aCameraMatrix);
-		mPorjectionViewMatrix = mPorjectionMatrix * *getViewMatrix();
+		mProjectionViewMatrix = mProjectionMatrix * *getViewMatrix();
 	}
 
 	void CameraComponent::setProjectionMatrix(glm::mat4 aProjectionMatrx)
 	{
 		//set mPorjectionMatrix
-		mPorjectionMatrix = aProjectionMatrx;
+		mProjectionMatrix = aProjectionMatrx;
+	}
+
+	void CameraComponent::setPosition(const glm::vec3 & a_position)
+	{
+		mTransoform->setPosition({ a_position, 1.0f });
+	}
+
+	void CameraComponent::setRotation(float a_angle)
+	{
+		glm::vec3 pos = mTransoform->getPosition()->xyz;
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) *
+			glm::rotate(glm::mat4(1.0f), glm::radians(a_angle), glm::vec3(0, 0, 1));
+
+		mTransoform->setTransformMatrix(transform);
+
+		mViewMatrix = glm::inverse(*mTransoform->getTransformMatrix());
+		mProjectionViewMatrix = mProjectionMatrix * mViewMatrix;
 	}
 
 	void CameraComponent::setCameraPropertiesPre(float aFOV, float aAspect, float aNearPlane, float aFarPlane)
@@ -78,13 +95,15 @@ namespace InSight
 		setProjectionMatrix(glm::perspective(glm::pi<float>() * mFOV, mAspect, mFrustrumPlanes.x, mFrustrumPlanes.y));
 	}
 
-	void CameraComponent::setCameraPropertiesOrt(float aFOV, float aWidth, float aHeight, float aNearPlane, float aFarPlane)
+	void CameraComponent::setCameraPropertiesOrt(float a_left, float a_right, float a_bottom, float a_top)
 	{
-		aFOV;
-		aWidth;
-		aHeight;
-		aNearPlane;
-		aFarPlane;
+		setProjectionMatrix(glm::ortho(a_left, a_right, a_bottom, a_top));
+	}
+
+	void CameraComponent::recalculateViewMatrix()
+	{
+		mViewMatrix = glm::inverse(*mTransoform->getTransformMatrix());
+		mProjectionViewMatrix = mProjectionMatrix * mViewMatrix;
 	}
 
 	void CameraComponent::invertPitch()
@@ -102,14 +121,14 @@ namespace InSight
 	glm::mat4* CameraComponent::getProjectionMatrix()
 	{
 		//return a pointer for projection matrix
-		return &mPorjectionMatrix;
+		return &mProjectionMatrix;
 	}
 
 	glm::mat4* CameraComponent::getProjectionViewMatrix()
 	{
 		//return a pointer for porjection View matrix
-		mPorjectionViewMatrix = mPorjectionMatrix * *getViewMatrix();
-		return &mPorjectionViewMatrix;
+		mProjectionViewMatrix = mProjectionMatrix * *getViewMatrix();
+		return &mProjectionViewMatrix;
 	}
 
 	glm::mat4* CameraComponent::getViewMatrix()
@@ -122,7 +141,7 @@ namespace InSight
 	glm::mat4 * CameraComponent::getInvprojectionMatrix()
 	{
 		//return a pointer for inverse projection matrix
-		mInvProjection = glm::inverse(mPorjectionMatrix);
+		mInvProjection = glm::inverse(mProjectionMatrix);
 		return &mInvProjection;
 	}
 

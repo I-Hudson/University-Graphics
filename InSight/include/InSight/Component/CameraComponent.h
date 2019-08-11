@@ -25,9 +25,14 @@ namespace InSight
 		//set projection matrix
 		void setProjectionMatrix(glm::mat4 aProjectionMatrx);
 
+		void setPosition(const glm::vec3& a_position);
+		void setRotation(float a_angle);
+
 		//set camera props
 		void setCameraPropertiesPre(float aFOV, float aAspect, float aNearPlane, float aFarPlane);
-		void setCameraPropertiesOrt(float aFOV, float aWidth, float aHeight, float aNearPlane, float aFarPlane);
+		void setCameraPropertiesOrt(float a_left, float a_right, float a_bottom, float a_top);
+
+		void recalculateViewMatrix();
 
 		//invert pitch
 		void invertPitch();
@@ -53,8 +58,8 @@ namespace InSight
 		//camera Matrix (pos, rot)
 		TransformComponent* mTransoform;
 		//camera matrixs
-		glm::mat4 mPorjectionMatrix;
-		glm::mat4 mPorjectionViewMatrix;
+		glm::mat4 mProjectionMatrix;
+		glm::mat4 mProjectionViewMatrix;
 		glm::mat4 mViewMatrix;
 		glm::mat4 mInvProjection;
 		glm::mat4 mInvView;

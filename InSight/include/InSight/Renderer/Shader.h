@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <glm/glm.hpp>
 
 namespace InSight
 {
@@ -12,6 +13,8 @@ namespace InSight
 
 		void Bind() const;
 		void Unbind() const;
+
+		void UploadUniformMat4(const std::string& a_name, const glm::mat4& a_matrix);
 
 	private:
 		uint32_t mRednererID;

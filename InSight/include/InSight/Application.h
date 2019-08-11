@@ -16,6 +16,9 @@
 
 #include "InSight/Scene/SceneManager.h"
 
+#include "Entity/Entity.h"
+#include "Component/CameraComponent.h"
+
 struct GLFWwindow;
 
 namespace InSight
@@ -76,6 +79,8 @@ namespace InSight
 
 		std::shared_ptr<VertexArray> mSquareVA;
 		std::shared_ptr<InSight::Shader> mShaderSquare;
+
+		Entity m_mainCamera;
 
 		virtual bool	onCreate() = 0;
 		virtual void	Update(float a_deltaTime) = 0;

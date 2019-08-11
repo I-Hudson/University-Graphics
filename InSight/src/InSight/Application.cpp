@@ -108,10 +108,13 @@ namespace InSight
 	}
 
 	Application::Application()
-		: m_running(false)
+		: m_running(false), m_mainCamera(*EntityManager::Get().addEntity())
 	{
 		EN_CORE_ASSERT(!sInstnace, "Application already exists!");
 		sInstnace = this;
+		m_mainCamera.addComponent<CameraComponent>();
+		m_mainCamera.getComponent<CameraComponent>()->setCameraMatrix(glm::mat4(1.0f));
+		m_mainCamera.getComponent<CameraComponent>()->setCameraPropertiesOrt(-2.f, 2.f, -2.f, 2.f);
 	}
 
 	bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen)
@@ -165,9 +168,6 @@ namespace InSight
 			indexBuffer.reset(InSight::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 			mVertexArray->AddIndexBuffer(indexBuffer);
 
-
-
-
 			mSquareVA.reset(VertexArray::Create());
 			
 			float squareVertices[4 * 4] =
@@ -194,13 +194,15 @@ namespace InSight
 		#version 330
 
 		layout(location = 0) in vec4 aPosition;			
-		
+
+		uniform mat4 u_ProjectionView;		
+
 		out vec4 vPosition;
 
 		void main()
 		{
 			vPosition = aPosition;
-			gl_Position = vec4(aPosition.xyz, 1.0);
+			gl_Position = u_ProjectionView * vec4(aPosition.xyz, 1.0);
 		}
 	)";
 
@@ -226,6 +228,8 @@ namespace InSight
 		layout(location = 2) in vec4 aNormal;		
 		layout(location = 3) in vec2 aTexCoord1;		
 		
+		uniform mat4 u_ProjectionView;
+
 		out vec4 vPosition;
 		out vec4 vColour;
 
@@ -233,7 +237,7 @@ namespace InSight
 		{
 			vPosition = aPosition;
 			vColour = aColour;
-			gl_Position = vec4(aPosition.xyz, 1.0);
+			gl_Position = u_ProjectionView * vec4(aPosition.xyz, 1.0);
 		}
 	)";
 
@@ -298,13 +302,14 @@ namespace InSight
 					RenderCommand::SetClearColor({ 0.1, 0.1f, 0.1f, 1 });
 					RenderCommand::Clear();
 
-					Renderer::BegineScene();
+					m_mainCamera.getComponent<CameraComponent>()->setPosition({ 0.5f, 0.5f, 0.0f });
+					m_mainCamera.getComponent<CameraComponent>()->setRotation(45.0f);
 
-					mShaderSquare->Bind();
-					Renderer::Submit(mSquareVA);
+					Renderer::BegineScene(*m_mainCamera.getComponent<CameraComponent>());
 
-					mShader->Bind();
-					Renderer::Submit(mVertexArray);
+					Renderer::Submit(mShaderSquare, mSquareVA);
+
+					Renderer::Submit(mShader, mVertexArray);
 
 					Renderer::EndScene();
 

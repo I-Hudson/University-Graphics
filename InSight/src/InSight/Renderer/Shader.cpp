@@ -2,7 +2,10 @@
 #include "Log.h"
 #include<vector>
 
+#include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
+
+
 
 namespace InSight
 {
@@ -125,5 +128,11 @@ namespace InSight
 	void Shader::Unbind() const
 	{
 		glUseProgram(0);
+	}
+
+	void Shader::UploadUniformMat4(const std::string& a_name, const glm::mat4 & a_matrix)
+	{
+		unsigned int location = glGetUniformLocation(mRednererID, a_name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(a_matrix));
 	}
 }

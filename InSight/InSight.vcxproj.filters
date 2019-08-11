@@ -121,6 +121,9 @@
     <Filter Include="Header Files\Platform\Vulkan">
       <UniqueIdentifier>{22411cf7-f73f-4793-9817-d304ced56bfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\InSight\Camera">
+      <UniqueIdentifier>{9a70e277-e9c1-48e8-946e-0e05a5d1cf7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\deps\glad\include\glad\glad.h">
@@ -362,6 +365,12 @@
     </ClInclude>
     <ClInclude Include="include\Platform\Vulkan\VulkanVertexArray.h">
       <Filter>Header Files\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Camera\OrthographicCamera.h">
+      <Filter>Header Files\InSight\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\InSight\Camera\PerspectiveCamera.h">
+      <Filter>Header Files\InSight\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

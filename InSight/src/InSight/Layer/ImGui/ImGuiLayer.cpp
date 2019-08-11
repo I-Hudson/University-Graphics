@@ -35,7 +35,7 @@ namespace InSight
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
 		//set style
 		ImGui::StyleColorsDark();
@@ -83,11 +83,11 @@ namespace InSight
 		//dispatcher.Dispatch<MouseButtonReleasedEvent>(EN_BIND_EVENT_FN(OnMouseButtonReleasedEvent));
 		//dispatcher.Dispatch<MouseMovedEvent>(EN_BIND_EVENT_FN(OnMouseMoveEvent));
 		//dispatcher.Dispatch<MouseScrolledEvent>(EN_BIND_EVENT_FN(OnMouseScolledEvent));
-
+		//
 		//dispatcher.Dispatch<KeyPressedEvent>(EN_BIND_EVENT_FN(OnKeyPressedEvent));
 		//dispatcher.Dispatch<KeyReleasedEvent>(EN_BIND_EVENT_FN(OnKeyReleasedEvent));
 		//dispatcher.Dispatch<KeyTypedEvent>(EN_BIND_EVENT_FN(OnKeyTypedEvent));
-
+		//
 		//dispatcher.Dispatch<WindowResizeEvent>(EN_BIND_EVENT_FN(OnWindowResizeEvent));
 	}
 
