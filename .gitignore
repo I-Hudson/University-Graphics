@@ -2,6 +2,7 @@
 .vs/
 obj/
 obj/
+lib/
 
 # Ignore files
 *.pdb
