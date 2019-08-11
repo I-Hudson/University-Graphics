@@ -113,10 +113,19 @@ namespace InSight
 	void VulkanContext::SwapBuffers()
 	{
 		vkWaitForFences(mDevice, 1, &mInFlightFences[mCurrentFrame], VK_TRUE, std::numeric_limits<uint64_t>::max());
-		vkResetFences(mDevice, 1, &mInFlightFences[mCurrentFrame]);
 
 		uint32_t imageIndex;
-		vkAcquireNextImageKHR(mDevice, mSwapChain, std::numeric_limits<uint64_t>::max(), mImageAvailableSemaphores[mCurrentFrame], VK_NULL_HANDLE, &imageIndex);
+		VkResult result = vkAcquireNextImageKHR(mDevice, mSwapChain, std::numeric_limits<uint64_t>::max(), mImageAvailableSemaphores[mCurrentFrame], VK_NULL_HANDLE, &imageIndex);
+
+		if (result == VK_ERROR_OUT_OF_DATE_KHR)
+		{
+			RecreateSwapChain();
+			return;
+		}
+		else if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR)
+		{
+			EN_CORE_ASSERT(false, "Failed to acquire swap chain image");
+		}
 
 		VkSubmitInfo submitInfo = {};
 		submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
@@ -133,6 +142,7 @@ namespace InSight
 		submitInfo.signalSemaphoreCount = 1;
 		submitInfo.pSignalSemaphores = signalSemaphores;
 
+		vkResetFences(mDevice, 1, &mInFlightFences[mCurrentFrame]);
 		if (vkQueueSubmit(mGrahicsQueue, 1, &submitInfo, mInFlightFences[mCurrentFrame]) != VK_SUCCESS)
 		{
 			EN_CORE_ASSERT(false, "Failed to submit draw command buffer!");
@@ -150,7 +160,16 @@ namespace InSight
 
 		vkQueuePresentKHR(mPresentQueue, &presentInfo);
 
-		vkQueueWaitIdle(mPresentQueue);
+		//vkQueueWaitIdle(mPresentQueue);
+		if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || mFramebufferResized)
+		{
+			mFramebufferResized = false;
+			RecreateSwapChain();
+		}
+		else if (result != VK_SUCCESS)
+		{
+			EN_CORE_ASSERT(false, "Failed to acquire swap chain image");
+		}
 
 		mCurrentFrame = (mCurrentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 	}
@@ -168,21 +187,8 @@ namespace InSight
 		
 		vkDestroyCommandPool(mDevice, mCommandPool, nullptr);
 
-		for (auto framebuffer : mSwapChainFramebuffers )
-		{
-			vkDestroyFramebuffer(mDevice, framebuffer, nullptr);
-		}
+		CleanSwapChain();
 
-		vkDestroyPipeline(mDevice, mGraphicsPipeline, nullptr);
-		vkDestroyPipelineLayout(mDevice, mPipelineLayout, nullptr);
-		vkDestroyRenderPass(mDevice, mRenderPass, nullptr);
-
-		for (auto imageView : mSwapChainImageViews)
-		{
-			vkDestroyImageView(mDevice, imageView, nullptr);
-		}
-
-		vkDestroySwapchainKHR(mDevice, mSwapChain, nullptr);
 		vkDestroyDevice(mDevice, nullptr);
 
 		if (mValidationLayersEnabled)
@@ -450,10 +456,15 @@ namespace InSight
 
 		VkPipelineShaderStageCreateInfo shaderStages[] = { vertShaderStageInfo, fragShaderStageInfo };
 
+		auto bindingDesc = Vertex::GetBindingDescription();
+		auto attributeDesc = Vertex::GetAttributeDesc();
+
 		VkPipelineVertexInputStateCreateInfo vertInputInfo = {};
 		vertInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-		vertInputInfo.vertexBindingDescriptionCount = 0;
-		vertInputInfo.vertexAttributeDescriptionCount = 0;
+		vertInputInfo.vertexBindingDescriptionCount = 1;
+		vertInputInfo.pVertexBindingDescriptions = &bindingDesc;
+		vertInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(attributeDesc.size());
+		vertInputInfo.pVertexAttributeDescriptions = attributeDesc.data();
 
 		VkPipelineInputAssemblyStateCreateInfo inputAssembly = {};
 		inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
@@ -662,6 +673,48 @@ for (size_t i = 0; i < mSwapChainImageViews.size(); i++)
 
 	}
 
+	void VulkanContext::CleanSwapChain()
+	{
+		for (auto framebuffer : mSwapChainFramebuffers)
+		{
+			vkDestroyFramebuffer(mDevice, framebuffer, nullptr);
+		}
+
+		vkDestroyPipeline(mDevice, mGraphicsPipeline, nullptr);
+		vkDestroyPipelineLayout(mDevice, mPipelineLayout, nullptr);
+		vkDestroyRenderPass(mDevice, mRenderPass, nullptr);
+
+		for (auto imageView : mSwapChainImageViews)
+		{
+			vkDestroyImageView(mDevice, imageView, nullptr);
+		}
+
+		vkDestroySwapchainKHR(mDevice, mSwapChain, nullptr);
+	}
+
+	void VulkanContext::RecreateSwapChain()
+	{
+		int width = 0, height = 0;
+		while (width == 0 || height == 0)
+		{
+			glfwGetFramebufferSize(mWindowHandle, &width, &height);
+			glfwWaitEvents();
+		}
+
+		vkDeviceWaitIdle(mDevice);
+
+		CleanSwapChain();
+
+		CreateSwapChain();
+		CreateImageViews();
+		CreateRenderPass();
+		CreateGraphicsPipeline();
+		CreateFramebuffers();
+		CreateCommandBuffers();
+	}
+
+
+
 	QueueFamilyIndices VulkanContext::FindQueueFamilies(VkPhysicalDevice aDevice)
 	{
 		QueueFamilyIndices indices;
@@ -864,13 +917,21 @@ for (size_t i = 0; i < mSwapChainImageViews.size(); i++)
 		}
 		else
 		{
-			VkExtent2D actualExtent = { 1920 , 1080 };
+			int width, height;
+			glfwGetFramebufferSize(mWindowHandle, &width, &height);
+
+			VkExtent2D actualExtent = { static_cast<uint32_t>(width) , static_cast<uint32_t>(height) };
 
 			actualExtent.width = std::max(aCapabilities.minImageExtent.width, std::min(aCapabilities.maxImageExtent.width, actualExtent.width));
 			actualExtent.height = std::max(aCapabilities.minImageExtent.height, std::min(aCapabilities.maxImageExtent.height, actualExtent.height));
 
 			return actualExtent;
 		}
+	}
+
+	void VulkanContext::SetFramebufferResize(bool aState)
+	{
+		mFramebufferResized = aState;
 	}
 
 	std::vector<char> VulkanContext::ReadFile(const std::string & aFileName)

@@ -360,6 +360,9 @@
     <ClInclude Include="include\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>Header Files\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="include\Platform\Vulkan\VulkanVertexArray.h">
+      <Filter>Header Files\Platform\Vulkan</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\deps\glad\src\glad.c">
@@ -562,6 +565,9 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>Source Files\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Vulkan\VulkanVertexArray.cpp">
+      <Filter>Source Files\Platform\Vulkan</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

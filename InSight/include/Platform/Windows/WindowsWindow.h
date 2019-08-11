@@ -25,6 +25,9 @@ public:
 
 	//set event callback
 	inline void SetEventCallback(const EventCallbackFn& aCallback) override { mData.EventCallback = aCallback; };
+	static void FramebufferResizeCallback(GLFWwindow* window, int aWidth, int aHeight);
+	InSight::GraphicsContext* GetContext() { return mContext; }
+
 	//set vsync
 	void SetVSync(bool aEnabled) override;
 	//is vsync on or off

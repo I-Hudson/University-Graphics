@@ -2,6 +2,8 @@
 #include "Log.h"
 #include <iostream>
 
+#include "InSight/Application.h"
+
 #include "Event/ApplicationEvent.h"
 #include "Event/MouseEvent.h"
 #include "Event/KeyEvent.h"
@@ -68,7 +70,7 @@ void WindowsWindow::Init(const WindowProps& aProps)
 			sGLFWInitialized = true;
 		}
 		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-		glfwWindowHint(GLFW_RESIZABLE , GLFW_FALSE);
+		glfwWindowHint(GLFW_RESIZABLE , GL_TRUE);
 
 		mWindow = glfwCreateWindow((int)aProps.Width, (int)aProps.Height, mData.Title.c_str(), nullptr, nullptr);
 
@@ -89,6 +91,8 @@ void WindowsWindow::Init(const WindowProps& aProps)
 			WindowResizeEvent event(width, height);
 			data.EventCallback(event);
 		});
+
+	glfwSetFramebufferSizeCallback(mWindow, FramebufferResizeCallback);
 
 	glfwSetWindowCloseCallback(mWindow, [](GLFWwindow* window)
 		{
@@ -189,6 +193,13 @@ void WindowsWindow::OnUpdate()
 {
 	glfwPollEvents();
 	mContext->SwapBuffers();
+}
+
+void WindowsWindow::FramebufferResizeCallback(GLFWwindow * window, int aWidth, int aHeight)
+{
+	auto context = reinterpret_cast<WindowsWindow*>(&InSight::Application::Get().GetWindow());
+	auto graphicsContext = reinterpret_cast<InSight::VulkanContext*>(context->GetContext());
+	graphicsContext->SetFramebufferResize(true);
 }
 
 void WindowsWindow::SetVSync(bool aEnabled)

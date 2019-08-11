@@ -139,7 +139,7 @@ namespace InSight
 
 			Vertex vertices[3] =
 			{
-				Vertex(-0.5, -0.5, 0.0f, 1.0f,	  /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f),
+				Vertex(-0.5f, -0.5f, 0.0f, 1.0f, /*Colour*/ 0.8f, 0.2f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 0.0f),
 				Vertex(0.5f, -0.5f, 0.0f, 1.0f,  /*Colour*/ 0.2f, 0.3f, 0.8f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 0.0f, 0.0f),
 				Vertex(0.0f, 0.5f, 0.0f, 1.0f,   /*Colour*/ 0.8f, 0.8f, 0.2f, 1.0f, /*Normals*/ 0.0f, 0.0f, 1.0f, 0.0f, /*TexCoord1*/ 1.0f, 1.0f),
 			};
@@ -291,13 +291,13 @@ namespace InSight
 			m_running = true;
 			do
 			{
-				RenderCommand::SetClearColor({ 0.1, 0.1f, 0.1f, 1 });
-				RenderCommand::Clear();
-			
 				float deltaTime = Utility::tickTimer();
 
 				if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 				{
+					RenderCommand::SetClearColor({ 0.1, 0.1f, 0.1f, 1 });
+					RenderCommand::Clear();
+
 					Renderer::BegineScene();
 
 					mShaderSquare->Bind();
