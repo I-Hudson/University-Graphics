@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Shader/BaseShader.h"
-
 #include <vector>
+#include "Debug.h"
 
 class BaseRenderer
 {
@@ -16,7 +16,7 @@ public:
 	template<typename T, typename... TArgs>
 	T* addShader(TArgs&&... mArgs)
 	{
-		T* BaseShader = new T(std::forward<TArgs>(mArgs)...);
+		T* BaseShader = DEBUG_NEW T(std::forward<TArgs>(mArgs)...);
 		BaseShader->setBaseRenderer(this);
 		mShadersToRender.emplace_back(BaseShader);
 

@@ -6,14 +6,17 @@
 #include <string>
 #include "imgui_fileDialog.h"
 
+#include "Debug.h"
+
 namespace InSight
 {
 	MeshComponent::MeshComponent(const char* aFile, LoadType aLoadType)
+		: mTransform(nullptr)
 	{
 		if (aLoadType == LoadType::AssimpLoader)
 		{
 			//load new model
-			model = new AssimpModel(aFile);
+			model = DEBUG_NEW AssimpModel(aFile);
 			//set render mode
 			mRenderMode = RenderMode::Opaque;
 		}
@@ -174,7 +177,7 @@ namespace InSight
 					if (ImGuiFileDialog::Instance()->IsOk == true)
 					{
 						std::string modelPath = ImGuiFileDialog::Instance()->GetFilepathName();
-						model = new AssimpModel(modelPath.c_str(), true);
+						model = DEBUG_NEW AssimpModel(modelPath.c_str(), true);
 					}
 					mShowFileExplorer = false;
 				}
@@ -322,6 +325,6 @@ namespace InSight
 			}
 		}
 
-		model = new AssimpModel(m_vertices, indices);
+		model = DEBUG_NEW AssimpModel(m_vertices, indices);
 	}
 }

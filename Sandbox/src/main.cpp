@@ -4,10 +4,14 @@
 #include <iostream>
 #include <fstream>
 
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 #define DEFAULT_SCREENWIDTH 1920
 #define DEFAULT_SCREENHEIGHT 1080
 
-#define PreMadeScene false
+#define PreMadeScene true
 
 // main that controls the creation/destruction of an application
 int main(int argc, char* argv[])
@@ -29,6 +33,8 @@ int main(int argc, char* argv[])
 		// explicitly control the destruction of our application
 		delete app;
 	}
+
+	_CrtDumpMemoryLeaks();
 
 	return 0;
 }

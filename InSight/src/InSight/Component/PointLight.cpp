@@ -3,6 +3,7 @@
 #include "Gizmos.h"
 #include "Component/TransformComponent.h"
 #include "Component/CameraComponent.h"
+#include "Debug.h"
 
 namespace InSight
 {
@@ -137,7 +138,7 @@ namespace InSight
 		float latitiudinalRange = (a_latMax - a_latMin) * DEG2RAD;
 		float longitudinalRange = (a_longMax - a_longMin) * DEG2RAD;
 		// for each row of the mesh
-		glm::vec3* v4Array = new  glm::vec3[a_rows*a_columns + a_columns];
+		glm::vec3* v4Array = DEBUG_NEW  glm::vec3[a_rows*a_columns + a_columns];
 
 		for (int row = 0; row <= a_rows; ++row)
 		{

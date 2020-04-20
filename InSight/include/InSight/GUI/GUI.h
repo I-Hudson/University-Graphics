@@ -5,6 +5,7 @@
 
 #include "Log.h"
 #include "GUI/GUIBase.h"
+#include "Debug.h"
 
 namespace InSight::GUI
 {
@@ -28,7 +29,7 @@ namespace InSight::GUI
 			if (!hasElement<T>())
 			{
 				//make new element
-				T* element(new  T(std::forward<TArgs>(aArgs)...));
+				T* element(DEBUG_NEW  T(std::forward<TArgs>(aArgs)...));
 				mGUIElements.emplace_back(element);
 				mGUIElements[mGUIElements.size() - 1]->init(this);
 			}

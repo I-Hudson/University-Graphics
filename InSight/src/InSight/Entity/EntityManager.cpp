@@ -6,9 +6,11 @@
 #include "InSight/Scene/SceneManager.h"
 #include "InSight/Scene/Scene.h"
 
+#include "Debug.h"
+
 namespace InSight
 {
-	EntityManager* EntityManager::sInstance = new EntityManager();
+	EntityManager* EntityManager::sInstance =  new EntityManager();
 
 	EntityManager::EntityManager()
 	{
@@ -23,11 +25,7 @@ namespace InSight
 			std::cout << "Entity : " << entity->getID().c_str() << " : has been deleted" << "\n";
 			delete entity;
 		}
-
-		if (sInstance != nullptr)
-		{
-			delete sInstance;
-		}
+	
 	}
 
 	void EntityManager::update()
@@ -57,7 +55,8 @@ namespace InSight
 	Entity* EntityManager::addEntity()
 	{
 		//add a new entity
-		Entity *e = new Entity(0, this);
+		Entity* e = new Entity(0, this);
+		e->setID("New Created Entity");
 		e->addComponent<TransformComponent>();
 		mEntities.emplace_back(e);
 		//InSight::SceneManager::Get().GetActiveScene()->AddEntity(e);

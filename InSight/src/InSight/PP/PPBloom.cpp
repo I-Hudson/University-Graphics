@@ -1,26 +1,27 @@
 #include "PP/PPBloom.h"
 
 #include "Log.h"
+#include "Debug.h"
 
 PPBloom::PPBloom()
 {
 	//create new gbuffer for evaluation, horizontal, vertical blur
-	mEvalBuffer = new GBuffer();
+	mEvalBuffer = DEBUG_NEW GBuffer();
 	mEvalBuffer->createFrameBuffer();
 	mEvalBuffer->attachTextureToFrameBuffer(0, GL_RGBA16F, 1920, 1080, 0, GL_RGBA, GL_FLOAT, 0, GL_COLOR_ATTACHMENT0, "Colour Eval Blur");
 
-	mHorBuffer = new GBuffer();
+	mHorBuffer = DEBUG_NEW GBuffer();
 	mHorBuffer->createFrameBuffer();
 	mHorBuffer->attachTextureToFrameBuffer(0, GL_RGBA16F, 1920, 1080, 0, GL_RGBA, GL_FLOAT, 0, GL_COLOR_ATTACHMENT0, "Hor Blur");
 
-	mVerBuffer = new GBuffer();
+	mVerBuffer = DEBUG_NEW GBuffer();
 	mVerBuffer->createFrameBuffer();
 	mVerBuffer->attachTextureToFrameBuffer(0, GL_RGBA16F, 1920, 1080, 0, GL_RGBA, GL_FLOAT, 0, GL_COLOR_ATTACHMENT0, "Ver Blur");
 
 	//evalation BaseShader
 	const char* inputs[] = { "Position", "TexCoord1" };
 	const char* outputs[] = { "FragColour" };
-	mEvalShader = new BaseShader(
+	mEvalShader = DEBUG_NEW BaseShader(
 		"./shaders/pp/pp_baseVertex.glsl",
 		"",
 		"",
@@ -31,7 +32,7 @@ PPBloom::PPBloom()
 	);
 
 	//blur BaseShader
-	mBlurShader = new BaseShader(
+	mBlurShader = DEBUG_NEW BaseShader(
 		"./shaders/pp/pp_gaussianBlurVertex.glsl",
 		"",
 		"",
@@ -42,7 +43,7 @@ PPBloom::PPBloom()
 	);
 
 	//composite BaseShader
-	mCompositeShader = new BaseShader(
+	mCompositeShader = DEBUG_NEW BaseShader(
 		"./shaders/pp/pp_baseVertex.glsl",
 		"",
 		"",

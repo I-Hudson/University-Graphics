@@ -7,6 +7,8 @@
 
 #include "InSight/Component/Component.h"
 
+#include "Debug.h"
+
 
 namespace InSight
 {
@@ -72,7 +74,7 @@ namespace InSight
 		{
 			if (mComponents.size() < 2 && !hasComponent<T>())
 			{
-				T* c = new T(std::forward<TArgs>(mArgs)...);
+				T* c = DEBUG_NEW T(std::forward<TArgs>(mArgs)...);
 				c->entity = this;
 				mComponents.emplace_back(c);
 

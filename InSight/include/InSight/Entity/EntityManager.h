@@ -21,17 +21,18 @@ namespace InSight
 		void						draw();
 
 		inline static EntityManager& Get() { return *sInstance; }
+		inline static void Reset() { delete sInstance; }
 
 		//get all entities
 		std::vector<Entity*> const& getEntities() const;
 
 		//Add a new entity to entites
-		Entity*						addEntity();
+		Entity*		addEntity();
 
 		/*
 			Return an entity with a ID
 		*/
-		Entity*						getEntity(std::string aID);
+		Entity*		getEntity(std::string aID);
 
 		//Delete Entity
 		void						DeleteEntity(Entity* aEntity);

@@ -1,9 +1,7 @@
-#pragma once
-
-#include "InSight/Debug.h"
-
 #ifndef __POST_PROCESSING_H__
 #define __POST_PROCESSING_H__
+
+#include "InSight/Debug.h"
 
 #include <vector>
 #include <glad/glad.h>
@@ -122,4 +120,3 @@ private:
 };
 
 #endif // __POST_PROCESSING_H__
-

@@ -4,12 +4,14 @@ namespace InSight::GUI
 {
 	GUIHierarchy::GUIHierarchy()
 	{
+		mActiveEntity = nullptr;
 	}
 
 	GUIHierarchy::GUIHierarchy(EntityManager* aEntityManager)
 	{
 		//set entiy manager
 		mEntityManager = aEntityManager;
+		mActiveEntity = nullptr;
 	}
 
 	GUIHierarchy::GUIHierarchy(EntityManager* aEntityManager, const glm::vec2& aPosition, const glm::vec2& aSize) :
@@ -17,11 +19,13 @@ namespace InSight::GUI
 	{
 		//set entiy manager
 		mEntityManager = aEntityManager;
+		mActiveEntity = nullptr;
 	}
 
 	GUIHierarchy::GUIHierarchy(const glm::vec2& aPosition, const glm::vec2& aSize) :
 		GUIBase(aPosition, aSize)
 	{
+		mActiveEntity = nullptr;
 	}
 
 	GUIHierarchy::~GUIHierarchy()

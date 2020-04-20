@@ -18,6 +18,7 @@
 #include "Log.h"
 #include "Gizmos.h"
 #include "Platform/Windows/WindowsInput.h"
+#include "Debug.h"
 
 #include "Renderer/Renderer.h"
 
@@ -82,7 +83,7 @@ namespace InSight
 	float* VertexToFloatArray(const Application::Vertex* aVertex, const int& aCount)
 	{
 		int count = aCount;
-		float* vertices = new float[aCount * 14];
+		float* vertices = DEBUG_NEW float[aCount * 14];
 		for (int i = 0; i < count; i++)
 		{
 			vertices[i * 14 + 0] = aVertex[i].Position.x;
@@ -108,13 +109,14 @@ namespace InSight
 	}
 
 	Application::Application()
-		: m_running(false), m_mainCamera(*EntityManager::Get().addEntity())
+		: m_running(false), m_mainCamera(EntityManager::Get().addEntity())
 	{
 		EN_CORE_ASSERT(!sInstnace, "Application already exists!");
 		sInstnace = this;
-		m_mainCamera.addComponent<CameraComponent>();
-		m_mainCamera.getComponent<CameraComponent>()->setCameraMatrix(glm::mat4(1.0f));
-		m_mainCamera.getComponent<CameraComponent>()->setCameraPropertiesOrt(-2.f, 2.f, -2.f, 2.f);
+		m_mainCamera->addComponent<CameraComponent>();
+		m_mainCamera->setID("ApplicationCamera");
+		m_mainCamera->getComponent<CameraComponent>()->setCameraMatrix(glm::mat4(1.0f));
+		m_mainCamera->getComponent<CameraComponent>()->setCameraPropertiesOrt(-2.f, 2.f, -2.f, 2.f);
 	}
 
 	bool Application::create(const char* a_name, int a_width, int a_height, bool a_bFullscreen)
@@ -127,7 +129,7 @@ namespace InSight
 
 		if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
 		{
-			mImGuiLayer = new InSight::ImGuiLayer();
+			mImGuiLayer = DEBUG_NEW InSight::ImGuiLayer();
 			PushOverlay(mImGuiLayer);
 
 			mVertexArray.reset(VertexArray::Create());
@@ -218,7 +220,7 @@ namespace InSight
 		}
 	)";
 
-			mShaderSquare.reset(new InSight::Shader(vertexSrcSquare, fragSrcSquare));
+			mShaderSquare.reset(DEBUG_NEW InSight::Shader(vertexSrcSquare, fragSrcSquare));
 
 			std::string vertexSrc = R"(
 		#version 330
@@ -255,28 +257,9 @@ namespace InSight
 		}
 	)";
 
-			mShader.reset(new InSight::Shader(vertexSrc, fragSrc));
+			mShader.reset(DEBUG_NEW InSight::Shader(vertexSrc, fragSrc));
 		}
 
-#if DRAFT_ENABLED
-		//Set Up IMGUI
-		//Setup Dear ImGui context
-		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO();
-		(void)io;
-		//Setup Dear ImGui style
-		ImGui::StyleColorsDark();
-		const char* glsl_version = "#version 400";
-
-		//Setup Platform/BaseRenderer bindings
-		ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(mWindow->GetNativeWindow()), true);
-		ImGui_ImplOpenGL3_Init(glsl_version);
-#endif
-
-#ifdef __GL_DEBUG__
-		glDebugMessageCallback(glErrorCallback, NULL);
-#endif
 
 		m_showFrameData = true;
 
@@ -302,10 +285,10 @@ namespace InSight
 					RenderCommand::SetClearColor({ 0.1, 0.1f, 0.1f, 1 });
 					RenderCommand::Clear();
 
-					m_mainCamera.getComponent<CameraComponent>()->setPosition({ 0.5f, 0.5f, 0.0f });
-					m_mainCamera.getComponent<CameraComponent>()->setRotation(45.0f);
+					m_mainCamera->getComponent<CameraComponent>()->setPosition({ 0.5f, 0.5f, 0.0f });
+					m_mainCamera->getComponent<CameraComponent>()->setRotation(45.0f);
 
-					Renderer::BegineScene(*m_mainCamera.getComponent<CameraComponent>());
+					Renderer::BegineScene(*m_mainCamera->getComponent<CameraComponent>());
 
 					Renderer::Submit(mShaderSquare, mSquareVA);
 
@@ -356,9 +339,6 @@ namespace InSight
 			ImGui_ImplGlfw_Shutdown();
 			ImGui::DestroyContext();
 		}
-
-		//glfwDestroyWindow(mWindow->GetWindow());
-		//glfwTerminate();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& aEvent)

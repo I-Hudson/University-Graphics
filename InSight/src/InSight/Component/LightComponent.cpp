@@ -4,20 +4,21 @@
 #include "Component/TransformComponent.h"
 #include <glm/gtc/type_ptr.hpp> 
 
+#include "Debug.h"
+
 namespace InSight
 {
 	LightComponent::LightComponent()
 	{
-		//gen buffers
-		generateBuffers();
-
 		//set new array
-		mLightTri = new LightTri[mBUFFER_SIZE];
+		mLightTri = DEBUG_NEW LightTri[mBUFFER_SIZE];
 		mLightTriCount = 0;
 
 		mIntensity = 1.0f;
 
 		mShadowsAdded = false;
+		//gen buffers
+		generateBuffers();
 	}
 
 	LightComponent::~LightComponent()
